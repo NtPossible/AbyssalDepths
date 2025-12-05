@@ -1,0 +1,12 @@
+{
+	"ingredientPattern": "SP",
+	"ingredients": {
+		"S": { "type": "item", "code": "game:paper-parchment", "quantity": 2 },
+		"P": { "type": "item", "code": "ad-schematic-*", "name": "type" }
+	},
+	"shapeless": true,
+	"width": 2,
+	"height": 1,
+	"name": "adschematiccopy",
+	"output": { "type": "item", "code": "ad-schematic-{type}", "quantity": 1 }
+}

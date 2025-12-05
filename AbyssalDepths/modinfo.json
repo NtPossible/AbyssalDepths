@@ -1,0 +1,14 @@
+{
+  "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
+  "type": "Code",
+  "modid": "abyssaldepths",
+  "name": "Abyssal Depths",
+  "authors": [
+    "Notpossible"
+  ],
+  "description": "Adds content to explore the deep ocean",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.21.5"
+  }
+}

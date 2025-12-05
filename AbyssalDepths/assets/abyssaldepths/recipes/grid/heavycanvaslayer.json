@@ -1,0 +1,10 @@
+{
+  "ingredientPattern": "A__,B__,A__",
+  "ingredients": {
+    "A": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}", "name": "color" },
+    "B": { "type": "item", "code": "game:beeswax", "quantity": 2 }
+  },
+  "width": 3,
+  "height": 3,
+  "output": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "quantity": 1 }
+}

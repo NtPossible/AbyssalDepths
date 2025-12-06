@@ -15,7 +15,7 @@ namespace AbyssalDepths.src.Patches
             }
             
             // Only override if helmet light flag is enabled
-            bool helmetLightEnabled = entityPlayer.WatchedAttributes.GetBool("abyssalDepthsHelmetLight");
+            bool helmetLightEnabled = entityPlayer.WatchedAttributes.GetBool("abyssalDepthsSuitLight");
             if (!helmetLightEnabled)
             {
                 return true;

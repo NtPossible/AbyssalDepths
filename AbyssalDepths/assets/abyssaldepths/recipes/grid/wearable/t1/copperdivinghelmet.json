@@ -11,5 +11,5 @@
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divinghelmet" }
+	"output": { "type": "item", "code": "game:metalplate-brass" }
 }

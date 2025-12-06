@@ -2,7 +2,7 @@
 
 namespace AbyssalDepths.src.Items.Wearable
 {
-    public class ItemDivingHelmet : ItemWearable
+    public class ItemDivingSuit : ItemWearable
     {
 
     }

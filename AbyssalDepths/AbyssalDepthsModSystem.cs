@@ -10,7 +10,7 @@ namespace AbyssalDepths
     {
         public override void Start(ICoreAPI api)
         {
-            api.RegisterItemClass($"{Mod.Info.ModID}:ItemDivingHelmet", typeof(ItemDivingHelmet));
+            api.RegisterItemClass($"{Mod.Info.ModID}:ItemDivingSuit", typeof(ItemDivingSuit));
         }
 
         public override void StartServerSide(ICoreServerAPI api)

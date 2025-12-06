@@ -1,6 +1,6 @@
 {
   "code": "divingsuit",
-  "class": "ItemWearable",
+  "class": "abyssaldepths:ItemDivingSuit",
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "bodypart", "states": ["head", "body", "legs"] },

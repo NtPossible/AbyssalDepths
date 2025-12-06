@@ -5,5 +5,5 @@
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "divinghelmet" }
+	"output": { "type": "item", "code": "game:metalplate-brass" }
 }

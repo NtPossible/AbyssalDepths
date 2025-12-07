@@ -65,5 +65,17 @@
   "item-waxedlinen-black": "Black Waxed Linen",
   "item-waxedlinen-plain": "Plain Waxed Linen",
   "item-waxedlinen-gray": "Gray Waxed Linen",
-  "item-waxedlinen-white": "White Waxed Linen"
+  "item-waxedlinen-white": "White Waxed Linen",
+
+  "item-divingsuit-head-mk1": "Copper Diving Helmet",
+  "item-divingsuit-body-mk1": "Heavy Canvas Diving Suit",
+  "item-divingsuit-legs-mk1": "Heavy Canvas Diving Leggings",
+
+  "item-divingsuit-head-mk2": "Brass Diving Helmet",
+  "item-divingsuit-body-mk2": "Diving Suit",
+  "item-divingsuit-legs-mk2": "Diving Leggings",
+
+  "item-divingsuit-head-mk3": "Atmospheric Diving Helmet",
+  "item-divingsuit-body-mk3": "Atmospheric Diving Suit",
+  "item-divingsuit-legs-mk3": "Atmospheric Diving Leggings"
 }

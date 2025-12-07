@@ -63,9 +63,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
 </ItemGroup>
-
-<ItemGroup>
-  <Folder Include="assets\abyssaldepths\recipes\grid\wearable\t3\" />
-</ItemGroup>
-
+	
 </Project>

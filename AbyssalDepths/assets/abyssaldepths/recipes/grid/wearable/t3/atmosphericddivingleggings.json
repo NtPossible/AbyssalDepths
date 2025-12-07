@@ -1,0 +1,9 @@
+{
+	"ingredientPattern": "AAA,A_A,A_A",
+	"ingredients": {
+		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+	},
+	"width": 3,
+	"height": 3,
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-mk3" }
+}

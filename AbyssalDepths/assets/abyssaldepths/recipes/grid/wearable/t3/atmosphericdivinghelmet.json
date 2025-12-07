@@ -1,0 +1,13 @@
+{
+	"ingredientPattern": "ABC,BEB,DED",
+	"ingredients": {
+		"A": { "type": "item", "code": "game:metalnailsandstrips-*", "quantity": 8 },
+		"B": { "type": "item", "code": "game:metalplate-brass", "quantity":  2 },
+		"C": { "type": "block", "code": "game:glassslab-plain-down-free" },
+		"D": { "type": "block", "code": "game:metal-parts", "quantity": 8 },
+		"E": { "type": "item", "code": "abyssaldepths:waxedlinen" }
+	},
+	"width": 3,
+	"height": 3,
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-mk3" }
+}

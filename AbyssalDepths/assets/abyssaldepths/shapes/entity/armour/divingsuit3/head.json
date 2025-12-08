@@ -10,7 +10,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"divingsuit": "armor/entity/mk3"
+		"divingsuit": "armour/entity/mk3"
 		},
 	"elements": [
 		{

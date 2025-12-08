@@ -1,178 +1,1835 @@
 {
 	"editor": {
-		"backDropShape": "entity/humanoid/seraph",
+		"backDropShape": "assets/game/shapes/entity/humanoid/seraph-hairless",
+		"collapsedPaths": "",
 		"allAngles": true,
-		"singleTexture": true
+		"entityTextureMode": true
 	},
 	"textureWidth": 64,
 	"textureHeight": 64,
+	"textureSizes": {
+	},
 	"textures": {
-		"material": "game:entity/humanoid/serapharmor/plate/iron"
+		"divingsuit": "armor/entity/mk3"
 	},
 	"elements": [
 		{
 			"name": "ArmorUpperTorso",
 			"stepParentName": "UpperTorso",
-			"from": [ -0.5, -0.2, -0.4 ], 
-			"to": [ 5.5, 5.2, 6.6 ], 
-			"uv": [ 0.0, 0.0 ],
-			"rotationOrigin": [ -0.5, -0.2, -0.4 ],
+			"from": [ -1.2, -0.2, -0.4 ],
+			"to": [ 6.2, 5.2, 6.6 ],
+			"autoUnwrap": false,
+			"uv": [ 13.5, 38.0 ],
+			"rotationOrigin": [ -1.2, -0.2, -0.4 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 0.0, 7.0, 6.0, 12.0 ] },
-				"east": { "texture": "#material", "uv": [ 6.0, 7.0, 13.0, 12.0 ] },
-				"south": { "texture": "#material", "uv": [ 13.0, 7.0, 19.0, 12.0 ] },
-				"west": { "texture": "#material", "uv": [ 19.0, 7.0, 26.0, 12.0 ] },
-				"up": { "texture": "#material", "uv": [ 0.0, 0.0, 6.0, 7.0 ] },
-				"down": { "texture": "#material", "uv": [ 6.0, 0.0, 12.0, 7.0 ] }
-			}
+				"north": { "texture": "#divingsuit", "uv": [ 55.0, 51.5, 62.0, 56.5 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 56.0, 50.0, 63.0, 55.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 57.0, 49.5, 64.0, 54.5 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 53.5, 49.5, 60.5, 54.5 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 53.0, 47.0, 60.0, 54.0 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 55.0, 49.0, 62.0, 56.0 ] }
+			},
+			"children": [
+				{
+					"name": "ArmorUpperTorso2",
+					"from": [ 0.7, 5.0, 0.6 ],
+					"to": [ 1.3, 6.4, 6.4 ],
+					"autoUnwrap": false,
+					"uv": [ 50.5, 47.5 ],
+					"rotationOrigin": [ 0.7, 5.0, 0.6 ],
+					"rotationZ": 36.0,
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 57.5, 53.0, 58.0, 54.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 60.5, 56.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 57.0, 53.5, 57.5, 54.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 57.5, 53.5, 63.0, 54.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 57.0, 48.5, 57.5, 54.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 55.0, 48.0, 55.5, 53.5 ] }
+					}
+				},
+				{
+					"name": "ArmorUpperTorso3",
+					"from": [ 5.6, 5.2, 0.6 ],
+					"to": [ 6.2, 6.6, 6.4 ],
+					"autoUnwrap": false,
+					"uv": [ 50.0, 42.5 ],
+					"rotationOrigin": [ 5.6, 5.2, 0.6 ],
+					"rotationZ": -36.0,
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 56.5, 51.0, 57.0, 52.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 56.0, 50.5, 61.5, 51.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 56.5, 48.5, 57.0, 49.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 57.0, 48.5, 62.5, 49.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 58.0, 49.0, 58.5, 54.5 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 57.5, 48.0, 58.0, 53.5 ] }
+					}
+				},
+				{
+					"name": "ArmorUpperTorso4",
+					"from": [ 0.3, 5.0, 0.5 ],
+					"to": [ 6.5, 6.4, 1.1 ],
+					"autoUnwrap": false,
+					"uv": [ 47.5, 36.0 ],
+					"rotationOrigin": [ 0.3, 5.0, 0.5 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 55.5, 48.5, 61.5, 49.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 58.0, 51.5, 58.5, 52.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 55.5, 47.0, 61.5, 48.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 60.0, 49.5, 60.5, 50.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 53.0, 50.5, 59.0, 51.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 55.5, 50.5, 61.5, 51.0 ] }
+					}
+				},
+				{
+					"name": "ArmorUpperTorso5",
+					"from": [ 0.3, 5.0, 5.9 ],
+					"to": [ 6.5, 6.4, 6.5 ],
+					"autoUnwrap": false,
+					"uv": [ 50.5, 46.5 ],
+					"rotationOrigin": [ 0.3, 5.0, 5.9 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 54.0, 48.5, 60.0, 49.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 56.5, 47.0, 57.0, 48.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 56.5, 47.0, 62.5, 48.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 63.0, 47.0, 63.5, 48.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 54.5, 49.5, 60.5, 50.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 56.5, 46.5, 62.5, 47.0 ] }
+					}
+				},
+				{
+					"name": "ArmorUpperTorso6",
+					"from": [ -0.3, 1.0, -0.1 ],
+					"to": [ 7.7, 4.5, 7.1 ],
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ -0.3, 1.0, -0.1 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 0.0, 7.0, 8.0, 10.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 8.0, 7.0, 15.0, 10.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 15.0, 7.0, 23.0, 10.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 23.0, 7.0, 30.0, 10.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 0.0, 0.0, 8.0, 7.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 8.0, 0.0, 16.0, 7.0 ] }
+					},
+					"children": [
+						{
+							"name": "Reinforcement1",
+							"from": [ -1.8, 2.5, 1.0 ],
+							"to": [ 0.0, 3.1, 1.6 ],
+							"uv": [ 57.0, 54.0 ],
+							"rotationOrigin": [ -1.8, 2.5, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 57.0, 54.5, 58.5, 55.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 58.5, 54.5, 59.0, 55.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 59.0, 54.5, 60.5, 55.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 60.5, 54.5, 61.0, 55.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 57.0, 54.0, 58.5, 54.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 58.5, 54.0, 60.0, 54.5 ] }
+							},
+							"children": [
+								{
+									"name": "Reinforcement2",
+									"from": [ 0.0, 0.0, 1.6 ],
+									"to": [ 1.8, 0.6, 2.2 ],
+									"uv": [ 57.0, 54.0 ],
+									"rotationOrigin": [ 0.0, 0.0, 1.6 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 57.0, 54.5, 58.5, 55.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 58.5, 54.5, 59.0, 55.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 59.0, 54.5, 60.5, 55.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 54.5, 61.0, 55.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 57.0, 54.0, 58.5, 54.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 58.5, 54.0, 60.0, 54.5 ] }
+									}
+								},
+								{
+									"name": "Reinforcement3",
+									"from": [ 0.0, 0.0, 4.7 ],
+									"to": [ 1.8, 0.6, 5.3 ],
+									"uv": [ 57.0, 54.0 ],
+									"rotationOrigin": [ 0.0, 0.0, 4.7 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 57.0, 54.5, 58.5, 55.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 58.5, 54.5, 59.0, 55.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 59.0, 54.5, 60.5, 55.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 54.5, 61.0, 55.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 57.0, 54.0, 58.5, 54.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 58.5, 54.0, 60.0, 54.5 ] }
+									}
+								},
+								{
+									"name": "Reinforcement4",
+									"from": [ 0.0, 0.0, 3.1 ],
+									"to": [ 1.8, 0.6, 3.7 ],
+									"uv": [ 57.0, 54.0 ],
+									"rotationOrigin": [ 0.0, 0.0, 3.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 57.0, 54.5, 58.5, 55.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 58.5, 54.5, 59.0, 55.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 59.0, 54.5, 60.5, 55.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 54.5, 61.0, 55.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 57.0, 54.0, 58.5, 54.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 58.5, 54.0, 60.0, 54.5 ] }
+									}
+								},
+								{
+									"name": "Reinforcement5",
+									"from": [ -0.8, -0.1, -0.4 ],
+									"to": [ 0.0, 0.7, 5.7 ],
+									"autoUnwrap": false,
+									"uv": [ 54.5, 50.5 ],
+									"rotationOrigin": [ -0.8, -0.1, -0.4 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 54.5, 56.5, 55.0, 57.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 55.0, 56.5, 61.0, 57.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 61.0, 56.5, 61.5, 57.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 55.5, 57.5, 61.5, 58.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 54.5, 50.5, 55.0, 56.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 55.0, 50.5, 55.5, 56.5 ] }
+									},
+									"children": [
+										{
+											"name": "Reinforcement6",
+											"from": [ 0.0, -0.01, -1.1 ],
+											"to": [ 0.8, 0.81, 0.0 ],
+											"uv": [ 59.0, 50.0 ],
+											"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+											"rotationY": -19.0,
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 59.0, 51.0, 59.5, 51.5 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 59.5, 51.0, 60.5, 51.5 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 60.5, 51.0, 61.0, 51.5 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 61.0, 51.0, 62.0, 51.5 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 59.0, 50.0, 59.5, 51.0 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 59.5, 50.0, 60.0, 51.0 ] }
+											}
+										},
+										{
+											"name": "Reinforcement7",
+											"from": [ 0.0, -0.01, 6.1 ],
+											"to": [ 0.8, 0.81, 7.2 ],
+											"uv": [ 59.0, 51.0 ],
+											"rotationOrigin": [ 0.0, 0.0, 6.1 ],
+											"rotationY": 19.0,
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 59.0, 52.0, 59.5, 52.5 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 59.5, 52.0, 60.5, 52.5 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 60.5, 52.0, 61.0, 52.5 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 61.0, 52.0, 62.0, 52.5 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 59.0, 51.0, 59.5, 52.0 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 59.5, 51.0, 60.0, 52.0 ] }
+											}
+										},
+										{
+											"name": "Reinforcement8",
+											"from": [ 0.0, 0.8, 0.3 ],
+											"to": [ 0.8, 3.8, 1.1 ],
+											"uv": [ 57.0, 52.0 ],
+											"rotationOrigin": [ 0.0, 0.8, 0.3 ],
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 57.0, 52.5, 57.5, 55.5 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 57.5, 52.5, 58.0, 55.5 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 58.0, 52.5, 58.5, 55.5 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 58.5, 52.5, 59.0, 55.5 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 57.0, 52.0, 57.5, 52.5 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 57.5, 52.0, 58.0, 52.5 ] }
+											},
+											"children": [
+												{
+													"name": "Reinforcement9",
+													"from": [ -0.01, 3.0, 0.0 ],
+													"to": [ 0.81, 5.0, 0.8 ],
+													"uv": [ 55.0, 55.0 ],
+													"rotationOrigin": [ 0.0, 3.0, 0.8 ],
+													"rotationX": -30.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 57.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 57.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 57.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 57.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+													},
+													"children": [
+														{
+															"name": "Reinforcement10",
+															"from": [ -0.01, 2.0, 0.0 ],
+															"to": [ 0.79, 3.1, 0.8 ],
+															"uv": [ 55.0, 55.0 ],
+															"rotationOrigin": [ 0.0, 2.0, 0.0 ],
+															"rotationX": 30.0,
+															"rotationY": 0.0,
+															"rotationZ": 0.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.5 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.5 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.5 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.5 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "Cube17",
+													"from": [ -0.1, 0.4, -0.1 ],
+													"to": [ 0.9, 2.2, 0.9 ],
+													"uv": [ 57.0, 20.0 ],
+													"rotationOrigin": [ -0.1, 0.4, -0.1 ],
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 57.0, 21.0, 58.0, 22.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 58.0, 21.0, 59.0, 22.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 59.0, 21.0, 60.0, 22.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 60.0, 21.0, 61.0, 22.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 57.0, 20.0, 58.0, 21.0 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 58.0, 20.0, 59.0, 21.0 ] }
+													}
+												}
+											]
+										},
+										{
+											"name": "Reinforcement11",
+											"from": [ 0.0, 0.8, 5.1 ],
+											"to": [ 0.8, 3.8, 5.9 ],
+											"uv": [ 57.0, 51.0 ],
+											"rotationOrigin": [ 0.0, 0.8, 5.1 ],
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 57.0, 51.5, 57.5, 54.5 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 57.5, 51.5, 58.0, 54.5 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 58.0, 51.5, 58.5, 54.5 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 58.5, 51.5, 59.0, 54.5 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 57.0, 51.0, 57.5, 51.5 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 57.5, 51.0, 58.0, 51.5 ] }
+											},
+											"children": [
+												{
+													"name": "Reinforcement12",
+													"from": [ -0.01, 3.0, 0.0 ],
+													"to": [ 0.81, 5.0, 0.8 ],
+													"uv": [ 55.0, 55.0 ],
+													"rotationOrigin": [ 0.0, 3.0, 0.0 ],
+													"rotationX": 30.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 57.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 57.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 57.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 57.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+													},
+													"children": [
+														{
+															"name": "Reinforcement13",
+															"from": [ -0.01, 2.0, 0.0 ],
+															"to": [ 0.79, 3.1, 0.8 ],
+															"uv": [ 55.0, 55.0 ],
+															"rotationOrigin": [ 0.0, 2.0, 0.8 ],
+															"rotationX": -30.0,
+															"rotationY": 0.0,
+															"rotationZ": 0.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.5 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.5 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.5 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.5 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "Cube16",
+													"from": [ -0.1, 0.4, -0.1 ],
+													"to": [ 0.9, 2.2, 0.9 ],
+													"uv": [ 57.5, 23.5 ],
+													"rotationOrigin": [ -0.1, 0.4, -0.1 ],
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 57.5, 24.5, 58.5, 26.0 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 58.5, 24.5, 59.5, 26.0 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.5, 26.0 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.5, 26.0 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 57.5, 23.5, 58.5, 24.5 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 58.5, 23.5, 59.5, 24.5 ] }
+													}
+												}
+											]
+										},
+										{
+											"name": "Reinforcement14",
+											"from": [ 0.0, 6.2, -1.0 ],
+											"to": [ 0.8, 7.0, 7.1 ],
+											"autoUnwrap": false,
+											"uv": [ 53.0, 49.5 ],
+											"rotationOrigin": [ 0.0, 6.2, -1.0 ],
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 53.0, 57.5, 53.5, 58.0 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 53.5, 57.5, 61.5, 58.0 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 61.5, 57.5, 62.0, 58.0 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 55.0, 57.0, 63.0, 57.5 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 53.0, 49.5, 53.5, 57.5 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 53.5, 49.5, 54.0, 57.5 ] }
+											},
+											"children": [
+												{
+													"name": "Reinforcement15",
+													"from": [ 0.0, -0.01, -2.1 ],
+													"to": [ 0.8, 0.81, 0.0 ],
+													"uv": [ 55.0, 55.0 ],
+													"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+													"rotationY": -40.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 55.0, 57.0, 55.5, 57.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 55.5, 57.0, 57.5, 57.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 57.5, 57.0, 58.0, 57.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 58.0, 57.0, 60.0, 57.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 57.0 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 57.0 ] }
+													},
+													"children": [
+														{
+															"name": "Reinforcement16",
+															"from": [ -0.8, 0.01, 0.0 ],
+															"to": [ 0.0, 0.81, 5.8 ],
+															"autoUnwrap": false,
+															"uv": [ 53.5, 51.5 ],
+															"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+															"rotationX": -180.0,
+															"rotationY": 45.0,
+															"rotationZ": 180.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 53.5, 57.0, 54.0, 57.5 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 54.0, 57.0, 59.5, 57.5 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 59.5, 57.0, 60.0, 57.5 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 56.5, 56.0, 62.0, 56.5 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 53.5, 51.5, 54.0, 57.0 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 54.0, 51.5, 54.5, 57.0 ] }
+															},
+															"children": [
+																{
+																	"name": "Reinforcement17",
+																	"from": [ -0.9, -0.3, 5.6 ],
+																	"to": [ 0.9, 0.9, 6.6 ],
+																	"uv": [ 59.0, 23.0 ],
+																	"rotationOrigin": [ -0.9, -0.3, 5.6 ],
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 60.5, 25.0 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 60.5, 24.0, 61.5, 25.0 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 61.5, 24.0, 63.0, 25.0 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 63.0, 24.0, 64.0, 25.0 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 59.0, 23.0, 60.5, 24.0 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 60.5, 23.0, 62.0, 24.0 ] }
+																	}
+																},
+																{
+																	"name": "Reinforcement18",
+																	"from": [ 0.9, -0.2, 5.7 ],
+																	"to": [ 1.2, 0.8, 6.5 ],
+																	"uv": [ 58.0, 24.0 ],
+																	"rotationOrigin": [ 0.9, -0.2, 5.7 ],
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 58.0, 24.5, 58.5, 25.5 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 58.5, 24.5, 59.0, 25.5 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.5 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.5 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 58.0, 24.0, 58.5, 24.5 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 58.5, 24.0, 59.0, 24.5 ] }
+																	}
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "Reinforcement19",
+													"from": [ 0.0, -0.01, 8.1 ],
+													"to": [ 0.8, 0.81, 10.2 ],
+													"uv": [ 55.0, 55.0 ],
+													"rotationOrigin": [ 0.0, 0.0, 8.1 ],
+													"rotationY": 40.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 55.0, 57.0, 55.5, 57.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 55.5, 57.0, 57.5, 57.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 57.5, 57.0, 58.0, 57.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 58.0, 57.0, 60.0, 57.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 57.0 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 57.0 ] }
+													},
+													"children": [
+														{
+															"name": "Reinforcement20",
+															"from": [ 0.0, 0.01, 2.0 ],
+															"to": [ 0.8, 0.81, 7.8 ],
+															"autoUnwrap": false,
+															"uv": [ 53.5, 49.5 ],
+															"rotationOrigin": [ 0.0, 0.0, 2.0 ],
+															"rotationY": 45.0,
+															"rotationZ": 0.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 53.5, 55.0, 54.0, 55.5 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 54.0, 55.0, 59.5, 55.5 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 59.5, 55.0, 60.0, 55.5 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 56.5, 54.5, 62.0, 55.0 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 53.5, 49.5, 54.0, 55.0 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 54.0, 49.5, 54.5, 55.0 ] }
+															},
+															"children": [
+																{
+																	"name": "Reinforcement21",
+																	"from": [ -0.1, -0.3, 5.6 ],
+																	"to": [ 1.7, 0.9, 6.6 ],
+																	"uv": [ 58.5, 21.5 ],
+																	"rotationOrigin": [ -0.1, -0.3, 5.6 ],
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 58.5, 22.5, 60.0, 23.5 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 60.0, 22.5, 61.0, 23.5 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 61.0, 22.5, 62.5, 23.5 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 62.5, 22.5, 63.5, 23.5 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 58.5, 21.5, 60.0, 22.5 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 60.0, 21.5, 61.5, 22.5 ] }
+																	}
+																},
+																{
+																	"name": "Reinforcement22",
+																	"from": [ -0.3, -0.2, 5.7 ],
+																	"to": [ 0.0, 0.8, 6.5 ],
+																	"uv": [ 58.5, 24.0 ],
+																	"rotationOrigin": [ -0.3, -0.2, 5.7 ],
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 58.5, 24.5, 59.0, 25.5 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.5 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.5 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.5 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 58.5, 24.0, 59.0, 24.5 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] }
+																	}
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ReinforcementB1",
+							"from": [ 8.0, 0.6, 1.4 ],
+							"to": [ 8.4, 3.4, 3.0 ],
+							"uv": [ 57.5, 21.0 ],
+							"rotationOrigin": [ 8.0, 0.6, 1.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 57.5, 22.5, 58.0, 25.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 58.0, 22.5, 59.5, 25.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 59.5, 22.5, 60.0, 25.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 60.0, 22.5, 61.5, 25.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 57.5, 21.0, 58.0, 22.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 58.0, 21.0, 58.5, 22.5 ] }
+							},
+							"children": [
+								{
+									"name": "Cube2",
+									"from": [ 0.4, 0.2, 0.3 ],
+									"to": [ 1.4, 1.2, 1.3 ],
+									"uv": [ 56.0, 46.0 ],
+									"rotationOrigin": [ 0.4, 0.2, 0.3 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 56.0, 47.0, 57.0, 48.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 57.0, 47.0, 58.0, 48.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 58.0, 47.0, 59.0, 48.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 59.0, 47.0, 60.0, 48.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 56.0, 46.0, 57.0, 47.0 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 57.0, 46.0, 58.0, 47.0 ] }
+									},
+									"children": [
+										{
+											"name": "Cube3",
+											"from": [ 1.0, 0.0, -0.01 ],
+											"to": [ 2.0, 1.0, 1.01 ],
+											"uv": [ 55.0, 52.0 ],
+											"rotationOrigin": [ 1.0, 0.0, 0.0 ],
+											"rotationZ": 45.0,
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 55.0, 53.0, 56.0, 54.0 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 56.0, 53.0, 57.0, 54.0 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 57.0, 53.0, 58.0, 54.0 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 58.0, 53.0, 59.0, 54.0 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 55.0, 52.0, 56.0, 53.0 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 56.0, 52.0, 57.0, 53.0 ] }
+											},
+											"children": [
+												{
+													"name": "Cube4",
+													"from": [ 1.0, 0.0, 0.01 ],
+													"to": [ 4.6, 1.0, 1.01 ],
+													"uv": [ 53.0, 53.5 ],
+													"rotationOrigin": [ 1.0, 0.0, 0.0 ],
+													"rotationZ": 45.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 53.0, 54.5, 56.5, 55.5 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 56.5, 54.5, 57.5, 55.5 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 57.5, 54.5, 61.0, 55.5 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 61.0, 54.5, 62.0, 55.5 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 53.0, 53.5, 56.5, 54.5 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 56.5, 53.5, 60.0, 54.5 ] }
+													},
+													"children": [
+														{
+															"name": "Cube5",
+															"from": [ 2.6, 0.0, -0.01 ],
+															"to": [ 3.6, 1.0, 1.01 ],
+															"uv": [ 55.0, 55.0 ],
+															"rotationOrigin": [ 3.6, 0.0, 0.0 ],
+															"rotationZ": -45.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 55.0, 56.0, 56.0, 57.0 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 56.0, 56.0, 57.0, 57.0 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 57.0, 56.0, 58.0, 57.0 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 58.0, 56.0, 59.0, 57.0 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 56.0, 56.0 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 56.0, 55.0, 57.0, 56.0 ] }
+															},
+															"children": [
+																{
+																	"name": "Cube6",
+																	"from": [ -1.1314, 1.6971, 0.01 ],
+																	"to": [ 0.8686, 2.6971, 1.01 ],
+																	"uv": [ 55.0, 55.0 ],
+																	"rotationOrigin": [ -1.1314, 1.6971, 0.0 ],
+																	"rotationZ": -45.0,
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 55.0, 56.0, 57.0, 57.0 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 57.0, 56.0, 58.0, 57.0 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 58.0, 56.0, 60.0, 57.0 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 60.0, 56.0, 61.0, 57.0 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 57.0, 56.0 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 57.0, 55.0, 59.0, 56.0 ] }
+																	}
+																}
+															]
+														},
+														{
+															"name": "Cube18",
+															"from": [ 0.9, -0.1, -0.1 ],
+															"to": [ 2.8, 1.1, 1.1 ],
+															"uv": [ 57.5, 21.5 ],
+															"rotationOrigin": [ 0.9, -0.1, -0.1 ],
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 57.5, 22.5, 59.0, 23.5 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 59.0, 22.5, 60.0, 23.5 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 60.0, 22.5, 61.5, 23.5 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 61.5, 22.5, 62.5, 23.5 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 57.5, 21.5, 59.0, 22.5 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 59.0, 21.5, 60.5, 22.5 ] }
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ReinforcementB2",
+							"from": [ 8.0, 0.6, 4.2 ],
+							"to": [ 8.4, 3.4, 5.8 ],
+							"uv": [ 58.5, 20.0 ],
+							"rotationOrigin": [ 8.0, 0.6, 4.2 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 58.5, 21.5, 59.0, 24.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 59.0, 21.5, 60.5, 24.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 60.5, 21.5, 61.0, 24.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 61.0, 21.5, 62.5, 24.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 58.5, 20.0, 59.0, 21.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 59.0, 20.0, 59.5, 21.5 ] }
+							},
+							"children": [
+								{
+									"name": "Cube7",
+									"from": [ 0.4, 0.2, 0.3 ],
+									"to": [ 1.4, 1.2, 1.3 ],
+									"uv": [ 56.0, 49.0 ],
+									"rotationOrigin": [ 0.4, 0.2, 0.3 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 56.0, 50.0, 57.0, 51.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 57.0, 50.0, 58.0, 51.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 58.0, 50.0, 59.0, 51.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 59.0, 50.0, 60.0, 51.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 56.0, 49.0, 57.0, 50.0 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 57.0, 49.0, 58.0, 50.0 ] }
+									},
+									"children": [
+										{
+											"name": "Cube8",
+											"from": [ 1.0, 0.0, -0.01 ],
+											"to": [ 2.0, 1.0, 1.01 ],
+											"uv": [ 53.0, 55.0 ],
+											"rotationOrigin": [ 1.0, 0.0, 0.0 ],
+											"rotationZ": 45.0,
+											"faces": {
+												"north": { "texture": "#divingsuit", "uv": [ 53.0, 56.0, 54.0, 57.0 ] },
+												"east": { "texture": "#divingsuit", "uv": [ 54.0, 56.0, 55.0, 57.0 ] },
+												"south": { "texture": "#divingsuit", "uv": [ 55.0, 56.0, 56.0, 57.0 ] },
+												"west": { "texture": "#divingsuit", "uv": [ 56.0, 56.0, 57.0, 57.0 ] },
+												"up": { "texture": "#divingsuit", "uv": [ 53.0, 55.0, 54.0, 56.0 ] },
+												"down": { "texture": "#divingsuit", "uv": [ 54.0, 55.0, 55.0, 56.0 ] }
+											},
+											"children": [
+												{
+													"name": "Cube9",
+													"from": [ 1.0, 0.0, 0.01 ],
+													"to": [ 4.6, 1.0, 1.01 ],
+													"uv": [ 53.5, 52.0 ],
+													"rotationOrigin": [ 1.0, 0.0, 0.0 ],
+													"rotationZ": 45.0,
+													"faces": {
+														"north": { "texture": "#divingsuit", "uv": [ 53.5, 53.0, 57.0, 54.0 ] },
+														"east": { "texture": "#divingsuit", "uv": [ 57.0, 53.0, 58.0, 54.0 ] },
+														"south": { "texture": "#divingsuit", "uv": [ 58.0, 53.0, 61.5, 54.0 ] },
+														"west": { "texture": "#divingsuit", "uv": [ 61.5, 53.0, 62.5, 54.0 ] },
+														"up": { "texture": "#divingsuit", "uv": [ 53.5, 52.0, 57.0, 53.0 ] },
+														"down": { "texture": "#divingsuit", "uv": [ 57.0, 52.0, 60.5, 53.0 ] }
+													},
+													"children": [
+														{
+															"name": "Cube10",
+															"from": [ 2.6, 0.0, -0.01 ],
+															"to": [ 3.6, 1.0, 1.01 ],
+															"uv": [ 56.0, 55.0 ],
+															"rotationOrigin": [ 3.6, 0.0, 0.0 ],
+															"rotationZ": -45.0,
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 56.0, 56.0, 57.0, 57.0 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 57.0, 56.0, 58.0, 57.0 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 58.0, 56.0, 59.0, 57.0 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 59.0, 56.0, 60.0, 57.0 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 56.0, 55.0, 57.0, 56.0 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 57.0, 55.0, 58.0, 56.0 ] }
+															},
+															"children": [
+																{
+																	"name": "Cube11",
+																	"from": [ -1.1314, 1.6971, 0.01 ],
+																	"to": [ 0.8686, 2.6971, 1.01 ],
+																	"uv": [ 55.0, 55.0 ],
+																	"rotationOrigin": [ -1.1314, 1.6971, 0.0 ],
+																	"rotationZ": -45.0,
+																	"faces": {
+																		"north": { "texture": "#divingsuit", "uv": [ 55.0, 56.0, 57.0, 57.0 ] },
+																		"east": { "texture": "#divingsuit", "uv": [ 57.0, 56.0, 58.0, 57.0 ] },
+																		"south": { "texture": "#divingsuit", "uv": [ 58.0, 56.0, 60.0, 57.0 ] },
+																		"west": { "texture": "#divingsuit", "uv": [ 60.0, 56.0, 61.0, 57.0 ] },
+																		"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 57.0, 56.0 ] },
+																		"down": { "texture": "#divingsuit", "uv": [ 57.0, 55.0, 59.0, 56.0 ] }
+																	}
+																}
+															]
+														},
+														{
+															"name": "Cube19",
+															"from": [ 0.9, -0.1, -0.1 ],
+															"to": [ 2.8, 1.1, 1.1 ],
+															"uv": [ 57.5, 24.0 ],
+															"rotationOrigin": [ 0.9, -0.1, -0.1 ],
+															"faces": {
+																"north": { "texture": "#divingsuit", "uv": [ 57.5, 25.0, 59.0, 26.0 ] },
+																"east": { "texture": "#divingsuit", "uv": [ 59.0, 25.0, 60.0, 26.0 ] },
+																"south": { "texture": "#divingsuit", "uv": [ 60.0, 25.0, 61.5, 26.0 ] },
+																"west": { "texture": "#divingsuit", "uv": [ 61.5, 25.0, 62.5, 26.0 ] },
+																"up": { "texture": "#divingsuit", "uv": [ 57.5, 24.0, 59.0, 25.0 ] },
+																"down": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 60.5, 25.0 ] }
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cube20",
+					"from": [ -1.0, 4.5, 2.0 ],
+					"to": [ 0.0, 5.5, 3.0 ],
+					"uv": [ 57.0, 23.0 ],
+					"rotationOrigin": [ -1.0, 4.5, 2.0 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 57.0, 24.0, 58.0, 25.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 58.0, 24.0, 59.0, 25.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 60.0, 25.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 60.0, 24.0, 61.0, 25.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 57.0, 23.0, 58.0, 24.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 58.0, 23.0, 59.0, 24.0 ] }
+					}
+				},
+				{
+					"name": "Cube21",
+					"from": [ -1.0, 4.5, 4.0 ],
+					"to": [ 0.0, 5.5, 5.0 ],
+					"uv": [ 57.0, 23.5 ],
+					"rotationOrigin": [ -1.0, 4.5, 4.0 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 57.0, 24.5, 58.0, 25.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 58.0, 24.5, 59.0, 25.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 60.0, 25.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 61.0, 25.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 57.0, 23.5, 58.0, 24.5 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 58.0, 23.5, 59.0, 24.5 ] }
+					}
+				}
+			]
 		},
 		{
 			"name": "ArmorLowerTorso",
 			"stepParentName": "LowerTorso",
-			"from": [ -0.3, -0.5, -0.3 ], 
-			"to": [ 5.2, 5.1, 6.3 ], 
+			"from": [ -0.8, -0.5, -0.3 ],
+			"to": [ 5.7, 5.1, 6.3 ],
+			"autoUnwrap": false,
 			"uv": [ 0.0, 18.0 ],
-			"rotationOrigin": [ -0.3, -0.5, -0.3 ],
+			"rotationOrigin": [ -0.8, -0.5, -0.3 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 0.0, 24.5, 5.5, 30.0 ] },
-				"east": { "texture": "#material", "uv": [ 5.5, 24.5, 12.0, 30.0 ] },
-				"south": { "texture": "#material", "uv": [ 12.0, 24.5, 17.5, 30.0 ] },
-				"west": { "texture": "#material", "uv": [ 17.5, 24.5, 24.0, 30.0 ] },
-				"up": { "texture": "#material", "uv": [ 0.0, 18.0, 5.5, 24.5 ] },
-				"down": { "texture": "#material", "uv": [ 5.5, 18.0, 11.0, 24.5 ] }
-			}
+				"north": { "texture": "#divingsuit", "uv": [ 57.0, 50.0, 63.5, 55.5 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 53.0, 47.0, 59.5, 52.5 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 53.0, 49.0, 59.5, 54.5 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 55.5, 49.5, 62.0, 55.0 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 55.0, 48.0, 61.5, 54.5 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 56.0, 47.5, 62.5, 54.0 ] }
+			},
+			"children": [
+				{
+					"name": "ArmorLowerTorso2",
+					"from": [ -0.3, 0.8, -0.1 ],
+					"to": [ 6.8, 3.8, 6.7 ],
+					"uv": [ 0.0, 10.5 ],
+					"rotationOrigin": [ -0.3, 0.8, -0.1 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 0.0, 17.0, 7.0, 20.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 7.0, 17.0, 13.5, 20.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 13.5, 17.0, 20.5, 20.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 20.5, 17.0, 27.0, 20.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 0.0, 10.5, 7.0, 17.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 7.0, 10.5, 14.0, 17.0 ] }
+					},
+					"children": [
+						{
+							"name": "Nut4",
+							"from": [ -0.1, 3.2, 5.6 ],
+							"to": [ 0.3, 4.0, 6.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 5.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop4",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 59.0, 24.0 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 24.0, 60.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut7",
+							"from": [ 7.2, 3.2, 5.7 ],
+							"to": [ 7.6, 4.0, 6.5 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 5.7 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop7",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 59.0, 24.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 24.0, 60.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut8",
+							"from": [ 7.2, 3.2, 4.6 ],
+							"to": [ 7.6, 4.0, 5.4 ],
+							"uv": [ 55.0, 56.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 4.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 56.5, 55.5, 57.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 56.5, 56.0, 57.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 56.5, 56.5, 57.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 56.5, 57.0, 57.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 56.0, 55.5, 56.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 56.0, 56.0, 56.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop8",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 60.0, 25.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 60.0, 25.5, 60.5, 26.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 60.5, 25.5, 61.0, 26.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 61.0, 25.5, 61.5, 26.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 61.5, 25.5, 62.0, 26.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 60.0, 25.0, 60.5, 25.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 60.5, 25.0, 61.0, 25.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut9",
+							"from": [ 7.2, 3.2, 3.5 ],
+							"to": [ 7.6, 4.0, 4.3 ],
+							"uv": [ 55.0, 57.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 3.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 57.5, 55.5, 58.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 57.5, 56.0, 58.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 57.5, 56.5, 58.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 57.5, 57.0, 58.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 57.0, 55.5, 57.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 57.0, 56.0, 57.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop9",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 58.0, 23.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 58.0, 23.5, 58.5, 24.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 58.5, 23.5, 59.0, 24.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 59.0, 23.5, 59.5, 24.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 59.5, 23.5, 60.0, 24.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 58.0, 23.0, 58.5, 23.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 58.5, 23.0, 59.0, 23.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut10",
+							"from": [ 7.2, 3.2, 2.4 ],
+							"to": [ 7.6, 4.0, 3.2 ],
+							"uv": [ 56.0, 57.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 2.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 56.0, 57.5, 56.5, 58.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.5, 57.5, 57.0, 58.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 57.0, 57.5, 57.5, 58.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 57.5, 57.5, 58.0, 58.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 56.0, 57.0, 56.5, 57.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 56.5, 57.0, 57.0, 57.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop10",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 60.0, 24.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 61.0, 24.5, 61.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 61.5, 24.5, 62.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 60.0, 24.0, 60.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 60.5, 24.0, 61.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut11",
+							"from": [ 7.2, 3.2, 1.3 ],
+							"to": [ 7.6, 4.0, 2.1 ],
+							"uv": [ 56.0, 55.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 1.3 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 57.0, 55.5, 57.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 57.5, 55.5, 58.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 56.0, 55.0, 56.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 56.5, 55.0, 57.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop11",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 62.0, 23.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 62.0, 23.5, 62.5, 24.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 62.5, 23.5, 63.0, 24.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 63.0, 23.5, 63.5, 24.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 63.5, 23.5, 64.0, 24.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 62.0, 23.0, 62.5, 23.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 62.5, 23.0, 63.0, 23.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut12",
+							"from": [ 7.2, 3.2, 0.2 ],
+							"to": [ 7.6, 4.0, 1.0 ],
+							"uv": [ 56.0, 56.0 ],
+							"rotationOrigin": [ 7.2, 3.2, 0.2 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 56.0, 56.5, 56.5, 57.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.5, 56.5, 57.0, 57.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 57.0, 56.5, 57.5, 57.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 57.5, 56.5, 58.0, 57.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 56.0, 56.0, 56.5, 56.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 56.5, 56.0, 57.0, 56.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop12",
+									"from": [ 0.4, 0.1, 0.1 ],
+									"to": [ 0.6, 0.7, 0.7 ],
+									"uv": [ 62.0, 22.0 ],
+									"rotationOrigin": [ 0.4, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 62.0, 22.5, 62.5, 23.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 62.5, 22.5, 63.0, 23.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 63.0, 22.5, 63.5, 23.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 63.5, 22.5, 64.0, 23.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 62.0, 22.0, 62.5, 22.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 62.5, 22.0, 63.0, 22.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut21",
+							"from": [ -0.1, 3.2, 4.6 ],
+							"to": [ 0.3, 4.0, 5.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 4.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop21",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 59.0, 25.0 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 25.5, 59.5, 26.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 25.5, 60.0, 26.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 25.5, 60.5, 26.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 25.5, 61.0, 26.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 25.0, 59.5, 25.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 25.0, 60.0, 25.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut22",
+							"from": [ -0.1, 3.2, 3.6 ],
+							"to": [ 0.3, 4.0, 4.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 3.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop22",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 60.0, 21.5 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 60.0, 22.0, 60.5, 22.5 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 60.5, 22.0, 61.0, 22.5 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 61.0, 22.0, 61.5, 22.5 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 61.5, 22.0, 62.0, 22.5 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 60.0, 21.5, 60.5, 22.0 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 60.5, 21.5, 61.0, 22.0 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut23",
+							"from": [ -0.1, 3.2, 2.5 ],
+							"to": [ 0.3, 4.0, 3.3 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 2.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop23",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 59.0, 24.0 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 24.0, 60.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut24",
+							"from": [ -0.1, 3.2, 1.5 ],
+							"to": [ 0.3, 4.0, 2.3 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 1.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop24",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 59.0, 25.0 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 25.5, 59.5, 26.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 25.5, 60.0, 26.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 25.5, 60.5, 26.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 25.5, 61.0, 26.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 25.0, 59.5, 25.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 25.0, 60.0, 25.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut25",
+							"from": [ -0.1, 3.2, 0.5 ],
+							"to": [ 0.3, 4.0, 1.3 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ -0.1, 3.2, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop25",
+									"from": [ -0.2, 0.1, 0.1 ],
+									"to": [ 0.0, 0.7, 0.7 ],
+									"uv": [ 59.0, 24.0 ],
+									"rotationOrigin": [ -0.2, 0.1, 0.1 ],
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 24.0, 60.0, 24.5 ] }
+									}
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "ArmorUpperArmR",
 			"stepParentName": "UpperArmR",
-			"from": [ -0.2, -0.2, -0.3 ], 
-			"to": [ 3.1, 7.2, 2.1 ], 
-			"uv": [ 54.0, 0.0 ],
-			"rotationOrigin": [ -0.2, -0.2, -0.3 ],
+			"from": [ -0.7, -0.2, -1.3 ],
+			"to": [ 3.6, 7.2, 2.1 ],
+			"uv": [ 50.0, 0.0 ],
+			"rotationOrigin": [ -0.7, -0.2, -1.3 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 54.0, 2.0, 57.0, 9.0 ] },
-				"east": { "texture": "#material", "uv": [ 57.0, 2.0, 59.0, 9.0 ] },
-				"south": { "texture": "#material", "uv": [ 59.0, 2.0, 62.0, 9.0 ] },
-				"west": { "texture": "#material", "uv": [ 62.0, 2.0, 64.0, 9.0 ] },
-				"up": { "texture": "#material", "uv": [ 54.0, 0.0, 57.0, 2.0 ] },
-				"down": { "texture": "#material", "uv": [ 57.0, 0.0, 60.0, 2.0 ] }
+				"north": { "texture": "#divingsuit", "uv": [ 50.0, 3.0, 54.0, 10.0 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 54.0, 3.0, 57.0, 10.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 57.0, 3.0, 61.0, 10.0 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 61.0, 3.0, 64.0, 10.0 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 50.0, 0.0, 54.0, 3.0 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 54.0, 0.0, 58.0, 3.0 ] }
 			},
 			"children": [
 				{
 					"name": "ArmorPauldronR",
-					"from": [ -0.3, 4.0, -0.5 ], 
-					"to": [ 3.5, 8.0, 1.5 ], 
+					"from": [ -0.8, 3.0, -1.3 ],
+					"to": [ 5.0, 8.0, 3.7 ],
 					"unwrapMode": 1,
-					"uv": [ 22.0, 12.0 ],
-					"rotationOrigin": [ -0.3, 4.0, -0.5 ],
+					"autoUnwrap": false,
+					"uv": [ 40.5, 26.0 ],
+					"rotationOrigin": [ -0.8, 3.0, -1.3 ],
 					"faces": {
-						"north": { "texture": "#material", "uv": [ 24.0, 14.0, 27.5, 18.0 ] },
-						"east": { "texture": "#material", "uv": [ 22.0, 14.0, 24.0, 18.0 ] },
-						"south": { "texture": "#material", "uv": [ 29.5, 14.0, 33.0, 18.0 ] },
-						"west": { "texture": "#material", "uv": [ 27.5, 14.0, 29.5, 18.0 ] },
-						"up": { "texture": "#material", "uv": [ 24.0, 12.0, 27.5, 14.0 ], "rotation": 180 },
-						"down": { "texture": "#material", "uv": [ 24.0, 18.0, 27.5, 20.0 ] }
-					}
+						"north": { "texture": "#divingsuit", "uv": [ 33.5, 20.5, 39.0, 25.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 33.5, 20.5, 38.5, 25.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 33.5, 20.5, 39.0, 25.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 46.0, 21.0, 51.0, 26.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 33.0, 14.5, 38.5, 19.5 ], "rotation": 180 },
+						"down": { "texture": "#divingsuit", "uv": [ 27.0, 20.5, 32.5, 25.5 ] }
+					},
+					"children": [
+						{
+							"name": "ArmorPauldronR2",
+							"from": [ -0.8, 0.5, 0.5 ],
+							"to": [ 0.0, 4.5, 4.5 ],
+							"unwrapMode": 1,
+							"autoUnwrap": false,
+							"uv": [ 46.5, 27.0 ],
+							"rotationOrigin": [ -0.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 45.5, 21.5, 46.0, 25.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 50.5, 21.5, 51.0, 25.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 46.5, 21.5, 50.5, 25.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 50.5, 21.5, 51.0, 25.5 ], "rotation": 180 },
+								"down": { "texture": "#divingsuit", "uv": [ 45.5, 21.0, 46.0, 25.0 ] }
+							}
+						},
+						{
+							"name": "ArmorPauldronR3",
+							"from": [ -1.6, 1.0, 1.0 ],
+							"to": [ -0.8, 4.0, 4.0 ],
+							"unwrapMode": 1,
+							"autoUnwrap": false,
+							"uv": [ 45.0, 25.0 ],
+							"rotationOrigin": [ -1.6, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 57.0, 23.5, 57.5, 26.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 57.0, 23.5, 57.5, 26.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 27.0, 0.5, 31.0, 4.5 ], "autoUv": false },
+								"up": { "texture": "#divingsuit", "uv": [ 56.5, 22.5, 57.0, 25.5 ], "rotation": 180 },
+								"down": { "texture": "#divingsuit", "uv": [ 59.0, 23.0, 59.5, 26.0 ] }
+							}
+						},
+						{
+							"name": "ArmorPauldronR5",
+							"from": [ 6.4, 1.0, 1.0 ],
+							"to": [ 7.2, 4.0, 4.0 ],
+							"unwrapMode": 1,
+							"autoUnwrap": false,
+							"uv": [ 44.0, 26.5 ],
+							"rotationOrigin": [ 6.4, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 63.0, 22.0, 63.5, 25.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 27.0, 0.5, 31.0, 4.5 ], "autoUv": false },
+								"south": { "texture": "#divingsuit", "uv": [ 62.0, 23.5, 62.5, 26.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 60.5, 23.5, 61.0, 26.5 ], "rotation": 180 },
+								"down": { "texture": "#divingsuit", "uv": [ 62.0, 23.5, 62.5, 26.5 ] }
+							}
+						},
+						{
+							"name": "ArmorPauldronR4",
+							"from": [ 5.8, 0.5, 0.5 ],
+							"to": [ 6.6, 4.5, 4.5 ],
+							"unwrapMode": 1,
+							"autoUnwrap": false,
+							"uv": [ 41.0, 26.5 ],
+							"rotationOrigin": [ 5.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 45.0, 21.0, 45.5, 25.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 46.5, 21.5, 50.5, 25.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
+								"south": { "texture": "#divingsuit", "uv": [ 50.5, 21.5, 51.0, 25.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 45.0, 21.0, 45.5, 25.0 ], "rotation": 180 },
+								"down": { "texture": "#divingsuit", "uv": [ 45.0, 21.0, 45.5, 25.0 ] }
+							}
+						},
+						{
+							"name": "Cube14",
+							"from": [ 1.0, 0.6, -0.6 ],
+							"to": [ 1.6, 5.6, 2.0 ],
+							"uv": [ 56.0, 49.0 ],
+							"rotationOrigin": [ 1.0, 0.6, -0.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 56.0, 51.5, 56.5, 56.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.5, 51.5, 59.0, 56.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 59.0, 51.5, 59.5, 56.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 59.5, 51.5, 62.0, 56.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 56.0, 49.0, 56.5, 51.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 56.5, 49.0, 57.0, 51.5 ] }
+							}
+						},
+						{
+							"name": "Cube15",
+							"from": [ 4.0, 0.6, -0.6 ],
+							"to": [ 4.6, 5.6, 2.0 ],
+							"uv": [ 55.5, 47.0 ],
+							"rotationOrigin": [ 4.0, 0.6, -0.6 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.5, 49.5, 56.0, 54.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.0, 49.5, 58.5, 54.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 58.5, 49.5, 59.0, 54.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 59.0, 49.5, 61.5, 54.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.5, 47.0, 56.0, 49.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 56.0, 47.0, 56.5, 49.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "ArmorElbowR",
+					"from": [ 0.8, -2.3, -0.3 ],
+					"to": [ 6.1, 1.7, 3.7 ],
+					"unwrapMode": 3,
+					"autoUnwrap": false,
+					"uv": [ 44.0, 35.5 ],
+					"rotationOrigin": [ 0.8, -2.3, 3.7 ],
+					"rotationZ": 25.0,
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 49.0, 31.5, 54.0, 35.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 45.0, 31.5, 49.0, 35.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 48.5, 31.5, 53.5, 35.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 45.0, 31.5, 49.0, 35.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 27.0, 20.5, 32.0, 24.5 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 27.5, 21.0, 32.5, 25.0 ], "rotation": 180 }
+					},
+					"children": [
+						{
+							"name": "ArmorElbowR1",
+							"from": [ -0.8, 0.5, 0.5 ],
+							"to": [ 0.0, 3.5, 3.5 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 33.5, 0.5 ],
+							"rotationOrigin": [ -0.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 40.0, 3.5, 40.5, 6.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 37.0, 3.5, 40.0, 6.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 36.5, 3.5, 37.0, 6.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 33.5, 3.5, 36.5, 6.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 36.5, 0.5, 37.0, 3.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 36.0, 3.0, 36.5, 6.0 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorElbowR2",
+							"from": [ -1.6, 1.0, 1.0 ],
+							"to": [ -0.8, 3.0, 3.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 59.5, 37.5 ],
+							"rotationOrigin": [ -1.6, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 40.0, 22.0, 40.5, 24.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 44.0, 22.5, 44.5, 24.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.0, 38.5, 58.0, 40.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 42.5, 22.5, 43.0, 24.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 43.5, 21.5, 44.0, 23.5 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorElbowR3",
+							"from": [ 5.3, 0.5, 0.5 ],
+							"to": [ 6.1, 3.5, 3.5 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 33.0, 1.0 ],
+							"rotationOrigin": [ 5.3, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 39.5, 4.0, 40.0, 7.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 36.5, 4.0, 39.5, 7.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 36.0, 4.0, 36.5, 7.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 33.0, 4.0, 36.0, 7.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 36.0, 1.0, 36.5, 4.0 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 36.0, 4.0, 36.5, 7.0 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorElbowR4",
+							"from": [ 6.1, 1.0, 1.0 ],
+							"to": [ 6.9, 3.0, 3.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 57.5, 39.0 ],
+							"rotationOrigin": [ 6.1, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 33.0, 23.5, 33.5, 25.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.0, 38.5, 58.0, 40.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 32.0, 22.5, 32.5, 24.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 35.0, 28.5, 37.0, 30.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 33.0, 23.0, 33.5, 25.0 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 33.0, 23.0, 33.5, 25.0 ], "rotation": 180 }
+							}
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "ArmorUpperArmL",
 			"stepParentName": "UpperArmL",
-			"from": [ -0.2, -0.2, -0.1 ], 
-			"to": [ 3.1, 7.2, 2.3 ], 
-			"uv": [ 44.0, 0.0 ],
-			"rotationOrigin": [ -0.2, -0.2, -0.1 ],
+			"from": [ -0.7, -0.2, -0.1 ],
+			"to": [ 3.6, 7.2, 3.3 ],
+			"uv": [ 50.0, 0.0 ],
+			"rotationOrigin": [ -0.7, -0.2, -0.1 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 44.0, 2.0, 47.0, 9.0 ] },
-				"east": { "texture": "#material", "uv": [ 47.0, 2.0, 49.0, 9.0 ] },
-				"south": { "texture": "#material", "uv": [ 49.0, 2.0, 52.0, 9.0 ] },
-				"west": { "texture": "#material", "uv": [ 52.0, 2.0, 54.0, 9.0 ] },
-				"up": { "texture": "#material", "uv": [ 44.0, 0.0, 47.0, 2.0 ] },
-				"down": { "texture": "#material", "uv": [ 47.0, 0.0, 50.0, 2.0 ] }
+				"north": { "texture": "#divingsuit", "uv": [ 50.0, 3.0, 54.0, 10.0 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 54.0, 3.0, 57.0, 10.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 57.0, 3.0, 61.0, 10.0 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 61.0, 3.0, 64.0, 10.0 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 50.0, 0.0, 54.0, 3.0 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 54.0, 0.0, 58.0, 3.0 ] }
 			},
 			"children": [
 				{
 					"name": "ArmorPauldronL",
-					"from": [ -0.3, 4.0, 0.7 ], 
-					"to": [ 3.5, 8.0, 2.7 ], 
+					"from": [ -0.8, 3.0, -0.3 ],
+					"to": [ 5.0, 8.0, 4.7 ],
 					"unwrapMode": 3,
-					"uv": [ 11.0, 12.0 ],
-					"rotationOrigin": [ -0.3, 4.0, 0.7 ],
+					"autoUnwrap": false,
+					"uv": [ 39.0, 25.5 ],
+					"rotationOrigin": [ -0.8, 3.0, -0.3 ],
 					"faces": {
-						"north": { "texture": "#material", "uv": [ 18.5, 14.0, 22.0, 18.0 ] },
-						"east": { "texture": "#material", "uv": [ 16.5, 14.0, 18.5, 18.0 ] },
-						"south": { "texture": "#material", "uv": [ 13.0, 14.0, 16.5, 18.0 ] },
-						"west": { "texture": "#material", "uv": [ 11.0, 14.0, 13.0, 18.0 ] },
-						"up": { "texture": "#material", "uv": [ 13.0, 12.0, 16.5, 14.0 ] },
-						"down": { "texture": "#material", "uv": [ 13.0, 18.0, 16.5, 20.0 ], "rotation": 180 }
-					}
+						"north": { "texture": "#divingsuit", "uv": [ 33.0, 14.5, 38.5, 19.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 45.5, 21.0, 50.5, 26.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 33.5, 20.5, 39.0, 25.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 27.0, 20.5, 32.0, 25.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 33.0, 14.5, 38.5, 19.5 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 33.0, 14.5, 38.5, 19.5 ], "rotation": 180 }
+					},
+					"children": [
+						{
+							"name": "ArmorPauldronL2",
+							"from": [ -0.8, 0.5, 0.5 ],
+							"to": [ 0.0, 4.5, 4.5 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 45.0, 27.5 ],
+							"rotationOrigin": [ -0.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 42.5, 21.0, 43.0, 25.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 43.0, 21.0, 43.5, 25.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 47.0, 21.5, 51.0, 25.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 44.0, 21.0, 44.5, 25.0 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 42.0, 22.5, 42.5, 26.5 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorPauldronL3",
+							"from": [ -1.6, 1.0, 1.0 ],
+							"to": [ -0.8, 4.0, 4.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 49.0, 29.5 ],
+							"rotationOrigin": [ -1.6, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 61.0, 22.0, 61.5, 25.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 59.5, 23.5, 60.0, 26.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 27.0, 0.5, 31.0, 4.5 ], "autoUv": false },
+								"up": { "texture": "#divingsuit", "uv": [ 58.5, 22.5, 59.0, 25.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 60.5, 22.5, 61.0, 25.5 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorPauldronL4",
+							"from": [ 5.8, 0.5, 0.5 ],
+							"to": [ 6.6, 4.5, 4.5 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 41.0, 26.5 ],
+							"rotationOrigin": [ 5.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 41.0, 20.5, 41.5, 24.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 46.5, 21.5, 50.5, 25.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 41.0, 21.0, 41.5, 25.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 41.0, 21.5, 41.5, 25.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 41.0, 22.0, 41.5, 26.0 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorPauldronL5",
+							"from": [ 6.6, 1.0, 1.0 ],
+							"to": [ 7.4, 4.0, 4.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 43.0, 28.5 ],
+							"rotationOrigin": [ 6.6, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 61.5, 20.0, 62.0, 23.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 27.0, 0.6, 31.0, 4.5 ], "autoUv": false },
+								"south": { "texture": "#divingsuit", "uv": [ 60.0, 22.5, 60.5, 25.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 58.0, 23.5, 58.5, 26.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 58.5, 21.5, 59.0, 24.5 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "Cube12",
+							"from": [ 1.0, 0.6, 3.0 ],
+							"to": [ 1.6, 5.6, 5.6 ],
+							"uv": [ 57.0, 47.5 ],
+							"rotationOrigin": [ 1.0, 0.6, 3.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 57.0, 50.0, 57.5, 55.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 57.5, 50.0, 60.0, 55.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 60.0, 50.0, 60.5, 55.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 60.5, 50.0, 63.0, 55.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 57.0, 47.5, 57.5, 50.0 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 57.5, 47.5, 58.0, 50.0 ] }
+							}
+						},
+						{
+							"name": "Cube13",
+							"from": [ 4.0, 0.6, 3.0 ],
+							"to": [ 4.6, 5.6, 5.6 ],
+							"uv": [ 56.5, 48.0 ],
+							"rotationOrigin": [ 4.0, 0.6, 3.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 56.5, 50.5, 57.0, 55.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 57.0, 50.5, 59.5, 55.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 59.5, 50.5, 60.0, 55.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 60.0, 50.5, 62.5, 55.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 56.5, 48.0, 57.0, 50.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 57.0, 48.0, 57.5, 50.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "ArmorElbowL",
+					"from": [ 0.8, -2.3, -0.3 ],
+					"to": [ 6.1, 1.7, 3.7 ],
+					"unwrapMode": 3,
+					"autoUnwrap": false,
+					"uv": [ 45.0, 26.0 ],
+					"rotationOrigin": [ 0.8, -2.3, -0.3 ],
+					"rotationZ": 25.0,
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 58.0, 31.5, 63.0, 35.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 54.0, 31.5, 58.0, 35.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 58.0, 31.5, 63.0, 35.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 54.0, 31.5, 58.0, 35.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 27.5, 21.0, 32.5, 25.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 27.5, 21.0, 32.5, 25.0 ], "rotation": 180 }
+					},
+					"children": [
+						{
+							"name": "ArmorElbowL1",
+							"from": [ -0.8, 0.5, 0.5 ],
+							"to": [ 0.0, 3.5, 3.5 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 34.5, 0.5 ],
+							"rotationOrigin": [ -0.8, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 40.5, 3.5, 41.0, 6.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 38.0, 3.5, 41.0, 6.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 37.5, 3.5, 38.0, 6.5 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 34.5, 3.5, 37.5, 6.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 37.5, 0.5, 38.0, 3.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 34.0, 2.0, 34.5, 5.0 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorElbowL2",
+							"from": [ -1.6, 1.0, 1.0 ],
+							"to": [ -0.8, 3.0, 3.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 58.0, 39.0 ],
+							"rotationOrigin": [ -1.6, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 43.5, 22.5, 44.0, 24.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 41.0, 22.0, 41.5, 24.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.0, 38.5, 58.0, 40.5 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 40.0, 22.5, 40.5, 24.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 41.5, 22.0, 42.0, 24.0 ], "rotation": 180 }
+							}
+						},
+						{
+							"name": "ArmorElbowL3",
+							"from": [ 5.3, 0.5, 0.5 ],
+							"to": [ 6.1, 3.5, 3.5 ],
+							"unwrapMode": 6,
+							"autoUnwrap": false,
+							"uv": [ 34.0, 0.5 ],
+							"rotationOrigin": [ 5.3, 0.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 37.0, 0.5, 37.5, 3.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 34.0, 3.5, 37.0, 6.5 ], "rotation": 90 },
+								"south": { "texture": "#divingsuit", "uv": [ 33.5, 2.0, 34.0, 5.0 ], "rotation": 180 },
+								"west": { "texture": "#divingsuit", "uv": [ 37.5, 3.5, 40.5, 6.5 ], "rotation": 270 },
+								"up": { "texture": "#divingsuit", "uv": [ 40.5, 3.5, 41.0, 6.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 37.0, 3.5, 37.5, 6.5 ] }
+							}
+						},
+						{
+							"name": "ArmorElbowL4",
+							"from": [ 6.1, 1.0, 1.0 ],
+							"to": [ 6.9, 3.0, 3.0 ],
+							"unwrapMode": 3,
+							"autoUnwrap": false,
+							"uv": [ 58.0, 38.0 ],
+							"rotationOrigin": [ 6.1, 1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 42.5, 22.5, 43.0, 24.5 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 56.0, 38.5, 58.0, 40.5 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 43.5, 22.0, 44.0, 24.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 40.5, 22.5, 41.0, 24.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 43.5, 23.0, 44.0, 25.0 ], "rotation": 180 }
+							}
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "ArmorLowerArmR",
 			"stepParentName": "LowerArmR",
-			"from": [ -0.2, -0.2, -0.35 ], 
-			"to": [ 2.7, 8.2, 2.25 ], 
-			"uv": [ 54.0, 9.0 ],
-			"rotationOrigin": [ -0.2, -0.2, -0.5 ],
+			"from": [ -0.7, -0.2, -1.35 ],
+			"to": [ 3.2, 8.2, 2.25 ],
+			"uv": [ 43.0, 6.5 ],
+			"rotationOrigin": [ -0.7, -0.2, -1.5 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 54.0, 11.5, 56.5, 19.5 ] },
-				"east": { "texture": "#material", "uv": [ 56.5, 11.5, 59.0, 19.5 ] },
-				"south": { "texture": "#material", "uv": [ 59.0, 11.5, 61.5, 19.5 ] },
-				"west": { "texture": "#material", "uv": [ 61.5, 11.5, 64.0, 19.5 ] },
-				"up": { "texture": "#material", "uv": [ 54.0, 9.0, 56.5, 11.5 ] },
-				"down": { "texture": "#material", "uv": [ 56.5, 9.0, 59.0, 11.5 ] }
+				"north": { "texture": "#divingsuit", "uv": [ 43.0, 10.0, 46.5, 18.0 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 46.5, 10.0, 50.0, 18.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 50.0, 10.0, 53.5, 18.0 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 53.5, 10.0, 57.0, 18.0 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 43.0, 6.5, 46.5, 10.0 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 46.5, 6.5, 50.0, 10.0 ] }
 			},
 			"children": [
 				{
-					"name": "ArmorElbowSideR",
-					"from": [ 0.6, 5.6, -0.2 ], 
-					"to": [ 3.6, 8.6, 0.3 ], 
-					"unwrapMode": 1,
-					"uv": [ 44.5, 52.5 ],
-					"rotationOrigin": [ 0.6, 5.6, -0.2 ],
-					"faces": {
-						"north": { "texture": "#material", "uv": [ 45.0, 53.0, 48.0, 56.0 ] },
-						"east": { "texture": "#material", "uv": [ 44.5, 53.0, 45.0, 56.0 ] },
-						"south": { "texture": "#material", "uv": [ 48.5, 53.0, 51.5, 56.0 ] },
-						"west": { "texture": "#material", "uv": [ 48.0, 53.0, 48.5, 56.0 ] },
-						"up": { "texture": "#material", "uv": [ 45.0, 52.5, 48.0, 53.0 ], "rotation": 180 },
-						"down": { "texture": "#material", "uv": [ 45.0, 56.0, 48.0, 56.5 ] }
-					}
-				},
-				{
-					"name": "ArmorElbowR",
-					"from": [ 2.0, 6.2, 0.3 ], 
-					"to": [ 4.0, 8.2, 2.3 ], 
-					"unwrapMode": 1,
-					"uv": [ 40.0, 47.0 ],
-					"rotationOrigin": [ 3.0, 7.2, 1.3 ],
-					"rotationZ": -45.0,
-					"faces": {
-						"north": { "texture": "#material", "uv": [ 42.0, 49.0, 44.0, 51.0 ] },
-						"east": { "texture": "#material", "uv": [ 40.0, 49.0, 42.0, 51.0 ] },
-						"south": { "texture": "#material", "uv": [ 46.0, 49.0, 48.0, 51.0 ] },
-						"west": { "texture": "#material", "uv": [ 44.0, 49.0, 46.0, 51.0 ] },
-						"up": { "texture": "#material", "uv": [ 42.0, 47.0, 44.0, 49.0 ], "rotation": 180 },
-						"down": { "texture": "#material", "uv": [ 42.0, 51.0, 44.0, 53.0 ] }
-					}
-				},
-				{
 					"name": "ArmorHandR",
-					"from": [ -0.3, -0.3, -0.5 ], 
-					"to": [ 3.2, 3.1, 1.5 ], 
+					"from": [ -0.1, -1.3, -0.2 ],
+					"to": [ 4.0, 2.1, 1.8 ],
 					"unwrapMode": 1,
-					"uv": [ 43.0, 40.0 ],
-					"rotationOrigin": [ -0.3, -0.3, -0.5 ],
+					"autoUnwrap": false,
+					"uv": [ 46.0, 30.5 ],
+					"rotationOrigin": [ -0.1, -1.3, -0.2 ],
 					"faces": {
-						"north": { "texture": "#material", "uv": [ 45.0, 42.0, 48.5, 45.0 ] },
-						"east": { "texture": "#material", "uv": [ 43.0, 42.0, 45.0, 45.0 ] },
-						"south": { "texture": "#material", "uv": [ 50.5, 42.0, 54.0, 45.0 ] },
-						"west": { "texture": "#material", "uv": [ 48.5, 42.0, 50.5, 45.0 ] },
-						"up": { "texture": "#material", "uv": [ 45.0, 40.0, 48.5, 42.0 ], "rotation": 180 },
-						"down": { "texture": "#material", "uv": [ 45.0, 45.0, 48.5, 47.0 ] }
+						"north": { "texture": "#divingsuit", "uv": [ 48.0, 32.5, 52.0, 35.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 46.0, 32.5, 48.0, 35.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 54.0, 32.5, 58.0, 35.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 52.0, 32.5, 54.0, 35.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 48.0, 31.5, 52.0, 33.5 ], "rotation": 180 },
+						"down": { "texture": "#divingsuit", "uv": [ 48.0, 34.5, 52.0, 36.5 ] }
+					},
+					"children": [
+						{
+							"name": "Nut17",
+							"from": [ 0.1, 2.4, -0.4 ],
+							"to": [ 0.9, 3.2, 0.0 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 0.1, 2.4, -0.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop17",
+									"from": [ 0.1, 0.1, -0.2 ],
+									"to": [ 0.7, 0.7, 0.0 ],
+									"uv": [ 59.0, 21.0 ],
+									"rotationOrigin": [ 0.1, 0.1, -0.2 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 21.5, 59.5, 22.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 21.5, 60.0, 22.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 21.5, 60.5, 22.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 21.5, 61.0, 22.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 21.0, 59.5, 21.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 21.0, 60.0, 21.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut18",
+							"from": [ 1.1, 2.4, -0.4 ],
+							"to": [ 1.9, 3.2, 0.0 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 1.1, 2.4, -0.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop18",
+									"from": [ 0.1, 0.1, -0.2 ],
+									"to": [ 0.7, 0.7, 0.0 ],
+									"uv": [ 62.0, 23.0 ],
+									"rotationOrigin": [ 0.1, 0.1, -0.2 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 62.0, 23.5, 62.5, 24.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 62.5, 23.5, 63.0, 24.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 63.0, 23.5, 63.5, 24.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 63.5, 23.5, 64.0, 24.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 62.0, 23.0, 62.5, 23.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 62.5, 23.0, 63.0, 23.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut19",
+							"from": [ 2.2, 2.4, -0.4 ],
+							"to": [ 3.0, 3.2, 0.0 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 2.2, 2.4, -0.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop19",
+									"from": [ 0.1, 0.1, -0.2 ],
+									"to": [ 0.7, 0.7, 0.0 ],
+									"uv": [ 60.0, 24.0 ],
+									"rotationOrigin": [ 0.1, 0.1, -0.2 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 61.0, 24.5, 61.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 61.5, 24.5, 62.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 60.0, 24.0, 60.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 60.5, 24.0, 61.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut20",
+							"from": [ 3.2, 2.4, -0.4 ],
+							"to": [ 4.0, 3.2, 0.0 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 3.2, 2.4, -0.4 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop20",
+									"from": [ 0.1, 0.1, -0.2 ],
+									"to": [ 0.7, 0.7, 0.0 ],
+									"uv": [ 59.0, 23.0 ],
+									"rotationOrigin": [ 0.1, 0.1, -0.2 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 23.5, 59.5, 24.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 23.5, 60.0, 24.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 23.5, 60.5, 24.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 23.5, 61.0, 24.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 23.0, 59.5, 23.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 23.0, 60.0, 23.5 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ArmorHandR2",
+					"from": [ -0.1, -0.7, 2.8 ],
+					"to": [ 4.0, 2.7, 3.8 ],
+					"unwrapMode": 1,
+					"uv": [ 46.5, 31.0 ],
+					"rotationOrigin": [ -0.1, -0.7, 2.8 ],
+					"faces": {
+						"north": { "texture": "#divingsuit", "uv": [ 47.5, 32.0, 51.5, 35.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 46.5, 32.0, 47.5, 35.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 52.5, 32.0, 56.5, 35.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 51.5, 32.0, 52.5, 35.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 47.5, 31.0, 51.5, 32.0 ], "rotation": 180 },
+						"down": { "texture": "#divingsuit", "uv": [ 47.5, 35.0, 51.5, 36.0 ] }
 					}
 				}
 			]
@@ -180,138 +1837,197 @@
 		{
 			"name": "ArmorLowerArmL",
 			"stepParentName": "LowerArmL",
-			"from": [ -0.2, -0.2, -0.25 ], 
-			"to": [ 2.7, 8.2, 2.35 ], 
-			"uv": [ 44.0, 9.0 ],
-			"rotationOrigin": [ -0.2, -0.2, -0.3 ],
+			"from": [ -0.7, -0.2, -0.25 ],
+			"to": [ 3.2, 8.2, 3.35 ],
+			"uv": [ 43.0, 6.5 ],
+			"rotationOrigin": [ -0.7, -0.2, -0.3 ],
 			"faces": {
-				"north": { "texture": "#material", "uv": [ 44.0, 11.5, 46.5, 19.5 ] },
-				"east": { "texture": "#material", "uv": [ 46.5, 11.5, 49.0, 19.5 ] },
-				"south": { "texture": "#material", "uv": [ 49.0, 11.5, 51.5, 19.5 ] },
-				"west": { "texture": "#material", "uv": [ 51.5, 11.5, 54.0, 19.5 ] },
-				"up": { "texture": "#material", "uv": [ 44.0, 9.0, 46.5, 11.5 ] },
-				"down": { "texture": "#material", "uv": [ 46.5, 9.0, 49.0, 11.5 ] }
+				"north": { "texture": "#divingsuit", "uv": [ 43.0, 10.0, 46.5, 18.0 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 46.5, 10.0, 50.0, 18.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 50.0, 10.0, 53.5, 18.0 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 53.5, 10.0, 57.0, 18.0 ] },
+				"up": { "texture": "#divingsuit", "uv": [ 43.0, 6.5, 46.5, 10.0 ] },
+				"down": { "texture": "#divingsuit", "uv": [ 46.5, 6.5, 50.0, 10.0 ] }
 			},
 			"children": [
-				{
-					"name": "ArmorElbowSideL",
-					"from": [ 0.6, 5.6, 2.4 ], 
-					"to": [ 3.6, 8.6, 2.9 ], 
-					"unwrapMode": 3,
-					"uv": [ 35.0, 53.0 ],
-					"rotationOrigin": [ 0.6, 5.6, 2.4 ],
-					"faces": {
-						"north": { "texture": "#material", "uv": [ 39.0, 53.5, 42.0, 56.5 ] },
-						"east": { "texture": "#material", "uv": [ 38.5, 53.5, 39.0, 56.5 ] },
-						"south": { "texture": "#material", "uv": [ 35.5, 53.5, 38.5, 56.5 ] },
-						"west": { "texture": "#material", "uv": [ 35.0, 53.5, 35.5, 56.5 ] },
-						"up": { "texture": "#material", "uv": [ 35.5, 53.0, 38.5, 53.5 ] },
-						"down": { "texture": "#material", "uv": [ 35.5, 56.5, 38.5, 57.0 ], "rotation": 180 }
-					}
-				},
-				{
-					"name": "ArmorElbowL",
-					"from": [ 2.0, 6.1, 0.4 ], 
-					"to": [ 4.0, 8.1, 2.4 ], 
-					"unwrapMode": 3,
-					"uv": [ 32.0, 47.0 ],
-					"rotationOrigin": [ 3.0, 7.1, 1.4 ],
-					"rotationZ": 45.0,
-					"faces": {
-						"north": { "texture": "#material", "uv": [ 38.0, 49.0, 40.0, 51.0 ] },
-						"east": { "texture": "#material", "uv": [ 36.0, 49.0, 38.0, 51.0 ] },
-						"south": { "texture": "#material", "uv": [ 34.0, 49.0, 36.0, 51.0 ] },
-						"west": { "texture": "#material", "uv": [ 32.0, 49.0, 34.0, 51.0 ] },
-						"up": { "texture": "#material", "uv": [ 34.0, 47.0, 36.0, 49.0 ] },
-						"down": { "texture": "#material", "uv": [ 34.0, 51.0, 36.0, 53.0 ], "rotation": 180 }
-					}
-				},
 				{
 					"name": "ArmorHandL",
-					"from": [ -0.3, -0.3, 0.8 ], 
-					"to": [ 3.2, 3.1, 2.8 ], 
+					"from": [ -0.1, -1.3, 1.8 ],
+					"to": [ 4.0, 2.1, 3.8 ],
 					"unwrapMode": 3,
-					"uv": [ 32.0, 40.0 ],
-					"rotationOrigin": [ -0.3, -0.3, 0.8 ],
-					"faces": {
-						"north": { "texture": "#material", "uv": [ 39.5, 42.0, 43.0, 45.0 ] },
-						"east": { "texture": "#material", "uv": [ 37.5, 42.0, 39.5, 45.0 ] },
-						"south": { "texture": "#material", "uv": [ 34.0, 42.0, 37.5, 45.0 ] },
-						"west": { "texture": "#material", "uv": [ 32.0, 42.0, 34.0, 45.0 ] },
-						"up": { "texture": "#material", "uv": [ 34.0, 40.0, 37.5, 42.0 ] },
-						"down": { "texture": "#material", "uv": [ 34.0, 45.0, 37.5, 47.0 ], "rotation": 180 }
-					}
-				}
-			]
-		},
-		{
-			"name": "ArmorCoatR",
-			"stepParentName": "UpperFootR",
-			"from": [ -0.9, 1.2, -0.85 ], 
-			"to": [ 4.9, 7.2, 3.15 ], 
-			"autoUnwrap": false,
-			"uv": [ 19.0, 30.0 ],
-			"rotationOrigin": [ -0.9, 1.2, -1.0 ],
-			"faces": {
-				"north": { "texture": "#material", "uv": [ 19.0, 34.0, 24.5, 40.0 ] },
-				"east": { "texture": "#material", "uv": [ 34.0, 34.0, 38.0, 40.0 ] },
-				"south": { "texture": "#material", "uv": [ 28.5, 34.0, 34.0, 40.0 ] },
-				"west": { "texture": "#material", "uv": [ 24.5, 34.0, 28.5, 40.0 ] },
-				"up": { "texture": "#material", "uv": [ 19.0, 30.0, 24.5, 34.0 ], "rotation": 180 },
-				"down": { "texture": "#material", "uv": [ 24.5, 30.0, 30.0, 34.0 ], "rotation": 180 }
-			},
-			"children": [
-				{
-					"name": "ArmorLegCoveR",
-					"from": [ 0.5, 2.0, 0.8 ], 
-					"to": [ 5.3, 7.9, 4.2 ], 
 					"autoUnwrap": false,
-					"uv": [ 0.0, 0.0 ],
-					"rotationOrigin": [ 0.5, 2.0, 0.8 ],
+					"uv": [ 46.0, 30.5 ],
+					"rotationOrigin": [ -0.1, -1.3, 1.8 ],
 					"faces": {
-						"north": { "texture": "#material", "uv": [ 53.0, 46.0, 57.5, 51.5 ] },
-						"east": { "texture": "#material", "uv": [ 58.0, 46.0, 61.0, 51.5 ] },
-						"south": { "texture": "#material", "uv": [ 53.0, 51.5, 57.5, 57.0 ] },
-						"west": { "texture": "#material", "uv": [ 53.0, 53.0, 56.0, 58.5 ] },
-						"up": { "texture": "#material", "uv": [ 58.0, 51.5, 62.5, 54.5 ] },
-						"down": { "texture": "#material", "uv": [ 55.5, 51.0, 60.0, 54.0 ] }
-					}
-				}
-			]
-		},
-		{
-			"name": "ArmorCoatL",
-			"stepParentName": "UpperFootL",
-			"from": [ -0.9, 1.2, 0.05 ], 
-			"to": [ 4.9, 7.2, 4.05 ], 
-			"autoUnwrap": false,
-			"uv": [ 0.0, 30.0 ],
-			"rotationOrigin": [ -0.9, 1.2, -0.1 ],
-			"faces": {
-				"north": { "texture": "#material", "uv": [ 0.0, 34.0, 5.5, 40.0 ] },
-				"east": { "texture": "#material", "uv": [ 15.0, 34.0, 19.0, 40.0 ] },
-				"south": { "texture": "#material", "uv": [ 9.5, 34.0, 15.0, 40.0 ] },
-				"west": { "texture": "#material", "uv": [ 5.5, 34.0, 9.5, 40.0 ] },
-				"up": { "texture": "#material", "uv": [ 0.0, 30.0, 5.5, 34.0 ] },
-				"down": { "texture": "#material", "uv": [ 5.5, 30.0, 11.0, 34.0 ] }
-			},
-			"children": [
+						"north": { "texture": "#divingsuit", "uv": [ 54.0, 32.5, 58.0, 35.5 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 52.0, 32.5, 54.0, 35.5 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 48.0, 32.5, 52.0, 35.5 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 46.0, 32.5, 48.0, 35.5 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 48.0, 31.0, 52.0, 33.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 48.0, 34.5, 52.0, 36.5 ], "rotation": 180 }
+					},
+					"children": [
+						{
+							"name": "Nut13",
+							"from": [ 0.1, 2.4, 2.0 ],
+							"to": [ 0.9, 3.2, 2.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 0.1, 2.4, 2.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop13",
+									"from": [ 0.1, 0.1, 0.4 ],
+									"to": [ 0.7, 0.7, 0.6 ],
+									"uv": [ 59.0, 24.0 ],
+									"rotationOrigin": [ 0.1, 0.1, 0.4 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 24.5, 59.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 24.5, 60.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 24.5, 60.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 24.5, 61.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 24.0, 59.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 24.0, 60.0, 24.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut14",
+							"from": [ 1.1, 2.4, 2.0 ],
+							"to": [ 1.9, 3.2, 2.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 1.1, 2.4, 2.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop14",
+									"from": [ 0.1, 0.1, 0.4 ],
+									"to": [ 0.7, 0.7, 0.6 ],
+									"uv": [ 59.0, 22.0 ],
+									"rotationOrigin": [ 0.1, 0.1, 0.4 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 59.0, 22.5, 59.5, 23.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 59.5, 22.5, 60.0, 23.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 60.0, 22.5, 60.5, 23.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 60.5, 22.5, 61.0, 23.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 59.0, 22.0, 59.5, 22.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 59.5, 22.0, 60.0, 22.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut15",
+							"from": [ 2.2, 2.4, 2.0 ],
+							"to": [ 3.0, 3.2, 2.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 2.2, 2.4, 2.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop15",
+									"from": [ 0.1, 0.1, 0.4 ],
+									"to": [ 0.7, 0.7, 0.6 ],
+									"uv": [ 61.0, 25.0 ],
+									"rotationOrigin": [ 0.1, 0.1, 0.4 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 61.0, 25.5, 61.5, 26.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 61.5, 25.5, 62.0, 26.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 62.0, 25.5, 62.5, 26.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 62.5, 25.5, 63.0, 26.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 61.0, 25.0, 61.5, 25.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 61.5, 25.0, 62.0, 25.5 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "Nut16",
+							"from": [ 3.2, 2.4, 2.0 ],
+							"to": [ 4.0, 3.2, 2.4 ],
+							"uv": [ 55.0, 55.0 ],
+							"rotationOrigin": [ 3.2, 2.4, 2.0 ],
+							"faces": {
+								"north": { "texture": "#divingsuit", "uv": [ 55.0, 55.5, 55.5, 56.0 ] },
+								"east": { "texture": "#divingsuit", "uv": [ 55.5, 55.5, 56.0, 56.0 ] },
+								"south": { "texture": "#divingsuit", "uv": [ 56.0, 55.5, 56.5, 56.0 ] },
+								"west": { "texture": "#divingsuit", "uv": [ 56.5, 55.5, 57.0, 56.0 ] },
+								"up": { "texture": "#divingsuit", "uv": [ 55.0, 55.0, 55.5, 55.5 ] },
+								"down": { "texture": "#divingsuit", "uv": [ 55.5, 55.0, 56.0, 55.5 ] }
+							},
+							"children": [
+								{
+									"name": "NutTop16",
+									"from": [ 0.1, 0.1, 0.4 ],
+									"to": [ 0.7, 0.7, 0.6 ],
+									"uv": [ 56.0, 24.0 ],
+									"rotationOrigin": [ 0.1, 0.1, 0.4 ],
+									"rotationX": 0.0,
+									"rotationY": 0.0,
+									"rotationZ": 0.0,
+									"faces": {
+										"north": { "texture": "#divingsuit", "uv": [ 56.0, 24.5, 56.5, 25.0 ] },
+										"east": { "texture": "#divingsuit", "uv": [ 56.5, 24.5, 57.0, 25.0 ] },
+										"south": { "texture": "#divingsuit", "uv": [ 57.0, 24.5, 57.5, 25.0 ] },
+										"west": { "texture": "#divingsuit", "uv": [ 57.5, 24.5, 58.0, 25.0 ] },
+										"up": { "texture": "#divingsuit", "uv": [ 56.0, 24.0, 56.5, 24.5 ] },
+										"down": { "texture": "#divingsuit", "uv": [ 56.5, 24.0, 57.0, 24.5 ] }
+									}
+								}
+							]
+						}
+					]
+				},
 				{
-					"name": "ArmorLegCoverL",
-					"from": [ 0.5, 2.0, -0.1 ], 
-					"to": [ 5.3, 7.9, 3.3 ], 
-					"autoUnwrap": false,
-					"uv": [ 41.5, 27.0 ],
-					"rotationOrigin": [ 0.5, 2.0, -0.1 ],
+					"name": "ArmorHandL2",
+					"from": [ -0.1, -0.7, -0.2 ],
+					"to": [ 4.0, 2.7, 0.8 ],
+					"unwrapMode": 3,
+					"uv": [ 46.5, 31.0 ],
+					"rotationOrigin": [ -0.1, -0.7, -0.2 ],
 					"faces": {
-						"north": { "texture": "#material", "uv": [ 59.0, 53.0, 63.5, 58.5 ] },
-						"east": { "texture": "#material", "uv": [ 56.5, 53.0, 59.5, 58.5 ] },
-						"south": { "texture": "#material", "uv": [ 59.0, 46.0, 63.5, 51.5 ] },
-						"west": { "texture": "#material", "uv": [ 60.5, 49.0, 63.5, 54.5 ] },
-						"up": { "texture": "#material", "uv": [ 56.0, 50.5, 60.5, 53.5 ] },
-						"down": { "texture": "#material", "uv": [ 56.5, 46.5, 61.0, 49.5 ] }
+						"north": { "texture": "#divingsuit", "uv": [ 52.5, 32.0, 56.5, 35.0 ] },
+						"east": { "texture": "#divingsuit", "uv": [ 51.5, 32.0, 52.5, 35.0 ] },
+						"south": { "texture": "#divingsuit", "uv": [ 47.5, 32.0, 51.5, 35.0 ] },
+						"west": { "texture": "#divingsuit", "uv": [ 46.5, 32.0, 47.5, 35.0 ] },
+						"up": { "texture": "#divingsuit", "uv": [ 47.5, 31.0, 51.5, 32.0 ] },
+						"down": { "texture": "#divingsuit", "uv": [ 47.5, 35.0, 51.5, 36.0 ], "rotation": 180 }
 					}
 				}
 			]
 		}
-	]}
+	],
+	"animations": [
+	]
+}

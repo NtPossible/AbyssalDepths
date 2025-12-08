@@ -56,8 +56,8 @@ namespace AbyssalDepths.src.Patches
 
             double velocityY = pos.Motion.Y;
 
-            const double maxDownSpeed = -0.16;
-            const double extraAccelPerSecond = -0.15;
+            const double maxDownSpeed = -0.20;
+            const double extraAccelPerSecond = -0.18;
 
             if (velocityY > maxDownSpeed)
             {

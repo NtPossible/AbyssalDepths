@@ -1,4 +1,5 @@
 ﻿using AbyssalDepths.src.Items.Wearable;
+using HarmonyLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -11,6 +12,8 @@ namespace AbyssalDepths
         public override void Start(ICoreAPI api)
         {
             api.RegisterItemClass($"{Mod.Info.ModID}:ItemDivingSuit", typeof(ItemDivingSuit));
+
+            new Harmony("abyssaldepths.divingsuit").PatchAll();
         }
 
         public override void StartServerSide(ICoreServerAPI api)

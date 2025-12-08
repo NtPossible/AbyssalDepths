@@ -81,7 +81,7 @@
     "footStepSoundByType": {
       "divingsuit-body-mk1": "game:wearable/leather*",
       "divingsuit-body-mk2": "game:wearable/scale*",
-      "divingsuit-body-mk3": "game:wearable/plate*"
+      "divingsuit-body-mk3": "abyssaldepths:sounds/wearable/deep*"
     },
     "protectionModifiersByType": {
       "divingsuit-*-mk1": {

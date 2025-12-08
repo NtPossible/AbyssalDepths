@@ -1,8 +1,6 @@
 ﻿using AbyssalDepths.src.Items.Wearable;
-using HarmonyLib;
 using System.Collections.Generic;
 using Vintagestory.API.Common;
-using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
 
@@ -11,17 +9,11 @@ namespace AbyssalDepths.src.Systems
     public class DivingSuitSystem : ModSystemWearableTick<ItemDivingSuit>
     {
         private const float maxOxygenMk1 = 300000f; // 5 minutes
-        private const float maxOxygenMk2 = 600000f; // 10 minutes
-        private const float maxOxygenMk3 = 900000f; // 15 minutes
-        private const string suitLightKey = "abyssalDepthsSuitLight";
+        private const float maxOxygenMk2 = 900000f; // 15 minutes
+        private const float maxOxygenMk3 = 1800000f; // 30 minutes
+        private const string disableSwimKey = "abyssalDepthsDisableSwim";
 
         public override bool ShouldLoad(EnumAppSide forSide) => true;
-
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-            new Harmony("abyssaldepths.divingsuit").PatchAll();
-            base.StartServerSide(api);
-        }
 
         protected override void HandleItem(IPlayer player, ItemDivingSuit item, ItemSlot slot, double hoursPassed, float dt)
         {
@@ -50,8 +42,13 @@ namespace AbyssalDepths.src.Systems
             // Check if we have a full suit, and which tier it is
             if (!TryGetEquippedDivingSuitTier(player, out string tier))
             {
-                ResetPlayerOxygenAndLight(player);
+                ResetPlayerOxygen(player);
                 return;
+            }
+
+            if (!entity.WatchedAttributes.GetBool(disableSwimKey))
+            {
+                entity.WatchedAttributes.SetBool(disableSwimKey, true);
             }
 
             float targetMaxOxygen = GetMaxOxygenForTier(tier);
@@ -59,18 +56,12 @@ namespace AbyssalDepths.src.Systems
             {
                 breathe.MaxOxygen = targetMaxOxygen;
             }
-
-            bool shouldEnableLight = entity.Swimming;
-            if (entity.WatchedAttributes.GetBool(suitLightKey) != shouldEnableLight)
-            {
-                entity.WatchedAttributes.SetBool(suitLightKey, shouldEnableLight);
-            }
         }
 
         protected override void HandleMissing(IPlayer player)
         {
             // No diving suit pieces found at all
-            ResetPlayerOxygenAndLight(player);
+            ResetPlayerOxygen(player);
         }
 
         private static float GetMaxOxygenForTier(string tier)
@@ -144,7 +135,7 @@ namespace AbyssalDepths.src.Systems
             return false;
         }
 
-        private static void ResetPlayerOxygenAndLight(IPlayer player)
+        private static void ResetPlayerOxygen(IPlayer player)
         {
             if (player.Entity is not EntityPlayer entity)
             {
@@ -178,9 +169,9 @@ namespace AbyssalDepths.src.Systems
                 breathe.Oxygen = baseMax;
             }
 
-            if (entity.WatchedAttributes.GetBool(suitLightKey))
+            if (entity.WatchedAttributes.GetBool(disableSwimKey))
             {
-                entity.WatchedAttributes.SetBool(suitLightKey, false);
+                entity.WatchedAttributes.SetBool(disableSwimKey, false);
             }
         }
     }

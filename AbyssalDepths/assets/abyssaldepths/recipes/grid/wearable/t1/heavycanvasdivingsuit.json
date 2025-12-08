@@ -1,9 +1,9 @@
 {
 	"ingredientPattern": "A_A,AAA,AAA",
 	"ingredients": {
-		"A": { "type": "item", "code": "aabyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "game:metalplate-brass" }
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-mk1" }
 }

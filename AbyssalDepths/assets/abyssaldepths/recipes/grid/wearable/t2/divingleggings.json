@@ -1,7 +1,7 @@
 {
 	"ingredientPattern": "AAA,A_A,A_A",
 	"ingredients": {
-		"A": { "type": "item", "code": "aabyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
 	},
 	"width": 3,
 	"height": 3,

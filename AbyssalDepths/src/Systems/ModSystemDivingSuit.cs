@@ -6,7 +6,7 @@ using Vintagestory.API.Config;
 
 namespace AbyssalDepths.src.Systems
 {
-    public class DivingSuitSystem : ModSystemWearableTick<ItemDivingSuit>
+    public class ModSystemDivingSuit : ModSystemWearableTick<ItemDivingSuit>
     {
         private const float maxOxygenMk1 = 300000f; // 5 minutes
         private const float maxOxygenMk2 = 900000f; // 15 minutes
@@ -80,7 +80,7 @@ namespace AbyssalDepths.src.Systems
             return entity.World.Config.GetAsInt("lungCapacity", 40000);
         }
 
-        private static bool TryGetEquippedDivingSuitTier(IPlayer player, out string tier)
+        public static bool TryGetEquippedDivingSuitTier(IPlayer player, out string tier)
         {
             tier = string.Empty;
 

@@ -1,7 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "assets/game/shapes/entity/humanoid/seraph-hairless",
-		"collapsedPaths": "Root/ArmorUpperTorso,Root/SideDecorationCrown/CrownFront,Root/ArmorHelmet/ArmorHelmetTop,Root/ArmorHelmet/PlumeP3/Plume22,Root/ArmorHelmet/SideDecorationCrown/CrownBack,Root/ArmorHelmet/TopDecorationLion/leg2/legdown2,Root/ArmorHelmet/TopDecorationLion/hand2,Root/ArmorHelmet/HeadcrownR3,Root/ArmorHelmet/TopDecorationLion/hand1,Root/ArmorHelmet/SideDecorationCrown/CrownRight,Root/SideDecorationCrown,Root/ArmorHelmet/Plume/Plume12,Root/ArmorHelmet/ArmorNose,Root/ArmorHelmet/TopDecorationLion/hand1/forearm1,Root/ArmorHelmet/lining,Root/TopDecorationLion/hand1,Root/ArmorHelmet/TopDecorationLion/Tail,Root/ArmorHelmet/SideDecorationCrown/CrownLeft,Root/ArmorHelmet/HeadDecCrownBase,Root/TopDecorationLion/hand2,Root/TopDecorationLion/Head,Root/ArmorHelmet/Plume/Plume4,Root/ArmorHelmet/Plume/Plume3,Root/ArmorHelmet/HeadDecCrownBase/CrownBack,Root/ArmorHelmet/TopDecorationLion/leg2,Root/ArmorHelmet/TopDecorationLion/leg1,Root/ArmorHelmet/HeadcrownL,Root/ArmorHelmet/Plume/Plume21,Root/ArmorHelmet/ArmorHelmet4,Root/TopDecorationLion/leg2,Root/ArmorUpperArmR,Root/ArmorHelmet/ArmorHelmet2,Root/ArmorHelmet/HeadcrownR,Root/ArmorUpperArmL,Root/ArmorHelmet/TopDecorationLion/hand2/forearm2,Root/ArmorHelmet/TopDecorationLion/Head,Root/ArmorHelmet/SideDecorationCrown/CrownFront,Root/ArmorHelmet/PlumeP2,Root/ArmorHelmet/TopDecorationLion/Bottomtop,Root/ArmorHelmet/ArmorHelmetBottom,Root/ArmorHelmet/ArmorHelmetTop/FaceRim2/OcularL/CheekL2/Bolt9,Root/ArmorHelmet/Plume/Plume3/Plume4,Root/TopDecorationLion,Root/ArmorHelmet/TopDecorationLion/Head/Nose,Root/ArmorHelmet/HeadDecCrownBase/CrownFront3,Root/SideDecorationCrown/CrownRight,Root/ArmorHelmet/Plume/Plume21/Plume22,Root/ArmorHelmet/HeadDecCrownBase/CrownFront4,Root/ArmorHelmet/PlumeP1/Plume4,Root/ArmorLowerTorso,Root/ArmorHelmet/TopDecorationLion/leg1/legdown1,Root/ArmorLowerArmR,Root/ArmorHelmet/HeadDecCrownBase/CrownLeft,Root/ArmorHelmet/HeadDecCrownBase/CrownFront2,Root/ArmorLowerArmL,Root/ArmorHelmet/Fin,Root/ArmorHelmet/Hinge1,Root/ArmorHelmet/HeadDecCrownBase/CrownFront,Root/ArmorHelmet/Hinge4,Root/ArmorHelmet/ArmorHelmetRim6,Root/SideDecorationCrown/CrownLeft,Root/ArmorHelmet/HeadDecCrownBase/CrownRight,Root/ArmorHelmet/ArmorHelmetRim1,Root/ArmorHelmet/HeadDecCrownBase/CrownRight2,Root/SideDecorationCrown/CrownFront4,Root/SideDecorationCrown/CrownFront3,Root/SideDecorationCrown/CrownFront2",
+		"backDropShape": "entity/humanoid/seraph-hairless",
 		"allAngles": true,
 		"entityTextureMode": true
 	},
@@ -1698,10 +1697,10 @@
 			"uv": [ 12.0, 5.5 ],
 			"rotationOrigin": [ -0.3, 2.6, -0.3 ],
 			"faces": {
-				"north": { "texture": "#gothichead", "uv": [ 12.0, 5.5, 15.5, 7.0 ] },
-				"east": { "texture": "#gothichead", "uv": [ 22.5, 5.5, 26.0, 7.0 ] },
-				"south": { "texture": "#gothichead", "uv": [ 19.0, 5.5, 22.5, 7.0 ] },
-				"west": { "texture": "#gothichead", "uv": [ 15.5, 5.5, 19.0, 7.0 ] }
+				"north": { "texture": "#divingsuit", "uv": [ 12.0, 5.5, 15.5, 7.0 ] },
+				"east": { "texture": "#divingsuit", "uv": [ 22.5, 5.5, 26.0, 7.0 ] },
+				"south": { "texture": "#divingsuit", "uv": [ 19.0, 5.5, 22.5, 7.0 ] },
+				"west": { "texture": "#divingsuit", "uv": [ 15.5, 5.5, 19.0, 7.0 ] }
 			}
 		}
 	],

@@ -1,11 +1,13 @@
 {
-	"ingredientPattern": "ABC,BEB,DED",
+	"ingredientPattern": "CBC,DGF,EAB",
 	"ingredients": {
-		"A": { "type": "item", "code": "game:metalnailsandstrips-*", "quantity": 8 },
-		"B": { "type": "item", "code": "game:metalplate-brass", "quantity":  2 },
-		"C": { "type": "block", "code": "game:glassslab-plain-down-free" },
-		"D": { "type": "block", "code": "game:metal-parts", "quantity": 8 },
-		"E": { "type": "item", "code": "abyssaldepths:waxedlinen" }
+		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 3},
+		"B": { "type": "item", "code": "game:metalplate-steel", "quantity": 3 },
+		"C": { "type": "item", "code": "game:metalplate-brass", "quantity": 3 },
+		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear"},
+		"E": { "type": "item", "code": "game:jonasframes-gears02" },
+		"F": { "type": "item", "code": "game:jonasparts-tank01" },
+		"G": { "type": "block", "code": "game:glassslab-plain-down-free" },
 	},
 	"width": 3,
 	"height": 3,

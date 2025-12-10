@@ -17,7 +17,7 @@ namespace AbyssalDepths.src.Patches
 
             if (__instance.FeetInLiquid)
             {
-                __result = __instance.walkSpeed * 1.2;
+                __result = __instance.walkSpeed * 1.1;
             }
         }
     }

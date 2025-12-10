@@ -1,7 +1,12 @@
 {
-	"ingredientPattern": "A_A,AAA,AAA",
+	"ingredientPattern": "ADA,BEB,CFC",
 	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 8},
+		"B": { "type": "item", "code": "game:metalplate-steel", "quantity": 8 },
+		"C": { "type": "item", "code": "game:metalplate-brass", "quantity": 8 },
+		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear"},
+		"E": { "type": "item", "code": "game:jonasframes-spring01" },
+		"F": { "type": "item", "code": "game:jonasframes-joint01" }
 	},
 	"width": 3,
 	"height": 3,

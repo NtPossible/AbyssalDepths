@@ -8,9 +8,6 @@ namespace AbyssalDepths.src.Systems
 {
     public class ModSystemDivingSuit : ModSystemWearableTick<ItemDivingSuit>
     {
-        private const float maxOxygenMk1 = 300000f; // 5 minutes
-        private const float maxOxygenMk2 = 900000f; // 15 minutes
-        private const float maxOxygenMk3 = 1800000f; // 30 minutes
         private const string disableSwimKey = "abyssalDepthsDisableSwim";
 
         public override bool ShouldLoad(EnumAppSide forSide) => true;
@@ -51,7 +48,7 @@ namespace AbyssalDepths.src.Systems
                 entity.WatchedAttributes.SetBool(disableSwimKey, true);
             }
 
-            float targetMaxOxygen = GetMaxOxygenForTier(tier);
+            float targetMaxOxygen = GetSuitMaxOxygen(slot, entity);
             if (breathe.MaxOxygen != targetMaxOxygen)
             {
                 breathe.MaxOxygen = targetMaxOxygen;
@@ -64,15 +61,14 @@ namespace AbyssalDepths.src.Systems
             ResetPlayerOxygen(player);
         }
 
-        private static float GetMaxOxygenForTier(string tier)
+        private static float GetSuitMaxOxygen(ItemSlot suitSlot, EntityPlayer entity)
         {
-            return tier switch
+            if (suitSlot.Itemstack?.Collectible is ItemDivingSuit suit && suit.MaxOxygenFromJson > 0f)
             {
-                "mk1" => maxOxygenMk1,
-                "mk2" => maxOxygenMk2,
-                "mk3" => maxOxygenMk3,
-                _ => maxOxygenMk1
-            };
+                return suit.MaxOxygenFromJson;
+            }
+
+            return GetDefaultPlayerOxygen(entity);
         }
 
         private static float GetDefaultPlayerOxygen(EntityPlayer entity)

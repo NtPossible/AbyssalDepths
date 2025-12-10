@@ -80,12 +80,7 @@ namespace AbyssalDepths.src.Systems
             int safeDepth = 0;
             if (hasFunctionalSuit)
             {
-                safeDepth = tier switch
-                {
-                    "mk1" => depth40,
-                    "mk2" => depth60,
-                    _ => 0
-                };
+                safeDepth = GetSuitSafeDepthFromJson(suitSlots);
             }
 
             // Within suit safe depth
@@ -128,6 +123,19 @@ namespace AbyssalDepths.src.Systems
 
             // if no suit or suit is broken, take damage
             ApplyPressureDamage(entity, playerDamagePerSecond);
+        }
+
+        private static int GetSuitSafeDepthFromJson(List<ItemSlot> suitSlots)
+        {
+            foreach (ItemSlot slot in suitSlots)
+            {
+                if (slot.Itemstack?.Collectible is ItemDivingSuit suit && suit.SafeDepthFromJson >= 0)
+                {
+                    return suit.SafeDepthFromJson;
+                }
+            }
+
+            return 0;
         }
 
         private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity)

@@ -6,6 +6,26 @@
     { "code": "bodypart", "states": ["head", "body", "legs"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
+   "attributesByType": {
+    "divingsuit-*-mk1": {
+      "abyssalDepths": {
+        "maxOxygen": 300000, // 5 minutes
+        "safeDepth": 40
+      }
+    },
+    "divingsuit-*-mk2": {
+      "abyssalDepths": {
+        "maxOxygen": 900000, // 15 minutes
+        "safeDepth": 60
+      }
+    },
+    "divingsuit-*-mk3": {
+      "abyssalDepths": {
+        "maxOxygen": 1800000, // 30 minutes
+        "safeDepth": 999
+      }
+    }
+  },
   "shapeByType": {
     "divingsuit-head-mk1": { "base": "entity/armour/divingsuit1/head" },
     "divingsuit-body-mk1": { "base": "entity/armour/divingsuit1/body" },

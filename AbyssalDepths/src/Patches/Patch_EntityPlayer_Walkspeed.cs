@@ -5,7 +5,7 @@ using Vintagestory.API.Datastructures;
 namespace AbyssalDepths.src.Patches
 {
     [HarmonyPatch(typeof(EntityPlayer), "GetWalkSpeedMultiplier")]
-    public class Patch_EntityPlayer_WalkSpeed
+    public static class Patch_EntityPlayer_WalkSpeed
     {
         static void Postfix(EntityPlayer __instance, ref double __result)
         {

@@ -6,7 +6,7 @@ using Vintagestory.API.Datastructures;
 namespace AbyssalDepths.src.Patches
 {
     [HarmonyPatch(typeof(Entity), "get_ApplyGravity")]
-    public class Patch_Entity_ApplyGravity
+    public static class Patch_Entity_ApplyGravity
     {
         static void Postfix(Entity __instance, ref bool __result)
         {

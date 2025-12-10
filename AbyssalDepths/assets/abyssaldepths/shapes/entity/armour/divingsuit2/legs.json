@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "D:/Hry/Vintagestory121/assets/game/shapes/entity/humanoid/seraph-hairless",
+		"backDropShape": "assets/game/shapes/entity/humanoid/seraph-hairless",
 		"collapsedPaths": "Root/ArmorLowerArmL,Root/ArmorLowerLegR/BootR1,Root/ArmorLowerLegL/BootL1/BootLNut2,Root/ArmorLowerLegL/BootL1/BootLNut1,Root/ArmorLowerLegL,Root/ArmorLowerLegL/BootL1/BootLNut4,Root/ArmorLowerLegL/BootL1/BootLNut5,Root/ArmorLowerLegL/BootL1/BootLNut7,Root/ArmorUpperLegL,Root/ArmorLowerTorso,Root/ArmorLowerLegL/BootL1/BootLNut11,Root/ArmorUpperLegR,Root/ArmorLowerLegL/BootL1/BootLNut12,Root/ArmorLowerLegR,Root/ArmorLowerArmR",
 		"allAngles": true,
 		"entityTextureMode": true
@@ -10,7 +10,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"divingsuit": "armour/entity/mk3"
+		"divingsuit": "armour/entity/mk2"
 		},
 	"elements": [
 		{
@@ -747,4 +747,5 @@
 	],
 	"animations": [
 	]
+
 }

@@ -5,7 +5,7 @@ using Vintagestory.API.Datastructures;
 namespace AbyssalDepths.src.Patches
 {
     [HarmonyPatch(typeof(EntityHeadController), "OnFrame")]
-    public class Patch_EntityHeadController_OnFrame
+    public static class Patch_EntityHeadController_OnFrame
     {
         static void Postfix(EntityHeadController __instance)
         {

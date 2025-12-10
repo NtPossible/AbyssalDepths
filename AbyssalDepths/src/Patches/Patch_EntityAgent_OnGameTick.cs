@@ -6,7 +6,7 @@ using Vintagestory.API.Datastructures;
 namespace AbyssalDepths.src.Patches
 {
     [HarmonyPatch(typeof(EntityAgent), "OnGameTick")]
-    public class Patch_EntityAgent_OnGameTick
+    public static class Patch_EntityAgent_OnGameTick
     {
         static void Prefix(EntityAgent __instance)
         {

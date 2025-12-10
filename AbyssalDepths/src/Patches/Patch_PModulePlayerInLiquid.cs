@@ -6,7 +6,7 @@ using Vintagestory.API.Datastructures;
 namespace AbyssalDepths.src.Patches
 {
     [HarmonyPatch(typeof(PModulePlayerInLiquid), "HandleSwimming")]
-    public class Patch_PModulePlayerInLiquid
+    public static class Patch_PModulePlayerInLiquid
     {
         static bool Prefix(Entity entity)
         {

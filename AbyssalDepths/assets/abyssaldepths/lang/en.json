@@ -77,5 +77,8 @@
 
   "item-divingsuit-head-mk3": "Atmospheric Diving Helmet",
   "item-divingsuit-body-mk3": "Atmospheric Diving Suit",
-  "item-divingsuit-legs-mk3": "Atmospheric Diving Leggings"
+  "item-divingsuit-legs-mk3": "Atmospheric Diving Leggings",
+
+  "item-divingsuit-maxoxygen": "Max Oxygen: {0}",
+  "item-divingsuit-safedepth": "Maximum Depth: {0}m"
 }

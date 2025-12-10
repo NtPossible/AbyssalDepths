@@ -123,31 +123,31 @@
         "protectionTier": 3
       },
       "divingsuit-*-mk3": {
-        "relativeProtection": 0.97,
-        "flatDamageReduction": 1.8,
+        "relativeProtection": 0.985,
+        "flatDamageReduction": 6,
         "highDamageTierResistant": true,
         "protectionTier": 4
       }
     },
     "statModifiersByType": {
       "divingsuit-*-mk1": {
-        "walkSpeed": -0.02,
+        "walkSpeed": -0.04,
         "healingeffectivness": -0.17,
         "hungerrate": 0.03
       },
       "divingsuit-*-mk2": {
         "rangedWeaponsAcc": -0.1,
         "rangedWeaponsSpeed": -0.2,
-        "walkSpeed": -0.07,
+        "walkSpeed": -0.1,
         "healingeffectivness": -0.17,
         "hungerrate": 0.12
       },
       "divingsuit-*-mk3": {
-        "rangedWeaponsAcc": -0.1,
-        "rangedWeaponsSpeed": -0.2,
-        "walkSpeed": -0.14,
-        "healingeffectivness": -0.3334,
-        "hungerrate": 0.24
+        "rangedWeaponsAcc": -0.2,
+        "rangedWeaponsSpeed": -0.3,
+        "walkSpeed": -0.22,
+        "healingeffectivness": -0.35,
+        "hungerrate": 0.3
       }
     }
   },

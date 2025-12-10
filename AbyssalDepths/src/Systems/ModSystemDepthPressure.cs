@@ -112,6 +112,8 @@ namespace AbyssalDepths.src.Systems
             // If the worn suit is beyond its safe depth, damage it first
             if (hasFunctionalSuit && waterDepth > safeDepth)
             {
+                TryPlaySuitCreak(world, entity, waterDepth, safeDepth, suitSlots);
+
                 DamageSuit(world, entity, suitSlots, suitDamagePerSecond);
 
                 // If the full suit still has durability after the damage tick, the suit is still protecting
@@ -123,6 +125,49 @@ namespace AbyssalDepths.src.Systems
 
             // if no suit or suit is broken, take damage
             ApplyPressureDamage(entity, playerDamagePerSecond);
+        }
+
+        private static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
+        {
+            int depthOver = GameMath.Max(0, waterDepth - safeDepth);
+
+            float chance = GameMath.Clamp(0.01f + 0.005f * depthOver, 0f, 0.08f);
+
+            if (world.Rand.NextDouble() < chance)
+            {
+                AssetLocation? sound = GetSuitCreakSoundFromJson(suitSlots);
+                if (sound != null)
+                {
+                    world.PlaySoundAt(sound, entity, null, true, 14f);
+                }
+            }
+        }
+
+
+        private static AssetLocation? GetSuitCreakSoundFromJson(List<ItemSlot> slots)
+        {
+            foreach (ItemSlot slot in slots)
+            {
+                if (slot?.Itemstack?.Collectible is ItemDivingSuit suit && suit.CreakSoundFromJson != null)
+                {
+                    return suit.CreakSoundFromJson;
+                }
+            }
+
+            return null;
+        }
+
+        private static AssetLocation? GetSuitBreakSoundFromJson(List<ItemSlot> slots)
+        {
+            foreach (ItemSlot slot in slots)
+            {
+                if (slot?.Itemstack?.Collectible is ItemDivingSuit suit && suit.BreakSoundFromJson != null)
+                {
+                    return suit.BreakSoundFromJson;
+                }
+            }
+
+            return null;
         }
 
         private static int GetSuitSafeDepthFromJson(List<ItemSlot> suitSlots)
@@ -240,6 +285,8 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
+            bool anyJustBroke = false;
+
             foreach (ItemSlot slot in slots)
             {
                 if (slot?.Itemstack == null)
@@ -252,8 +299,32 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
+                int before = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
+
+                if (before <= 0)
+                {
+                    continue;
+                }
+
                 slot.Itemstack.Collectible.DamageItem(world, entity, slot, amountPerPiece);
+
+                int after = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
+
+                if (after <= 0 && before > 0)
+                {
+                    anyJustBroke = true;
+                }
             }
+
+            if (anyJustBroke)
+            {
+                AssetLocation? sound = GetSuitBreakSoundFromJson(slots);
+                if (sound != null)
+                {
+                    world.PlaySoundAt(sound, entity, null, true, 32f);
+                }
+            }
+
         }
 
         private static void ApplyPressureDamage(EntityPlayer entity, float amount)

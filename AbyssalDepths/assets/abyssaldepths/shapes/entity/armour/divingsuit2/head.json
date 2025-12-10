@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "D:/Hry/Vintagestory121/assets/game/shapes/entity/humanoid/seraph-hairless",
+		"backDropShape": "assets/game/shapes/entity/humanoid/seraph-hairless",
 		"collapsedPaths": "",
 		"allAngles": true,
 		"entityTextureMode": true
@@ -1585,4 +1585,5 @@
 				}
 			]
 		}
+
 	]}

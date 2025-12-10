@@ -1,4 +1,6 @@
-﻿using Vintagestory.API.Common;
+﻿using System.Text;
+using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.GameContent;
 
@@ -33,6 +35,28 @@ namespace AbyssalDepths.src.Items.Wearable
                     BreakSoundFromJson = new AssetLocation(breakCode);
                 }
             }
+        }
+
+        public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
+        {
+            base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+
+            double totalSeconds = MaxOxygenFromJson / 1000.0;
+            int minutes = (int)(totalSeconds / 60);
+            int seconds = (int)(totalSeconds % 60);
+
+            string timeText;
+            if (minutes > 0)
+            {
+                timeText = Lang.Get("{0}m {1}s", minutes, seconds);
+            }
+            else
+            {
+                timeText = Lang.Get("{0}s", seconds);
+            }
+
+            dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-maxoxygen", timeText));
+            dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-safedepth", SafeDepthFromJson));
         }
     }
 }

@@ -1,0 +1,214 @@
+[
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "op": "addmerge",
+    "path": "/behaviors",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "value": [
+      {
+        "name": "CombatOverhaul:Armor",
+        "propertiesByType": {
+          "*head*mk1*": {
+            "Layers": ["Outer"],
+            "Zones": ["Head", "Neck", "Face"],
+            "Resists": {
+              "PiercingAttack": 3,
+              "SlashingAttack": 4,
+              "BluntAttack": 3
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": 0,
+              "manipulationSpeed": -0.1,
+              "steadyAim": -0.15,
+              "healingeffectivness": -0.09,
+              "hungerrate": 0.09
+            }
+          },
+          "*head*mk2*": {
+            "Layers": ["Outer"],
+            "Zones": ["Head", "Neck", "Face"],
+            "Resists": {
+              "PiercingAttack": 4,
+              "SlashingAttack": 5,
+              "BluntAttack": 3
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": 0,
+              "manipulationSpeed": -0.1,
+              "steadyAim": -0.2,
+              "healingeffectivness": -0.09,
+              "hungerrate": 0.12
+            }
+          },
+          "*head*mk3*": {
+            "Layers": ["Outer"],
+            "Zones": ["Head", "Neck", "Face"],
+            "Resists": {
+              "PiercingAttack": 13,
+              "SlashingAttack": 11,
+              "BluntAttack": 12
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": 0,
+              "manipulationSpeed": -0.35,
+              "steadyAim": -0.3,
+              "healingeffectivness": -0.15,
+              "hungerrate": 0.18
+            }
+          },
+          "*body*mk1*": {
+            "Layers": ["Outer"],
+            "Zones": ["Torso", "Arms", "Hands"],
+            "Resists": {
+              "PiercingAttack": 2,
+              "SlashingAttack": 2,
+              "BluntAttack": 4
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.06,
+              "manipulationSpeed": -0.2,
+              "steadyAim": -0.25,
+              "healingeffectivness": -0.09,
+              "hungerrate": 0.09
+            }
+          },
+          "*body*mk2*": {
+            "Layers": ["Outer"],
+            "Zones": ["Torso", "Arms", "Hands"],
+            "Resists": {
+              "PiercingAttack": 4,
+              "SlashingAttack": 4,
+              "BluntAttack": 5
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.08,
+              "manipulationSpeed": -0.3,
+              "steadyAim": -0.45,
+              "healingeffectivness": -0.09,
+              "hungerrate": 0.12
+            }
+          },
+          "*body*mk3*": {
+            "Layers": ["Outer"],
+            "Zones": ["Torso", "Arms", "Hands"],
+            "Resists": {
+              "PiercingAttack": 13,
+              "SlashingAttack": 11,
+              "BluntAttack": 12
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.15,
+              "manipulationSpeed": -0.4,
+              "steadyAim": -0.5,
+              "healingeffectivness": -0.15,
+              "hungerrate": 0.18
+            }
+          },
+          "*legs*mk1*": {
+            "Layers": ["Outer"],
+            "Zones": ["Legs", "Feet"],
+            "Resists": {
+              "PiercingAttack": 2,
+              "SlashingAttack": 2,
+              "BluntAttack": 4
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.1,
+              "manipulationSpeed": 0,
+              "steadyAim": 0,
+              "healingeffectivness": -0.06,
+              "hungerrate": 0.06
+            }
+          },
+          "*legs*mk2*": {
+            "Layers": ["Outer"],
+            "Zones": ["Legs", "Feet"],
+            "Resists": {
+              "PiercingAttack": 4,
+              "SlashingAttack": 4,
+              "BluntAttack": 5
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.22,
+              "manipulationSpeed": 0,
+              "steadyAim": 0,
+              "healingeffectivness": -0.06,
+              "hungerrate": 0.08
+            }
+          },
+          "*legs*mk3*": {
+            "Layers": ["Outer"],
+            "Zones": ["Legs", "Feet"],
+            "Resists": {
+              "PiercingAttack": 13,
+              "SlashingAttack": 11,
+              "BluntAttack": 12
+            },
+            "FlatReduction": {},
+            "PlayerStats": {
+              "walkspeed": -0.4,
+              "manipulationSpeed": 0,
+              "steadyAim": 0,
+              "healingeffectivness": -0.15,
+              "hungerrate": 0.18
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "op": "replace",
+    "path": "/durabilityByType",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "value": {
+        "*head*mk1*": 3000,
+        "*head*mk2*": 5500,
+        "*head*mk3*": 15000,
+        "*body*mk1*": 5500,
+        "*body*mk2*": 16000,
+        "*body*mk3*": 40000,
+        "*legs*mk1*": 4000,
+        "*legs*mk2*": 11000,
+        "*legs*mk3*": 28000
+    }
+  },
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "op": "replace",
+    "path": "/attributes/protectionModifiersByType",
+    "value": { "*": null }
+  },
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "op": "replace",
+    "path": "/attributes/statModifiersByType",
+    "value": { "*": null }
+  },
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "op": "replace",
+    "path": "/class",
+    "value": "CombatOverhaul:WearableArmor"
+  },
+  {
+    "file": "abyssaldepths:itemtypes/wearable/armour",
+    "dependsOn": [{ "modId": "combatoverhaul" }],
+    "op": "add",
+    "path": "/attributes/materialCountByType",
+    "value": { "*-body-*": 16 }
+  },  
+
+]

@@ -2,7 +2,7 @@
 	"ingredientPattern": "ABA,ACA,AAA",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
-		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }},
+		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"C": { "type": "item", "code": "game:ingot-copper", "quantity": 5 }
 	},
 	"width": 3,

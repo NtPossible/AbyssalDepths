@@ -1,10 +1,10 @@
 {
 	"ingredientPattern": "DEF,BAB,CAC",
 	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 6},
+		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 6 },
 		"B": { "type": "item", "code": "game:metalplate-steel", "quantity": 10 },
 		"C": { "type": "item", "code": "game:metalplate-brass", "quantity": 10 },
-		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }},
+		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"E": { "type": "item", "code": "game:jonasframes-oscillator01" },
 		"F": { "type": "item", "code": "game:jonasframes-joint01" }
 	},

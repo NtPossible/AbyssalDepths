@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
@@ -10,6 +11,7 @@ namespace AbyssalDepths.src.Systems
     public class ModSystemDivingSuit : ModSystem
     {
         private const string disableSwimKey = "abyssalDepthsDisableSwim";
+        private const float OxygenTolerance = 0.001f;
 
         private ICoreServerAPI? sapi;
 
@@ -113,7 +115,7 @@ namespace AbyssalDepths.src.Systems
             }
 
             float targetMaxOxygen = GetSuitMaxOxygen(abyssalDepths, entity);
-            if (breathe.MaxOxygen != targetMaxOxygen)
+            if (!NearlyEqual(breathe.MaxOxygen, targetMaxOxygen))
             {
                 breathe.MaxOxygen = targetMaxOxygen;
             }
@@ -225,7 +227,7 @@ namespace AbyssalDepths.src.Systems
             }
 
             float baseMax = GetDefaultPlayerOxygen(entity);
-            if (breathe.MaxOxygen != baseMax)
+            if (!NearlyEqual(breathe.MaxOxygen, baseMax))
             {
                 breathe.MaxOxygen = baseMax;
             }
@@ -239,6 +241,12 @@ namespace AbyssalDepths.src.Systems
             {
                 entity.WatchedAttributes.SetBool(disableSwimKey, false);
             }
+        }
+
+        // done to get rid of some floating point inequality complaint
+        private static bool NearlyEqual(float a, float b)
+        {
+            return Math.Abs(a - b) <= OxygenTolerance;
         }
     }
 }

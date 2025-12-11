@@ -1,79 +1,53 @@
 [
 	{
-		ingredientPattern: "BL,P_",
-		recipeGroup: 2,
-		ingredients: {
-			"B": { type: "item", code: "abyssaldepths:divingsuit-*",  
-						name: "type", allowedVariants: [
-					"head-mk1",
-					"legs-mk1",
-					"body-mk1"
-				]
-			},
-			"P": { type: "item", code: "game:metalplate-copper"
-			},
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color"
-			}
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": { 
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk1", "legs-mk1", "body-mk1" ] },
+			"P": { "type": "item", "code": "game:metalplate-copper" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
 		},
-		width: 2,
-		height: 2,
-		shapeless: true,
-		copyAttributesFrom: 'B',
-		averageDurability: false,
-		name: "divingsuit mk1",
-		output: { type: "item", code: "abyssaldepths:divingsuit-{type}"
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit mk1",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk2", "legs-mk2", "body-mk2" ] },
+			"P": { "type": "item", "code": "game:metalplate-brass" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit mk2",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}"
 		}
 	},
 	{
-		ingredientPattern: "BL,P_",
-		recipeGroup: 2,
-		ingredients: {
-			"B": { type: "item", code: "abyssaldepths:divingsuit-*",  
-						name: "type", allowedVariants: [
-					"head-mk2",
-					"legs-mk2",
-					"body-mk2"
-				]
-			},
-			"P": { type: "item", code: "game:metalplate-brass"
-			},
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color"
-			}
+		"ingredientPattern": "BL,PC",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk3", "legs-mk3", "body-mk3" ] },
+			"P": { "type": "item", "code": "game:metalplate-steel" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+			"C": { "type": "item", "code": "abyssaldepths:waxedlinen" }
 		},
-		width: 2,
-		height: 2,
-		shapeless: true,
-		copyAttributesFrom: 'B',
-		averageDurability: false,
-		name: "divingsuit mk2",
-		output: { type: "item", code: "abyssaldepths:divingsuit-{type}"
-		}
-	},
-	{
-		ingredientPattern: "BL,PC",
-		recipeGroup: 2,
-		ingredients: {
-			"B": { type: "item", code: "abyssaldepths:divingsuit-*",  
-						name: "type", allowedVariants: [
-					"head-mk3",
-					"legs-mk3",
-					"body-mk3"
-				]
-			},
-			"P": { type: "item", code: "game:metalplate-steel"
-			},
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color"
-			},
-			"C": { "type": "item", "code": "abyssaldepths:waxedlinen"
-			}
-		},
-		width: 2,
-		height: 2,
-		shapeless: true,
-		copyAttributesFrom: 'B',
-		averageDurability: false,
-		name: "divingsuit mk3",
-		output: { type: "item", code: "abyssaldepths:divingsuit-{type}"
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit mk3",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}"
 		}
 	}
 ]

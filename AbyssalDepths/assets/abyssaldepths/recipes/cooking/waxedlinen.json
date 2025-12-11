@@ -1,0 +1,26 @@
+{
+  "code": "waxedlinenrecipe",
+  "perishableProps": {
+    "type": "None",
+    "freshHours": { "avg": 48 },
+    "transitionHours": { "avg": 48 },
+    "transitionRatio": 1,
+    "transitionedStack": { "type": "item", "code": "abyssaldepths:waxedlinen" }
+  },
+  "shape": { "base": "game:block/food/meal/liquid" },
+  "ingredients": [
+    {
+      "code": "cloth",
+      "validStacks": [ { "type": "item", "code": "game:cloth-plain" } ],
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "code": "beeswax",
+      "validStacks": [ { "type": "item", "code": "game:beeswax", "quantity": 2 } ],
+      "minQuantity": 1,
+      "maxQuantity": 1
+    }
+  ],
+  "cooksInto": { "type": "item", "code": "abyssaldepths:waxedlinen" }
+}

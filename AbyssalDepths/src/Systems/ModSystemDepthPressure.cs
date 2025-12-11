@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using AbyssalDepths.src.Items.Wearable;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -44,70 +44,41 @@ namespace AbyssalDepths.src.Systems
 
             foreach (IPlayer player in world.AllOnlinePlayers)
             {
-                if (player?.Entity is not EntityPlayer entity)
-                {
-                    continue;
-                }
-
-                if (!entity.Alive)
-                {
-                    continue;
-                }
-
-                ApplyDepthPressure(world, player, entity);
+                ProcessPlayer(world, player);
             }
         }
 
-        private static void ApplyDepthPressure(IServerWorldAccessor world, IPlayer player, EntityPlayer entity)
+        private static void ProcessPlayer(IServerWorldAccessor world, IPlayer player)
         {
+            if (player?.Entity is not EntityPlayer entity)
+            {
+                return;
+            }
+
+            if (!entity.Alive || entity.ServerPos == null)
+            {
+                return;
+            }
+
+            if (!player.Entity.IsEyesSubmerged())
+            {
+                return;
+            }
+
             int waterDepth = GetWaterDepth(world, entity);
-
-            // Not deep enough for pressure
-            if (waterDepth < depth20)
+            if (waterDepth <= 0)
             {
                 return;
             }
 
-            bool hasFullSuit = ModSystemDivingSuit.TryGetEquippedDivingSuitTier(player, out string tier);
-            List<ItemSlot> suitSlots = hasFullSuit ? GetEquippedSuitSlots(player, tier) : [];
-            bool hasFunctionalSuit = hasFullSuit && !SuitDamaged(suitSlots);
+            bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
 
-            if (hasFunctionalSuit && tier == "mk3")
-            {
-                return;
-            }
-
-            int safeDepth = 0;
-            if (hasFunctionalSuit)
-            {
-                safeDepth = GetSuitSafeDepthFromJson(suitSlots);
-            }
-
-            // Within suit safe depth
             if (hasFunctionalSuit && waterDepth <= safeDepth)
             {
                 return;
             }
 
-            // Determine depth level and corresponding damage
-            float playerDamagePerSecond;
-            int suitDamagePerSecond;
-
-            if (waterDepth < depth40)
-            {
-                playerDamagePerSecond = damageDepth20;
-                suitDamagePerSecond = suitDamageDepth20;
-            }
-            else if (waterDepth < depth60)
-            {
-                playerDamagePerSecond = damageDepth40;
-                suitDamagePerSecond = suitDamageDepth40;
-            }
-            else
-            {
-                playerDamagePerSecond = damageDepth60;
-                suitDamagePerSecond = suitDamageDepth60;
-            }
+            GetDepthDamage(waterDepth, out float playerDamagePerSecond, out int suitDamagePerSecond);
 
             // If the worn suit is beyond its safe depth, damage it first
             if (hasFunctionalSuit && waterDepth > safeDepth)
@@ -127,6 +98,61 @@ namespace AbyssalDepths.src.Systems
             ApplyPressureDamage(entity, playerDamagePerSecond);
         }
 
+        private static void GetDepthDamage(int waterDepth, out float playerDamagePerSecond, out int suitDamagePerSecond)
+        {
+            if (waterDepth <= depth20)
+            {
+                playerDamagePerSecond = 0f;
+                suitDamagePerSecond = 0;
+            }
+            else if (waterDepth <= depth40)
+            {
+                playerDamagePerSecond = damageDepth20;
+                suitDamagePerSecond = suitDamageDepth20;
+            }
+            else if (waterDepth <= depth60)
+            {
+                playerDamagePerSecond = damageDepth40;
+                suitDamagePerSecond = suitDamageDepth40;
+            }
+            else
+            {
+                playerDamagePerSecond = damageDepth60;
+                suitDamagePerSecond = suitDamageDepth60;
+            }
+        }
+
+        private static bool TryGetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
+        {
+            suitSlots = [];
+            safeDepth = 0;
+
+            if (!ModSystemDivingSuit.TryGetEquippedDivingSuitTier(player, out string tier))
+            {
+                return false;
+            }
+
+            suitSlots = GetEquippedSuitSlots(player, tier);
+
+            if (SuitDamaged(suitSlots))
+            {
+                return false;
+            }
+
+            safeDepth = GetSuitSafeDepthFromJson(suitSlots);
+            return safeDepth > 0;
+        }
+
+        private static JsonObject? GetDivingSuitAttributes(ItemSlot? slot)
+        {
+            if (slot == null || slot.Itemstack == null)
+            {
+                return null;
+            }
+
+            return slot.Itemstack.Item.Attributes?["abyssalDepths"];
+        }
+
         private static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
         {
             int depthOver = GameMath.Max(0, waterDepth - safeDepth);
@@ -143,14 +169,20 @@ namespace AbyssalDepths.src.Systems
             }
         }
 
-
         private static AssetLocation? GetSuitCreakSoundFromJson(List<ItemSlot> slots)
         {
             foreach (ItemSlot slot in slots)
             {
-                if (slot?.Itemstack?.Collectible is ItemDivingSuit suit && suit.CreakSoundFromJson != null)
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
                 {
-                    return suit.CreakSoundFromJson;
+                    continue;
+                }
+
+                string creakCode = abyssalDepths["creakSound"].AsString(null);
+                if (!string.IsNullOrEmpty(creakCode))
+                {
+                    return new AssetLocation(creakCode);
                 }
             }
 
@@ -161,9 +193,16 @@ namespace AbyssalDepths.src.Systems
         {
             foreach (ItemSlot slot in slots)
             {
-                if (slot?.Itemstack?.Collectible is ItemDivingSuit suit && suit.BreakSoundFromJson != null)
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
                 {
-                    return suit.BreakSoundFromJson;
+                    continue;
+                }
+
+                string breakCode = abyssalDepths["breakSound"].AsString(null);
+                if (!string.IsNullOrEmpty(breakCode))
+                {
+                    return new AssetLocation(breakCode);
                 }
             }
 
@@ -172,15 +211,24 @@ namespace AbyssalDepths.src.Systems
 
         private static int GetSuitSafeDepthFromJson(List<ItemSlot> suitSlots)
         {
+            int maxSafeDepth = 0;
+
             foreach (ItemSlot slot in suitSlots)
             {
-                if (slot.Itemstack?.Collectible is ItemDivingSuit suit && suit.SafeDepthFromJson >= 0)
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
                 {
-                    return suit.SafeDepthFromJson;
+                    continue;
+                }
+
+                int safeDepth = abyssalDepths["safeDepth"].AsInt(-1);
+                if (safeDepth > maxSafeDepth)
+                {
+                    maxSafeDepth = safeDepth;
                 }
             }
 
-            return 0;
+            return maxSafeDepth;
         }
 
         private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity)
@@ -205,7 +253,6 @@ namespace AbyssalDepths.src.Systems
                 scanPos.Y = y;
 
                 Block block = blockAccessor.GetBlock(scanPos);
-
                 if (block != null && block.IsLiquid())
                 {
                     waterSurfaceY = y;
@@ -234,14 +281,19 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in inventory)
             {
-                if (slot?.Itemstack?.Item is not ItemDivingSuit)
+                if (slot == null || slot.Itemstack == null)
                 {
                     continue;
                 }
 
-                ItemStack stack = slot.Itemstack;
-                string bodypart = stack.Item.Variant["bodypart"];
-                string suitTier = stack.Item.Variant["tier"];
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
+                {
+                    continue;
+                }
+
+                string bodypart = slot.Itemstack.Item.Variant["bodypart"];
+                string suitTier = slot.Itemstack.Item.Variant["tier"];
 
                 if (suitTier != tier)
                 {
@@ -280,11 +332,6 @@ namespace AbyssalDepths.src.Systems
 
         private static void DamageSuit(IServerWorldAccessor world, EntityPlayer entity, List<ItemSlot> slots, int amountPerPiece)
         {
-            if (amountPerPiece <= 0)
-            {
-                return;
-            }
-
             bool anyJustBroke = false;
 
             foreach (ItemSlot slot in slots)
@@ -294,7 +341,8 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
-                if (slot.Itemstack.Item is not ItemDivingSuit)
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
                 {
                     continue;
                 }

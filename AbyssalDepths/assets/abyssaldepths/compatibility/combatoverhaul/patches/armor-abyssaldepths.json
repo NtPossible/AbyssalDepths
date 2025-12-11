@@ -209,6 +209,5 @@
     "op": "add",
     "path": "/attributes/materialCountByType",
     "value": { "*-body-*": 16 }
-  },  
-
+  }
 ]

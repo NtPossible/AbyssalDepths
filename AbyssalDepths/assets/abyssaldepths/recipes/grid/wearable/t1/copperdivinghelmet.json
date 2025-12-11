@@ -1,11 +1,12 @@
 {
-	"ingredientPattern": "ABC,BEB,DED",
+	"ingredientPattern": "ABC,BEB,DFD",
 	"ingredients": {
 		"A": { "type": "item", "code": "game:metalnailsandstrips-*","quantity": 8 },
 		"B": { "type": "item", "code": "game:metalplate-copper", "quantity":  2 },
 		"C": { "type": "block", "code": "game:glassslab-plain-down-free" },
 		"D": { "type": "block", "code": "game:metal-parts", "quantity": 8 },
-		"E": { "type": "item", "code": "abyssaldepths:waxedlinen-*" }
+		"E": { "type": "item", "code": "abyssaldepths:waxedlinen" },
+		"F": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear"}
 	},
 	"width": 3,
 	"height": 3,

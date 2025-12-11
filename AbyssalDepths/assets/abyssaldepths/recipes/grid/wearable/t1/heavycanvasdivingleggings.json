@@ -1,7 +1,10 @@
 {
-	"ingredientPattern": "AAA,A_A,A_A",
+	"ingredientPattern": "AAA,BCB,D_D",
 	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+		"B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
+		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" },
+		"D": { "type": "item", "code": "game:ingot-lead" }
 	},
 	"width": 3,
 	"height": 3,

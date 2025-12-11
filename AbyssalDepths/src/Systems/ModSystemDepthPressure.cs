@@ -231,42 +231,69 @@ namespace AbyssalDepths.src.Systems
             return maxSafeDepth;
         }
 
+        // checks a radius around the player's head for maximum water depth
         private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity)
         {
             IBlockAccessor blockAccessor = world.BlockAccessor;
 
             EntityPos entityPosition = entity.ServerPos ?? entity.Pos;
-            if (entityPosition == null)
+            BlockPos centerPos = entityPosition.AsBlockPos;
+
+            int maxY = blockAccessor.MapSizeY - 1;
+
+            int headY = GameMath.Clamp(centerPos.Y + 1, 0, maxY);
+            if (headY > maxY)
             {
                 return 0;
             }
 
-            BlockPos pos = entityPosition.AsBlockPos;
-            int headY = pos.Y + 1;
-            int maxY = blockAccessor.MapSizeY - 1;
-            BlockPos scanPos = new(pos.X, headY, pos.Z);
-            int waterSurfaceY = -1;
+            int maxDepth = 0;
 
-            // Scan from top of world down to head height
-            for (int y = maxY; y >= headY; y--)
+            BlockPos scanPos = new(centerPos.X, headY, centerPos.Z);
+
+            const int sampleRadius = 3;
+
+            for (int dx = -sampleRadius; dx <= sampleRadius; dx++)
             {
-                scanPos.Y = y;
-
-                Block block = blockAccessor.GetBlock(scanPos);
-                if (block != null && block.IsLiquid())
+                for (int dz = -sampleRadius; dz <= sampleRadius; dz++)
                 {
-                    waterSurfaceY = y;
-                    break;
+                    int x = centerPos.X + dx;
+                    int z = centerPos.Z + dz;
+
+                    int depth = GetColumnWaterDepth(blockAccessor, x, z, headY, maxY, scanPos);
+                    if (depth > maxDepth)
+                    {
+                        maxDepth = depth;
+
+                        if (maxDepth >= depth60)
+                        {
+                            return maxDepth;
+                        }
+                    }
                 }
             }
 
-            if (waterSurfaceY == -1)
+            return maxDepth;
+        }
+
+        private static int GetColumnWaterDepth(IBlockAccessor blockAccessor, int x, int z, int startY, int maxY, BlockPos reusablePos)
+        {
+            int depth = 0;
+
+            for (int y = startY; y <= maxY; y++)
             {
-                return 0;
+                reusablePos.Set(x, y, z);
+                Block block = blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid);
+
+                if (block == null || !block.IsLiquid())
+                {
+                    break;
+                }
+
+                depth++;
             }
 
-            int depth = waterSurfaceY - headY + 1;
-            return depth < 0 ? 0 : depth;
+            return depth;
         }
 
         private static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string tier)
@@ -372,7 +399,6 @@ namespace AbyssalDepths.src.Systems
                     world.PlaySoundAt(sound, entity, null, true, 32f);
                 }
             }
-
         }
 
         private static void ApplyPressureDamage(EntityPlayer entity, float amount)

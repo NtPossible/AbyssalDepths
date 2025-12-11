@@ -3,7 +3,7 @@
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
 		"B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
-		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" },
+		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }},
 		"D": { "type": "item", "code": "game:metalplate-brass" },
 		"E": { "type": "block", "code": "game:metal-parts", "quantity": 8 }
 	},

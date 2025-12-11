@@ -27,42 +27,42 @@ namespace AbyssalDepths.src.Systems
             {
                 return;
             }
-
             foreach (IPlayer player in sapi.World.AllOnlinePlayers)
             {
-                if (player == null || player.Entity is not EntityPlayer entity || !entity.Alive)
-                {
-                    continue;
-                }
+                ProcessPlayer(player);
+            }
+        }
 
-                IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
-                if (inventory == null)
-                {
-                    continue;
-                }
+        private static void ProcessPlayer(IPlayer? player)
+        {
+            if (player?.Entity is not EntityPlayer entity || !entity.Alive)
+            {
+                return;
+            }
+            IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
+            if (inventory == null)
+            {
+                return;
+            }
+            JsonObject? suitAttributes = null;
 
-                ItemSlot? suitSlot = null;
-                JsonObject? suitAttributes = null;
+            foreach (ItemSlot slot in inventory)
+            {
+                JsonObject? attributes = GetDivingSuitAttributes(slot);
+                if (attributes != null && attributes.Exists)
+                {
+                    suitAttributes = attributes;
+                    break;
+                }
+            }
 
-                foreach (ItemSlot slot in inventory)
-                {
-                    JsonObject? attributes = GetDivingSuitAttributes(slot);
-                    if (attributes != null && attributes.Exists)
-                    {
-                        suitSlot = slot;
-                        suitAttributes = attributes;
-                        break;
-                    }
-                }
-
-                if (suitSlot != null && suitAttributes != null)
-                {
-                    HandleSuit(player, suitAttributes);
-                }
-                else
-                {
-                    ResetPlayerOxygen(player);
-                }
+            if (suitAttributes != null)
+            {
+                HandleSuit(player, suitAttributes);
+            }
+            else
+            {
+                ResetPlayerOxygen(player);
             }
         }
 
@@ -151,35 +151,10 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in inventory)
             {
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                if (!IsValidDivingSuitSlot(slot, ref foundTier, bodypartsFound))
                 {
                     continue;
                 }
-
-                string? bodypart = slot!.Itemstack!.Item.Variant?["bodypart"];
-                string? suitTier = slot.Itemstack.Item.Variant?["tier"];
-
-                if (bodypart == null || suitTier == null)
-                {
-                    continue;
-                }
-
-                if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
-                {
-                    continue;
-                }
-
-                if (foundTier == null)
-                {
-                    foundTier = suitTier;
-                }
-                else if (foundTier != suitTier)
-                {
-                    return false;
-                }
-
-                bodypartsFound.Add(bodypart);
             }
 
             if (foundTier != null && bodypartsFound.Count == 3)
@@ -189,6 +164,41 @@ namespace AbyssalDepths.src.Systems
             }
 
             return false;
+        }
+
+        private static bool IsValidDivingSuitSlot(ItemSlot slot, ref string? foundTier, HashSet<string> bodypartsFound)
+        {
+            JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+            if (abyssalDepths == null || !abyssalDepths.Exists)
+            {
+                return false;
+            }
+
+            string? bodypart = slot!.Itemstack!.Item.Variant?["bodypart"];
+            string? suitTier = slot.Itemstack.Item.Variant?["tier"];
+
+            if (bodypart == null || suitTier == null)
+            {
+                return false;
+            }
+
+            if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
+            {
+                return false;
+            }
+
+            if (foundTier == null)
+            {
+                foundTier = suitTier;
+            }
+            else if (foundTier != suitTier)
+            {
+                foundTier = null;
+                return false;
+            }
+
+            bodypartsFound.Add(bodypart);
+            return true;
         }
 
         private static void ResetPlayerOxygen(IPlayer player)

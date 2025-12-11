@@ -1,11 +1,12 @@
 {
-	"ingredientPattern": "ABC,BEB,DED",
+	"ingredientPattern": "ABC,BEB,DFD",
 	"ingredients": {
-		"A": { "type": "item", "code": "game:metalnailsandstrips-*", "allowedVariants": [ "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ],"quantity": 8 },
+		"A": { "type": "item", "code": "game:metalnailsandstrips-*", "allowedVariants": [ "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ],"quantity": 16 },
 		"B": { "type": "item", "code": "game:metalplate-brass", "quantity":  2 },
-		"C": { "type": "block", "code": "game:glassslab-plain-down-free" },
+		"C": { "type": "block", "code": "game:glassslab-plain-down-free", "quantity": 5 },
 		"D": { "type": "block", "code": "game:metal-parts", "quantity": 8 },
-		"E": { "type": "item", "code": "abyssaldepths:waxedlinen-*" }
+		"E": { "type": "item", "code": "abyssaldepths:waxedlinen" },
+		"F": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear"}
 	},
 	"width": 3,
 	"height": 3,

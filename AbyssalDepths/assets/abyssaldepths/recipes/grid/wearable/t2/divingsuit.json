@@ -2,7 +2,7 @@
 	"ingredientPattern": "ABA,CDC,CCC",
 	"ingredients": {
 		"A": { "type": "item", "code": "game:metalplate-brass", "quantity": 3 },
-		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }},
+		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"C": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
 		"D": { "type": "item", "code": "game:ingot-lead", "quantity": 6}
 	},

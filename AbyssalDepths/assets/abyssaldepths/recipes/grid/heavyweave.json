@@ -1,7 +1,7 @@
 {
   "ingredientPattern": "AB",
   "ingredients": {
-    "A": { "type": "item", "code": "game:cloth-{color}", "name": "color" , "quantity": 2},
+    "A": { "type": "item", "code": "game:cloth-{color}", "name": "color" , "quantity": 2 },
     "B": { "type": "item", "code": "game:flaxtwine", "quantity": 2 }
   },
   "allowedVariants": { "color": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },

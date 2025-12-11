@@ -2,7 +2,7 @@
 	"ingredientPattern": "SP",
 	"ingredients": {
 		"S": { "type": "item", "code": "game:paper-parchment", "quantity": 2 },
-		"P": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }},
+		"P": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } }
 	},
 	"shapeless": true,
 	"width": 2,

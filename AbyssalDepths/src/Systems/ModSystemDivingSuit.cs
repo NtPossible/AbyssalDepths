@@ -1,18 +1,82 @@
-﻿using AbyssalDepths.src.Items.Wearable;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
-using Vintagestory.GameContent;
 using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace AbyssalDepths.src.Systems
 {
-    public class ModSystemDivingSuit : ModSystemWearableTick<ItemDivingSuit>
+    public class ModSystemDivingSuit : ModSystem
     {
         private const string disableSwimKey = "abyssalDepthsDisableSwim";
 
+        private ICoreServerAPI? sapi;
+
         public override bool ShouldLoad(EnumAppSide forSide) => true;
 
-        protected override void HandleItem(IPlayer player, ItemDivingSuit item, ItemSlot slot, double hoursPassed, float dt)
+        public override void StartServerSide(ICoreServerAPI api)
+        {
+            sapi = api;
+            api.Event.RegisterGameTickListener(OnTickServer1s, 1000, 200);
+        }
+
+        private void OnTickServer1s(float dt)
+        {
+            if (sapi?.World == null)
+            {
+                return;
+            }
+
+            foreach (IPlayer player in sapi.World.AllOnlinePlayers)
+            {
+                if (player == null || player.Entity is not EntityPlayer entity || !entity.Alive)
+                {
+                    continue;
+                }
+
+                IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
+                if (inventory == null)
+                {
+                    continue;
+                }
+
+                ItemSlot? suitSlot = null;
+                JsonObject? suitAttributes = null;
+
+                foreach (ItemSlot slot in inventory)
+                {
+                    JsonObject? attributes = GetDivingSuitAttributes(slot);
+                    if (attributes != null && attributes.Exists)
+                    {
+                        suitSlot = slot;
+                        suitAttributes = attributes;
+                        break;
+                    }
+                }
+
+                if (suitSlot != null && suitAttributes != null)
+                {
+                    HandleSuit(player, suitAttributes);
+                }
+                else
+                {
+                    ResetPlayerOxygen(player);
+                }
+            }
+        }
+
+        private static JsonObject? GetDivingSuitAttributes(ItemSlot? slot)
+        {
+            if (slot == null || slot.Itemstack == null)
+            {
+                return null;
+            }
+
+            return slot.Itemstack.Item.Attributes?["abyssalDepths"];
+        }
+
+        private static void HandleSuit(IPlayer player, JsonObject abyssalDepths)
         {
             EntityPlayer entity = player.Entity;
             if (entity == null)
@@ -37,7 +101,7 @@ namespace AbyssalDepths.src.Systems
             }
 
             // Check if we have a full suit, and which tier it is
-            if (!TryGetEquippedDivingSuitTier(player, out string tier))
+            if (!TryGetEquippedDivingSuitTier(player, out _))
             {
                 ResetPlayerOxygen(player);
                 return;
@@ -48,24 +112,19 @@ namespace AbyssalDepths.src.Systems
                 entity.WatchedAttributes.SetBool(disableSwimKey, true);
             }
 
-            float targetMaxOxygen = GetSuitMaxOxygen(slot, entity);
+            float targetMaxOxygen = GetSuitMaxOxygen(abyssalDepths, entity);
             if (breathe.MaxOxygen != targetMaxOxygen)
             {
                 breathe.MaxOxygen = targetMaxOxygen;
             }
         }
 
-        protected override void HandleMissing(IPlayer player)
+        private static float GetSuitMaxOxygen(JsonObject abyssalDepths, EntityPlayer entity)
         {
-            // No diving suit pieces found at all
-            ResetPlayerOxygen(player);
-        }
-
-        private static float GetSuitMaxOxygen(ItemSlot suitSlot, EntityPlayer entity)
-        {
-            if (suitSlot.Itemstack?.Collectible is ItemDivingSuit suit && suit.MaxOxygenFromJson > 0f)
+            float maxOxygen = abyssalDepths["maxOxygen"].AsFloat(-1f);
+            if (maxOxygen > 0f)
             {
-                return suit.MaxOxygenFromJson;
+                return maxOxygen;
             }
 
             return GetDefaultPlayerOxygen(entity);
@@ -92,13 +151,14 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in inventory)
             {
-                if (slot?.Itemstack?.Collectible is not ItemDivingSuit collectible)
+                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
+                if (abyssalDepths == null || !abyssalDepths.Exists)
                 {
                     continue;
                 }
 
-                string? bodypart = collectible.Variant?["bodypart"];
-                string? suitTier = collectible.Variant?["tier"];
+                string? bodypart = slot!.Itemstack!.Item.Variant?["bodypart"];
+                string? suitTier = slot.Itemstack.Item.Variant?["tier"];
 
                 if (bodypart == null || suitTier == null)
                 {

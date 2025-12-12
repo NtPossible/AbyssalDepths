@@ -14,7 +14,7 @@
 		"averageDurability": false,
 		"name": "divingsuit mk1",
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
-	},
+},
 	{
 		"ingredientPattern": "BL,P_",
 		"recipeGroup": 2,
@@ -29,8 +29,7 @@
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
 		"name": "divingsuit mk2",
-		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}"
-		}
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	},
 	{
 		"ingredientPattern": "BL,PC",
@@ -47,7 +46,6 @@
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
 		"name": "divingsuit mk3",
-		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}"
-		}
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	}
 ]

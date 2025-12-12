@@ -38,7 +38,7 @@
 		"ingredients": {
 			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk3", "legs-mk3", "body-mk3" ] },
 			"P": { "type": "item", "code": "game:metalplate-steel" },
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+			"L": { "type": "item", "code": "game:metalplate-brass" },
 			"C": { "type": "item", "code": "abyssaldepths:waxedlinen" }
 		},
 		"width": 2,

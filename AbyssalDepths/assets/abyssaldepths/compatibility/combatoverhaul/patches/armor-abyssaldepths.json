@@ -46,9 +46,9 @@
             "Layers": ["Outer"],
             "Zones": ["Head", "Neck", "Face"],
             "Resists": {
-              "PiercingAttack": 13,
+              "PiercingAttack": 11,
               "SlashingAttack": 11,
-              "BluntAttack": 12
+              "BluntAttack": 10
             },
             "FlatReduction": {},
             "PlayerStats": {
@@ -97,13 +97,13 @@
             "Layers": ["Outer"],
             "Zones": ["Torso", "Arms", "Hands"],
             "Resists": {
-              "PiercingAttack": 13,
+              "PiercingAttack": 11,
               "SlashingAttack": 11,
-              "BluntAttack": 12
+              "BluntAttack": 10
             },
             "FlatReduction": {},
             "PlayerStats": {
-              "walkspeed": -0.15,
+              "walkspeed": -0.10,
               "manipulationSpeed": -0.4,
               "steadyAim": -0.5,
               "healingeffectivness": -0.15,
@@ -148,13 +148,13 @@
             "Layers": ["Outer"],
             "Zones": ["Legs", "Feet"],
             "Resists": {
-              "PiercingAttack": 13,
+              "PiercingAttack": 11,
               "SlashingAttack": 11,
-              "BluntAttack": 12
+              "BluntAttack": 10
             },
             "FlatReduction": {},
             "PlayerStats": {
-              "walkspeed": -0.4,
+              "walkspeed": -0.35,
               "manipulationSpeed": 0,
               "steadyAim": 0,
               "healingeffectivness": -0.15,
@@ -171,13 +171,13 @@
     "path": "/durabilityByType",
     "dependsOn": [{ "modId": "combatoverhaul" }],
     "value": {
-        "*head*mk1*": 3000,
+        "*head*mk1*": 1800,
         "*head*mk2*": 5500,
         "*head*mk3*": 15000,
-        "*body*mk1*": 5500,
+        "*body*mk1*": 3500,
         "*body*mk2*": 16000,
         "*body*mk3*": 40000,
-        "*legs*mk1*": 4000,
+        "*legs*mk1*": 2000,
         "*legs*mk2*": 11000,
         "*legs*mk3*": 28000
     }
@@ -211,3 +211,4 @@
     "value": { "*-body-*": 16 }
   }
 ]
+

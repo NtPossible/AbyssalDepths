@@ -9,7 +9,6 @@ namespace AbyssalDepths.src.Patches
     {
         static void Postfix(EntityHeadController __instance)
         {
-            // Use Harmony Traverse to get the protected "entity" field
             EntityAgent? entityAgent = Traverse.Create(__instance).Field("entity").GetValue<EntityAgent>();
             if (entityAgent is not EntityPlayer entityPlayer)
             {
@@ -17,13 +16,13 @@ namespace AbyssalDepths.src.Patches
             }
 
             SyncedTreeAttribute attribute = entityPlayer.WatchedAttributes;
-            if (attribute == null || !attribute.GetBool("abyssalDepthsDisableSwim"))
+            if (attribute == null || !attribute.GetBool("abyssalDepthsLockHeadMovement"))
             {
                 // Not in a diving suit, keep vanilla behaviour
                 return;
             }
 
-            // Suit on: freeze head/neck/torso movement
+            // If the suit is on freeze head/neck/torso movement
             __instance.HeadPose.degOffY = 0f;
             __instance.HeadPose.degOffZ = 0f;
 

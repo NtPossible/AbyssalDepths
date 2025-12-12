@@ -10,7 +10,10 @@ namespace AbyssalDepths.src.Systems
 {
     public class ModSystemDivingSuit : ModSystem
     {
-        private const string disableSwimKey = "abyssalDepthsDisableSwim";
+        private const string DisableSwimKey = "abyssalDepthsDisableSwim";
+        private const string FullSuitKey = "abyssalDepthsFullDivingSuit";
+        private const string LockHeadKey = "abyssalDepthsLockHeadMovement";
+
         private const float OxygenTolerance = 0.001f;
 
         private ICoreServerAPI? sapi;
@@ -46,74 +49,95 @@ namespace AbyssalDepths.src.Systems
             {
                 return;
             }
-            JsonObject? suitAttributes = null;
+
+            bool disableSwim = false;
+            bool hasMk3Helmet = false;
+            bool hasFullSuit = TryGetEquippedDivingSuitTier(player, out _);
+
+            JsonObject? anySuitAttributes = null;
 
             foreach (ItemSlot slot in inventory)
             {
                 JsonObject? attributes = GetDivingSuitAttributes(slot);
-                if (attributes != null && attributes.Exists)
+                if (attributes == null || !attributes.Exists)
                 {
-                    suitAttributes = attributes;
-                    break;
+                    continue;
+                }
+                anySuitAttributes ??= attributes;
+
+                string? bodypart = slot.Itemstack?.Item?.Variant?["bodypart"];
+                string? tier = slot.Itemstack?.Item?.Variant?["tier"];
+
+                // mk1 and mk2 only has body/legs disable swim, all parts of mk3 disable swim
+                if (tier == "mk3")
+                {
+                    if (bodypart == "head" || bodypart == "body" || bodypart == "legs")
+                    {
+                        disableSwim = true;
+                    }
+                }
+                else
+                {
+                    if (bodypart == "body" || bodypart == "legs")
+                    {
+                        disableSwim = true;
+                    }
+                }
+
+                // Head lock only for mk3 helmet
+                if (bodypart == "head" && tier == "mk3")
+                {
+                    hasMk3Helmet = true;
                 }
             }
 
-            if (suitAttributes != null)
-            {
-                HandleSuit(player, suitAttributes);
-            }
-            else
+            SetWatchedBool(entity, DisableSwimKey, disableSwim);
+            SetWatchedBool(entity, LockHeadKey, hasMk3Helmet);
+            SetWatchedBool(entity, FullSuitKey, hasFullSuit);
+
+            // Oxygen only for full set of same tier
+            if (!hasFullSuit || anySuitAttributes == null)
             {
                 ResetPlayerOxygen(player);
+                return;
+            }
+
+            ApplyFullSuitOxygen(player, anySuitAttributes);
+        }
+
+        private static void SetWatchedBool(EntityPlayer entity, string key, bool value)
+        {
+            SyncedTreeAttribute attribute = entity.WatchedAttributes;
+            if (attribute == null)
+            {
+                return;
+            }
+            if (attribute.GetBool(key) != value)
+            {
+                attribute.SetBool(key, value);
             }
         }
 
         private static JsonObject? GetDivingSuitAttributes(ItemSlot? slot)
         {
-            if (slot == null || slot.Itemstack == null)
+            if (slot?.Itemstack?.Item == null)
             {
                 return null;
             }
-
             return slot.Itemstack.Item.Attributes?["abyssalDepths"];
         }
 
-        private static void HandleSuit(IPlayer player, JsonObject abyssalDepths)
+        private static void ApplyFullSuitOxygen(IPlayer player, JsonObject abyssalDepths)
         {
-            EntityPlayer entity = player.Entity;
-            if (entity == null)
+            if (player.Entity is not EntityPlayer entity)
             {
                 return;
             }
-
-            if (entity.SidedProperties?.Behaviors == null)
-            {
-                return;
-            }
-
             EntityBehaviorBreathe? breathe = entity.GetBehavior<EntityBehaviorBreathe>();
             if (breathe == null)
             {
                 return;
             }
-
-            if (entity.WatchedAttributes == null)
-            {
-                return;
-            }
-
-            // Check if we have a full suit, and which tier it is
-            if (!TryGetEquippedDivingSuitTier(player, out _))
-            {
-                ResetPlayerOxygen(player);
-                return;
-            }
-
-            if (!entity.WatchedAttributes.GetBool(disableSwimKey))
-            {
-                entity.WatchedAttributes.SetBool(disableSwimKey, true);
-            }
-
             float targetMaxOxygen = GetSuitMaxOxygen(abyssalDepths, entity);
             if (!NearlyEqual(breathe.MaxOxygen, targetMaxOxygen))
             {
@@ -153,10 +177,7 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in inventory)
             {
-                if (!IsValidDivingSuitSlot(slot, ref foundTier, bodypartsFound))
-                {
-                    continue;
-                }
+                IsValidDivingSuitSlot(slot, ref foundTier, bodypartsFound);
             }
 
             if (foundTier != null && bodypartsFound.Count == 3)
@@ -168,25 +189,23 @@ namespace AbyssalDepths.src.Systems
             return false;
         }
 
-        private static bool IsValidDivingSuitSlot(ItemSlot slot, ref string? foundTier, HashSet<string> bodypartsFound)
+        private static void IsValidDivingSuitSlot(ItemSlot slot, ref string? foundTier, HashSet<string> bodypartsFound)
         {
             JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
             if (abyssalDepths == null || !abyssalDepths.Exists)
             {
-                return false;
+                return;
             }
-
-            string? bodypart = slot!.Itemstack!.Item.Variant?["bodypart"];
-            string? suitTier = slot.Itemstack.Item.Variant?["tier"];
+            string? bodypart = slot.Itemstack?.Item?.Variant?["bodypart"];
+            string? suitTier = slot.Itemstack?.Item?.Variant?["tier"];
 
             if (bodypart == null || suitTier == null)
             {
-                return false;
+                return;
             }
-
             if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
             {
-                return false;
+                return;
             }
 
             if (foundTier == null)
@@ -196,11 +215,10 @@ namespace AbyssalDepths.src.Systems
             else if (foundTier != suitTier)
             {
                 foundTier = null;
-                return false;
+                return;
             }
 
             bodypartsFound.Add(bodypart);
-            return true;
         }
 
         private static void ResetPlayerOxygen(IPlayer player)
@@ -221,10 +239,6 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            if (entity.WatchedAttributes == null)
-            {
-                return;
-            }
 
             float baseMax = GetDefaultPlayerOxygen(entity);
             if (!NearlyEqual(breathe.MaxOxygen, baseMax))
@@ -235,11 +249,6 @@ namespace AbyssalDepths.src.Systems
             if (breathe.Oxygen > baseMax)
             {
                 breathe.Oxygen = baseMax;
-            }
-
-            if (entity.WatchedAttributes.GetBool(disableSwimKey))
-            {
-                entity.WatchedAttributes.SetBool(disableSwimKey, false);
             }
         }
 

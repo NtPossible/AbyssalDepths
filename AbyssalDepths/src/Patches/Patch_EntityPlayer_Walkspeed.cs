@@ -10,7 +10,7 @@ namespace AbyssalDepths.src.Patches
         static void Postfix(EntityPlayer __instance, ref double __result)
         {
             SyncedTreeAttribute attribute = __instance.WatchedAttributes;
-            if (attribute == null || !attribute.GetBool("abyssalDepthsDisableSwim"))
+            if (attribute == null || !attribute.GetBool("abyssalDepthsFullDivingSuit"))
             {
                 return;
             }

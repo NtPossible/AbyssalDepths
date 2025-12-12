@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "entity/humanoid/seraph-hairless",
+		"backDropShape": "D:/Hry/Vintagestory121/assets/game/shapes/entity/humanoid/seraph-hairless",
 		"allAngles": true,
 		"entityTextureMode": true
 	},
@@ -10,7 +10,7 @@
 	},
 	"textures": {
 		"divingsuit": "armour/entity/mk3"
-		},
+	},
 	"elements": [
 		{
 			"name": "ArmorHelmet",
@@ -1687,21 +1687,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "ArmorNeck",
-			"stepParentName": "Neck",
-			"from": [ -0.3, 0.6, -0.3 ],
-			"to": [ 3.3, 2.4, 3.3 ],
-			"unwrapMode": 4,
-			"uv": [ 12.0, 5.5 ],
-			"rotationOrigin": [ -0.3, 2.6, -0.3 ],
-			"faces": {
-				"north": { "texture": "#divingsuit", "uv": [ 12.0, 5.5, 15.5, 7.0 ] },
-				"east": { "texture": "#divingsuit", "uv": [ 22.5, 5.5, 26.0, 7.0 ] },
-				"south": { "texture": "#divingsuit", "uv": [ 19.0, 5.5, 22.5, 7.0 ] },
-				"west": { "texture": "#divingsuit", "uv": [ 15.5, 5.5, 19.0, 7.0 ] }
-			}
 		}
 	],
 	"animations": [
@@ -1792,19 +1777,36 @@
 		},
 
 		{
-			"name": "Swim",
-			"code": "swim",
-			"quantityframes": 55,
+			"name": "SneakWalk",
+			"code": "sneakwalk",
+			"quantityframes": 40,
 			"onActivityStopped": "Rewind",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
 					"frame": 0,
 					"elements": {
-
+						"ArmorHelmet": { "offsetX": 0.4, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0 }
 					}
 				}
 			]
-		}
+		},
+
+		{
+			"name": "SneakIdle",
+			"code": "sneakidle",
+			"quantityframes": 35,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ArmorHelmet": { "offsetX": -0.2, "offsetY": 0.3, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.0 }
+					}
+				}
+			]
+		},
+
 	]
 }

@@ -4,8 +4,8 @@
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
 		"B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
 		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"D": { "type": "item", "code": "game:metalplate-brass" },
-		"E": { "type": "block", "code": "game:metal-parts", "quantity": 8 }
+		"D": { "type": "item", "code": "game:ingot-lead" },
+		"E": { "type": "block", "code": "game:metalpalte-brass", "quantity": 2 }
 	},
 	"width": 3,
 	"height": 3,

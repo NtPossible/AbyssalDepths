@@ -2,8 +2,8 @@
 	"ingredientPattern": "CBC,DGF,EAB",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 3 },
-		"B": { "type": "item", "code": "game:metalplate-steel", "quantity": 5 },
-		"C": { "type": "item", "code": "game:metalplate-brass", "quantity": 5 },
+		"B": { "type": "item", "code": "game:metalplate-steel", "quantity": 8 },
+		"C": { "type": "item", "code": "game:metalplate-brass", "quantity": 8 },
 		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"E": { "type": "item", "code": "game:jonasframes-gears02" },
 		"F": { "type": "item", "code": "game:jonasparts-tank01" },

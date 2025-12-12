@@ -9,7 +9,7 @@
    "attributesByType": {
     "divingsuit-*-mk1": {
       "abyssalDepths": {
-        "maxOxygen": 300000, // 5 minutes
+        "maxOxygen": 600000, // 10 minutes
         "safeDepth": 40,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"
@@ -17,7 +17,7 @@
     },
     "divingsuit-*-mk2": {
       "abyssalDepths": {
-        "maxOxygen": 900000, // 15 minutes
+        "maxOxygen": 1500000, // 25 minutes
         "safeDepth": 60,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"
@@ -25,7 +25,7 @@
     },
     "divingsuit-*-mk3": {
       "abyssalDepths": {
-        "maxOxygen": 1800000, // 30 minutes
+        "maxOxygen": 3000000, // 50 minutes
         "safeDepth": 999,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"

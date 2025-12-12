@@ -1,0 +1,40 @@
+[
+    {
+        "file": "usefultraders:patches/usefultrader-treasurehunter.json", 
+        "op": "addmerge",
+        "path": "/1/value",
+        "value":[
+            {"code": "abyssaldepths:ad-schematic-divinggear",
+                "type": "item",
+                "stacksize": 1,
+                "stock": {
+                    "avg": 1,
+                    "var": 0.25
+                },
+                "price": {
+                    "avg": 180,
+                    "var": 20
+                }
+            }
+        ]
+    },
+    {
+        "file": "usefultraders:patches/usefultrader-treasurehunter.json", 
+        "op": "addmerge",
+        "path": "/2/value",
+        "value":[
+            {"code": "abyssaldepths:ad-schematic-divinggear",
+                "type": "item",
+                "stacksize": 1,
+                "stock": {
+                    "avg": 1,
+                    "var": 0.25
+                },
+                "price": {
+                    "avg": 50,
+                    "var": 20
+                }
+            }
+        ]
+    }
+]

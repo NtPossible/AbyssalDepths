@@ -1,0 +1,12 @@
+{
+	"ingredientPattern": "S,O,P",
+	"ingredients": {
+		"S": { "type": "item", "code": "game:metalplate-steel"},
+		"P": { "type": "item", "code": "game:metalplate-brass"},
+		"O": { "type": "block", "code": "game:metal-parts", "quantity": 2 }
+	},
+	"width": 1,
+	"height": 3,
+	"name": "reinforcedplate",
+	"output": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 1 }
+}

@@ -9,7 +9,7 @@
         "name": "CombatOverhaul:Armor",
         "propertiesByType": {
           "*head*mk1*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Head", "Neck", "Face"],
             "Resists": {
               "PiercingAttack": 3,
@@ -26,7 +26,7 @@
             }
           },
           "*head*mk2*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Head", "Neck", "Face"],
             "Resists": {
               "PiercingAttack": 4,
@@ -43,12 +43,12 @@
             }
           },
           "*head*mk3*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Head", "Neck", "Face"],
             "Resists": {
-              "PiercingAttack": 11,
-              "SlashingAttack": 11,
-              "BluntAttack": 10
+              "PiercingAttack": 15,
+              "SlashingAttack": 16,
+              "BluntAttack": 12
             },
             "FlatReduction": {},
             "PlayerStats": {
@@ -60,7 +60,7 @@
             }
           },
           "*body*mk1*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Torso", "Arms", "Hands"],
             "Resists": {
               "PiercingAttack": 2,
@@ -77,7 +77,7 @@
             }
           },
           "*body*mk2*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Torso", "Arms", "Hands"],
             "Resists": {
               "PiercingAttack": 4,
@@ -94,12 +94,12 @@
             }
           },
           "*body*mk3*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Torso", "Arms", "Hands"],
             "Resists": {
-              "PiercingAttack": 11,
-              "SlashingAttack": 11,
-              "BluntAttack": 10
+              "PiercingAttack": 15,
+              "SlashingAttack": 16,
+              "BluntAttack": 12
             },
             "FlatReduction": {},
             "PlayerStats": {
@@ -111,7 +111,7 @@
             }
           },
           "*legs*mk1*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Legs", "Feet"],
             "Resists": {
               "PiercingAttack": 2,
@@ -128,7 +128,7 @@
             }
           },
           "*legs*mk2*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Legs", "Feet"],
             "Resists": {
               "PiercingAttack": 4,
@@ -145,12 +145,12 @@
             }
           },
           "*legs*mk3*": {
-            "Layers": ["Outer"],
+            "Layers": ["Outer", "Middle", "Skin"],
             "Zones": ["Legs", "Feet"],
             "Resists": {
-              "PiercingAttack": 11,
-              "SlashingAttack": 11,
-              "BluntAttack": 10
+              "PiercingAttack": 15,
+              "SlashingAttack": 16,
+              "BluntAttack": 12
             },
             "FlatReduction": {},
             "PlayerStats": {

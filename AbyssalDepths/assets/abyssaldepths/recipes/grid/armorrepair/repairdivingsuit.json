@@ -32,12 +32,11 @@
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	},
 	{
-		"ingredientPattern": "BL,PC",
+		"ingredientPattern": "B_,PC",
 		"recipeGroup": 2,
 		"ingredients": {
 			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk3", "legs-mk3", "body-mk3" ] },
-			"P": { "type": "item", "code": "game:metalplate-steel" },
-			"L": { "type": "item", "code": "game:metalplate-brass" },
+			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
 			"C": { "type": "item", "code": "abyssaldepths:waxedlinen" }
 		},
 		"width": 2,
@@ -49,3 +48,4 @@
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	}
 ]
+

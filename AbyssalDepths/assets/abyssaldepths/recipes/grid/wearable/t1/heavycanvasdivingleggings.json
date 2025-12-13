@@ -1,8 +1,8 @@
 {
-	"ingredientPattern": "AAA,BCB,D_D",
+	"ingredientPattern": "BAB,ACA,D_D",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
-		"B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
+		"B": { "type": "block", "code": "game:metal-parts", "quantity": 4 },
 		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"D": { "type": "item", "code": "game:ingot-lead" }
 	},

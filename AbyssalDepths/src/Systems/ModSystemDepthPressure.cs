@@ -50,12 +50,12 @@ namespace AbyssalDepths.src.Systems
 
         private static void ProcessPlayer(IServerWorldAccessor world, IPlayer player)
         {
-            if (player?.Entity is not EntityPlayer entity)
+            if (player?.Entity is not EntityPlayer entity || !entity.Alive)
             {
                 return;
             }
 
-            if (!entity.Alive || entity.ServerPos == null)
+            if (entity.World == null || entity.Properties == null)
             {
                 return;
             }

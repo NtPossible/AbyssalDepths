@@ -129,7 +129,11 @@ namespace AbyssalDepths.src.Systems
 
         private static void ApplyFullSuitOxygen(IPlayer player, JsonObject abyssalDepths)
         {
-            if (player.Entity is not EntityPlayer entity)
+            if (player?.Entity is not EntityPlayer entity || !entity.Alive)
+            {
+                return;
+            }
+            if (entity.SidedProperties?.Behaviors == null)
             {
                 return;
             }

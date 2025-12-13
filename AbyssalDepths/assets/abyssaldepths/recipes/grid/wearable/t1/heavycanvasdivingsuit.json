@@ -1,9 +1,10 @@
 {
-	"ingredientPattern": "ABA,ACA,AAA",
+	"ingredientPattern": "ABA,DCD,DAD",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
 		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"C": { "type": "item", "code": "game:ingot-copper", "quantity": 5 }
+		"C": { "type": "item", "code": "game:ingot-copper", "quantity": 5 },
+		"D": { "type": "block", "code": "game:metal-parts", "quantity": 4 }
 	},
 	"width": 3,
 	"height": 3,

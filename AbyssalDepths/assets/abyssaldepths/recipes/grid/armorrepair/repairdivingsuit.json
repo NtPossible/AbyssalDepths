@@ -12,7 +12,7 @@
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk1",
+		"name": "divingsuit mk1 repair",
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 },
 	{
@@ -28,7 +28,7 @@
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk2",
+		"name": "divingsuit mk2 repair",
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	},
 	{
@@ -45,7 +45,7 @@
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk3",
+		"name": "divingsuit mk3 repair",
 		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
 	}
 ]

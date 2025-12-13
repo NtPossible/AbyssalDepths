@@ -154,7 +154,7 @@
             },
             "FlatReduction": {},
             "PlayerStats": {
-              "walkspeed": -0.35,
+              "walkspeed": -0.40,
               "manipulationSpeed": 0,
               "steadyAim": 0,
               "healingeffectivness": -0.15,
@@ -211,4 +211,5 @@
     "value": { "*-body-*": 16 }
   }
 ]
+
 

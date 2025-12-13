@@ -145,7 +145,7 @@
       "divingsuit-*-mk3": {
         "rangedWeaponsAcc": -0.2,
         "rangedWeaponsSpeed": -0.3,
-        "walkSpeed": -0.22,
+        "walkSpeed": -0.18,
         "healingeffectivness": -0.35,
         "hungerrate": 0.3
       }

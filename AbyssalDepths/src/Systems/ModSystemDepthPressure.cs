@@ -12,20 +12,7 @@ namespace AbyssalDepths.src.Systems
     {
         private ICoreServerAPI? sapi;
 
-        // Depth thresholds
-        private const int depth20 = 20;
-        private const int depth40 = 40;
-        private const int depth60 = 60;
-
-        // Damage per second at each depth level
-        private const float damageDepth20 = 1f;
-        private const float damageDepth40 = 3f;
-        private const float damageDepth60 = 9000f;
-
-        // Suit durability loss per second in each depth level
-        private const int suitDamageDepth20 = 2;
-        private const int suitDamageDepth40 = 4;
-        private const int suitDamageDepth60 = 16;
+        private const int baseSafeDepth = 20;
 
         public override void StartServerSide(ICoreServerAPI api)
         {
@@ -65,20 +52,22 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            int waterDepth = GetWaterDepth(world, entity);
+            bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
+            int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth;
+            int waterDepth = GetWaterDepth(world, entity, effectiveSafeDepth);
             if (waterDepth <= 0)
             {
                 return;
             }
 
-            bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
-
-            if (hasFunctionalSuit && waterDepth <= safeDepth)
+            int depthOver = waterDepth - effectiveSafeDepth;
+            if (depthOver <= 0)
             {
                 return;
             }
 
-            GetDepthDamage(waterDepth, out float playerDamagePerSecond, out int suitDamagePerSecond);
+            int suitDamagePerSecond = hasFunctionalSuit ? GetSuitDamagePerSecond(depthOver) : 0;
+            float playerDamagePerSecond = GetPlayerDamagePerSecond(depthOver);
 
             // If the worn suit is beyond its safe depth, damage it first
             if (hasFunctionalSuit && waterDepth > safeDepth)
@@ -98,28 +87,31 @@ namespace AbyssalDepths.src.Systems
             ApplyPressureDamage(entity, playerDamagePerSecond);
         }
 
-        private static void GetDepthDamage(int waterDepth, out float playerDamagePerSecond, out int suitDamagePerSecond)
+        private static float GetDepthSeverity(int depthOver)
         {
-            if (waterDepth <= depth20)
+            if (depthOver <= 0)
             {
-                playerDamagePerSecond = 0f;
-                suitDamagePerSecond = 0;
+                return 0f;
             }
-            else if (waterDepth <= depth40)
+
+            // Gentle up to 10 over then ramps hard
+            if (depthOver <= 10)
             {
-                playerDamagePerSecond = damageDepth20;
-                suitDamagePerSecond = suitDamageDepth20;
+                return 0.3f * depthOver;
             }
-            else if (waterDepth <= depth60)
-            {
-                playerDamagePerSecond = damageDepth40;
-                suitDamagePerSecond = suitDamageDepth40;
-            }
-            else
-            {
-                playerDamagePerSecond = damageDepth60;
-                suitDamagePerSecond = suitDamageDepth60;
-            }
+
+            int past = depthOver - 10;
+            return 3f + past * 0.5f;
+        }
+
+        private static int GetSuitDamagePerSecond(int depthOver)
+        {
+            return (int)GetDepthSeverity(depthOver);
+        }
+
+        private static float GetPlayerDamagePerSecond(int depthOver)
+        {
+            return GetDepthSeverity(depthOver);
         }
 
         private static bool TryGetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
@@ -232,7 +224,7 @@ namespace AbyssalDepths.src.Systems
         }
 
         // checks a radius around the player's head for maximum water depth
-        private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity)
+        private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity, int effectiveSafeDepth)
         {
             IBlockAccessor blockAccessor = world.BlockAccessor;
 
@@ -253,6 +245,9 @@ namespace AbyssalDepths.src.Systems
 
             const int sampleRadius = 3;
 
+            // If we're way beyond safe depth precise suit damage scaling doesn't matter as much
+            const int depthOverScanCap = 80;
+            int scanStopDepth = effectiveSafeDepth + depthOverScanCap;
             for (int dx = -sampleRadius; dx <= sampleRadius; dx++)
             {
                 for (int dz = -sampleRadius; dz <= sampleRadius; dz++)
@@ -265,7 +260,7 @@ namespace AbyssalDepths.src.Systems
                     {
                         maxDepth = depth;
 
-                        if (maxDepth >= depth60)
+                        if (maxDepth >= scanStopDepth)
                         {
                             return maxDepth;
                         }

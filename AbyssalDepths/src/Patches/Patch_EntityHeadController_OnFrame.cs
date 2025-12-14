@@ -7,9 +7,10 @@ namespace AbyssalDepths.src.Patches
     [HarmonyPatch(typeof(EntityHeadController), "OnFrame")]
     public static class Patch_EntityHeadController_OnFrame
     {
+        static readonly AccessTools.FieldRef<EntityHeadController, EntityAgent> entityRef = AccessTools.FieldRefAccess<EntityHeadController, EntityAgent>("entity");
         static void Postfix(EntityHeadController __instance)
         {
-            EntityAgent? entityAgent = Traverse.Create(__instance).Field("entity").GetValue<EntityAgent>();
+            EntityAgent? entityAgent = entityRef(__instance);
             if (entityAgent is not EntityPlayer entityPlayer)
             {
                 return;

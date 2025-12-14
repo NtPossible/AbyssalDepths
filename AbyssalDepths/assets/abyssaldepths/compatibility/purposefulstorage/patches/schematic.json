@@ -1,0 +1,10 @@
+[
+  {
+    "file": "purposefulstorage:config/restrictions/general/schematics.json",
+    "op": "addmerge",
+    "path": "/CollectibleCodes",
+    "side": "server",
+    "value": [ "abyssaldepths:ad-schematic-*" ],
+    "dependsOn": [ { "modid": "purposefulstorage" } ]
+  }
+]

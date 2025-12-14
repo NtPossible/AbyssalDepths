@@ -8,6 +8,8 @@ namespace AbyssalDepths.src.Patches
     public static class Patch_EntityHeadController_OnFrame
     {
         static readonly AccessTools.FieldRef<EntityHeadController, EntityAgent> entityRef = AccessTools.FieldRefAccess<EntityHeadController, EntityAgent>("entity");
+
+        // Head clips through mk3 helmet without this patch
         static void Postfix(EntityHeadController __instance)
         {
             EntityAgent? entityAgent = entityRef(__instance);

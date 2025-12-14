@@ -8,26 +8,7 @@ namespace AbyssalDepths.src.Patches
     [HarmonyPatch(typeof(EntityAgent), "OnGameTick")]
     public static class Patch_EntityAgent_OnGameTick
     {
-        static void Prefix(EntityAgent __instance)
-        {
-            if (__instance is not EntityPlayer entityPlayer)
-            {
-                return;
-            }
-
-            SyncedTreeAttribute attribute = entityPlayer.WatchedAttributes;
-            if (attribute == null || !attribute.GetBool("abyssalDepthsDisableSwim"))
-            {
-                return;
-            }
-
-            // diving suits should never swim
-            if (entityPlayer.Swimming)
-            {
-                entityPlayer.Swimming = false;
-            }
-        }
-
+        // Sink the player faster when wearing a diving suit and in liquid
         static void Postfix(EntityAgent __instance, float dt)
         {
             if (__instance is not EntityPlayer entityPlayer)
@@ -51,7 +32,6 @@ namespace AbyssalDepths.src.Patches
                 return;
             }
 
-            // sink the player faster when wearing a diving suit
             EntityPos pos = entityPlayer.SidedPos;
 
             double velocityY = pos.Motion.Y;

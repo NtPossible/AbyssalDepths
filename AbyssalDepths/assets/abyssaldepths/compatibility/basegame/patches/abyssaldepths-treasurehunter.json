@@ -1,0 +1,40 @@
+[
+    {
+        "file": "game:config/tradelists/trader-treasurehunter.json", 
+        "op": "addmerge",
+        "path": "/selling/list",
+        "value":[
+            {"code": "abyssaldepths:ad-schematic-divinggear",
+                "type": "item",
+                "stacksize": 1,
+                "stock": {
+                    "avg": 1,
+                    "var": 0.25
+                },
+                "price": {
+                    "avg": 180,
+                    "var": 20
+                }
+            }
+        ]
+    },
+    {
+        "file": "game:config/tradelists/trader-treasurehunter.json", 
+        "op": "addmerge",
+        "path": "/buying/list",
+        "value":[
+            {"code": "abyssaldepths:ad-schematic-divinggear",
+                "type": "item",
+                "stacksize": 1,
+                "stock": {
+                    "avg": 1,
+                    "var": 0.25
+                },
+                "price": {
+                    "avg": 50,
+                    "var": 20
+                }
+            }
+        ]
+    }
+]

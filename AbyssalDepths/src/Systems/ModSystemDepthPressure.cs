@@ -271,6 +271,7 @@ namespace AbyssalDepths.src.Systems
             return maxDepth;
         }
 
+        // Measures how much water is above a position, stopping at open air or flowing water that is not enclosed.
         private static int GetColumnWaterDepth(IBlockAccessor blockAccessor, int x, int z, int startY, int maxY, BlockPos reusablePos)
         {
             int depth = 0;
@@ -286,9 +287,49 @@ namespace AbyssalDepths.src.Systems
                 }
 
                 depth++;
+
+                // Stop at a real surface
+                reusablePos.Set(x, y + 1, z);
+                Block above = blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid);
+                if (above == null || !above.IsLiquid())
+                {
+                    break;
+                }
+
+                // Stop if the water is open to air on multiple sides (e.g. waterfalls)
+                if (IsExposedToAir(blockAccessor, x, y, z, reusablePos))
+                {
+                    break;
+                }
             }
 
             return depth;
+        }
+
+        // Checks whether a water block is open to air on enough sides to prevent pressure buildup.
+        private static bool IsExposedToAir(IBlockAccessor blockAccessor, int x, int y, int z, BlockPos reusablePos)
+        {
+            reusablePos.Set(x + 1, y, z);
+            if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
+            {
+                return true;
+            }
+            reusablePos.Set(x - 1, y, z);
+            if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
+            {
+                return true;
+            }
+            reusablePos.Set(x, y, z + 1);
+            if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
+            {
+                return true;
+            }
+            reusablePos.Set(x, y, z - 1);
+            if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
+            {
+                return true;
+            }
+            return false;
         }
 
         private static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string tier)

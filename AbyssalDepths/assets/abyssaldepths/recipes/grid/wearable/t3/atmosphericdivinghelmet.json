@@ -1,7 +1,7 @@
 {
 	"ingredientPattern": "BBB,DGF,EA_",
 	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 3 },
+		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
 		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
 		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"E": { "type": "item", "code": "game:jonasframes-gears02" },

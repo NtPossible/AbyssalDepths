@@ -1,7 +1,7 @@
 {
 	"ingredientPattern": "DEF,BAB,BAB",
 	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:waxedlinen" , "quantity": 3 },
+		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
 		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 4 },
 		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"E": { "type": "item", "code": "game:jonasframes-oscillator01" },

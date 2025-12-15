@@ -37,7 +37,7 @@
 		"ingredients": {
 			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk3", "legs-mk3", "body-mk3" ] },
 			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
-			"C": { "type": "item", "code": "abyssaldepths:waxedlinen" }
+			"C": { "type": "item", "code": "abyssaldepths:waxedcloth" }
 		},
 		"width": 2,
 		"height": 2,

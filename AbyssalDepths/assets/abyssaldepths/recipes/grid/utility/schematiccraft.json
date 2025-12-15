@@ -1,0 +1,15 @@
+{
+	"ingredientPattern": "AB,CD,E_",
+	"ingredients": {
+		"A": { "type": "item", "code": "game:paper-parchment" },
+		"B": { "type": "item", "code": "game:inkandquill" },
+		"C": { "type": "item", "code": "game:cloth-{color}" },
+		"D": { "type": "item", "code": "game:beeswax" }, 
+		"E": { "type": "item", "code": "game:ingot-brass" } 
+	},
+	"shapeless": true,
+	"width": 2,
+	"height": 3,
+	"name": "adschematiccraft",
+	"output": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" }
+}

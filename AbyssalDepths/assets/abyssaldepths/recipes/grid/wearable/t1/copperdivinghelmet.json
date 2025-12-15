@@ -5,7 +5,7 @@
 		"B": { "type": "item", "code": "game:metalplate-copper", "quantity":  2 },
 		"C": { "type": "block", "code": "game:glassslab-plain-down-free" },
 		"D": { "type": "block", "code": "game:metal-parts", "quantity": 8 },
-		"E": { "type": "item", "code": "abyssaldepths:waxedlinen" },
+		"E": { "type": "item", "code": "abyssaldepths:waxedcloth" },
 		"F": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } }
 	},
 	"width": 3,

@@ -200,6 +200,12 @@ namespace AbyssalDepths.src.Systems
             {
                 return;
             }
+
+            if (slot.Itemstack?.Item?.GetRemainingDurability(slot.Itemstack) <= 0)
+            {
+                return;
+            }
+
             string? bodypart = slot.Itemstack?.Item?.Variant?["bodypart"];
             string? suitTier = slot.Itemstack?.Item?.Variant?["tier"];
 

@@ -8,7 +8,7 @@
     "AladarCZ"
   ],
   "description": "Adds content to explore the deep ocean",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "game": "1.21.5"
   }

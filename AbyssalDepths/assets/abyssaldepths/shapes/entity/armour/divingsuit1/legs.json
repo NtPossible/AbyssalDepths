@@ -1,7 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "assets/game/shapes/entity/humanoid/seraph-hairless",
-		"collapsedPaths": "Root/ArmorLowerArmL,Root/ArmorUpperLegR,Root/ArmorLowerTorso,Root/ArmorLowerLegR,Root/ArmorLowerLegL,Root/ArmorLowerArmR,Root/ArmorHelmet,Root/ArmorUpperLegL",
+		"backDropShape": "entity/humanoid/seraph-hairless",
 		"allAngles": true,
 		"entityTextureMode": true
 	},

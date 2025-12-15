@@ -1,7 +1,6 @@
 {
 	"editor": {
 		"backDropShape": "entity/humanoid/seraph-hairless",
-		"collapsedPaths": "",
 		"allAngles": true,
 		"entityTextureMode": true
 	},

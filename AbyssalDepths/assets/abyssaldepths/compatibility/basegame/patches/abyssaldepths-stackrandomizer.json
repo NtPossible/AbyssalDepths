@@ -1,30 +1,26 @@
 [
-    { "file": "game:itemtypes/meta/stackrandomizer.json", 
-        "op": "addmerge",
-        "path": "/attributesByType/*-resource/stacks",
-        "value": [
-				{ "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 1 }
-                ]
-    },
-	    { "file": "game:itemtypes/meta/stackrandomizer.json", 
-        "op": "addmerge",
-        "path": "/attributesByType/*-accessory-lowstatus/stacks",
-        "value": [
-				{ "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.25 }
-                ]
-    },
-	    { "file": "game:itemtypes/meta/stackrandomizer.json", 
-        "op": "addmerge",
-        "path": "/attributesByType/*-accessory-mediumstatus/stacks",
-        "value": [
-				{ "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.35 }
-                ]
+  {
+    "file": "game:itemtypes/meta/stackrandomizer.json", 
+    "op": "addmerge",
+    "path": "/attributesByType/*-resource/stacks",
+    "value": [ { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 1 } ]
+  },
+  { 
+    "file": "game:itemtypes/meta/stackrandomizer.json", 
+    "op": "addmerge",
+    "path": "/attributesByType/*-accessory-lowstatus/stacks",
+    "value": [ { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.25 } ]
+  },
+  { 
+    "file": "game:itemtypes/meta/stackrandomizer.json", 
+    "op": "addmerge",
+    "path": "/attributesByType/*-accessory-mediumstatus/stacks",
+    "value": [ { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.35 } ]
 	},
-		{ "file": "game:itemtypes/meta/stackrandomizer.json", 
-        "op": "addmerge",
-        "path": "/attributesByType/*-accessory-highstatus/stacks",
-        "value": [
-				{ "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.5 }
-                ]
-	},
+  { 
+    "file": "game:itemtypes/meta/stackrandomizer.json", 
+    "op": "addmerge",
+    "path": "/attributesByType/*-accessory-highstatus/stacks",
+    "value": [ { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "chance": 0.5 } ]
+	}
 ]

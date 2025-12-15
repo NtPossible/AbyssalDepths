@@ -4,40 +4,40 @@
     "op": "replace",
     "path": "/ingredients",
     "value":
-	{
-		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
-		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 1 },
-		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"E": { "type": "item", "code": "game:jonasframes-gears02" },
-		"F": { "type": "item", "code": "game:jonasparts-tank01" },
-		"G": { "type": "block", "code": "game:glassslab-plain-down-free" }
-	}
+			{
+				"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
+				"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 1 },
+				"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+				"E": { "type": "item", "code": "game:jonasframes-gears02" },
+				"F": { "type": "item", "code": "game:jonasparts-tank01" },
+				"G": { "type": "block", "code": "game:glassslab-plain-down-free" }
+			}
   },
   {
     "file": "abyssaldepths:recipes/grid/wearable/t3/atmosphericdivingsuit",
     "op": "replace",
     "path": "/ingredients",
     "value":
-	{
-		"A": { "type": "item", "code": "abyssaldepths:waxedcloth", "quantity": 8 },
-		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
-		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"E": { "type": "item", "code": "game:jonasframes-spring01" },
-		"F": { "type": "item", "code": "game:jonasframes-joint01" }
-	}
+			{
+				"A": { "type": "item", "code": "abyssaldepths:waxedcloth", "quantity": 8 },
+				"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
+				"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+				"E": { "type": "item", "code": "game:jonasframes-spring01" },
+				"F": { "type": "item", "code": "game:jonasframes-joint01" }
+			}
   },
   {
     "file": "abyssaldepths:recipes/grid/wearable/t3/atmosphericdivingleggings",
     "op": "replace",
     "path": "/ingredients",
     "value":
-	{
-		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 5 },
-		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
-		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"E": { "type": "item", "code": "game:jonasframes-oscillator01" },
-		"F": { "type": "item", "code": "game:jonasframes-joint01" }
-	}
+			{
+				"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 5 },
+				"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
+				"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+				"E": { "type": "item", "code": "game:jonasframes-oscillator01" },
+				"F": { "type": "item", "code": "game:jonasframes-joint01" }
+			}
   }
 ]
 

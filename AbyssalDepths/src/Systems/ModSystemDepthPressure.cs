@@ -12,8 +12,6 @@ namespace AbyssalDepths.src.Systems
     {
         private ICoreServerAPI? sapi;
 
-        private const int baseSafeDepth = 20;
-
         public override void StartServerSide(ICoreServerAPI api)
         {
             sapi = api;
@@ -37,6 +35,11 @@ namespace AbyssalDepths.src.Systems
 
         private static void ProcessPlayer(IServerWorldAccessor world, IPlayer player)
         {
+            if (!AbyssalDepthsModSystem.Config.EnablePressure)
+            {
+                return;
+            }
+
             if (player?.Entity is not EntityPlayer entity || !entity.Alive)
             {
                 return;
@@ -53,7 +56,8 @@ namespace AbyssalDepths.src.Systems
             }
 
             bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
-            int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth;
+            int baseSafeDepth = AbyssalDepthsModSystem.Config.BaseSafeDepth;
+            int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth; 
             int waterDepth = GetWaterDepth(world, entity, effectiveSafeDepth);
             if (waterDepth <= 0)
             {

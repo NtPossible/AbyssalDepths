@@ -1,5 +1,5 @@
 {
-	"ingredientPattern": "ABA,DCD,DAD",
+	"ingredientPattern": "ABA,ACA,DAD",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
 		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },

@@ -1,11 +1,10 @@
 {
-  "ingredientPattern": "A__,B__,C__",
+  "ingredientPattern": "A,B",
   "ingredients": {
-    "A": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}", "name": "color" },
-    "B": { "type": "item", "code": "game:beeswax", "quantity": 2 },
-    "C": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+    "A": { "type": "item", "code": "abyssaldepths:sealedheavycanvas-{color}", "name": "color" },
+    "B": { "type": "item", "code": "abyssaldepths:waxedcloth" }
   },
-  "width": 3,
-  "height": 3,
+  "width": 1,
+  "height": 2,
   "output": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}" }
 }

@@ -1,11 +1,27 @@
-{
-  "ingredientPattern": "A__,B__,A__",
-  "ingredients": {
-    "A": { "type": "item", "code": "abyssaldepths:treatedheavyweave-{color}", "name": "color" },
-    "B": { "type": "item", "code": "game:beeswax", "quantity": 2 }
+[
+  {
+    "ingredientPattern": "AB",
+    "ingredients": {
+      "A": { "type": "item", "code": "game:cloth-{color}", "name": "color", "quantity": 3 },
+      "B": { "type": "item", "code": "game:flaxtwine", "quantity": 2 }
+    },
+    "allowedVariants": { "color": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
+    "width": 2,
+    "height": 1,
+    "output": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}" }
   },
-  "shapeless": true,
-  "width": 3,
-  "height": 3,
-  "output": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}" }
-}
+  {
+    "ingredientPattern": "AB",
+    "ingredients": {
+      "A": { "type": "item", "code": "game:cloth-{color}", "name": "color", "quantity": 3 },
+      "B": { "type": "item", "code": "game:flaxtwine" }
+    },
+    "allowedVariants": {
+      "color": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"]
+    },
+    "width": 2,
+    "height": 1,
+    "requiresTrait": "clothier",
+    "output": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}" }
+  }
+ ]

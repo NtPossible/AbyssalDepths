@@ -1,0 +1,10 @@
+{
+  "ingredientPattern": "AB",
+  "ingredients": {
+    "A": { "type": "item", "code": "abyssaldepths:treatedheavycanvas-{color}", "name": "color" },
+    "B": { "type": "item", "code": "game:beeswax" }
+  },
+  "width": 2,
+  "height": 1,
+  "output": { "type": "item", "code": "abyssaldepths:sealedheavycanvas-{color}" }
+}

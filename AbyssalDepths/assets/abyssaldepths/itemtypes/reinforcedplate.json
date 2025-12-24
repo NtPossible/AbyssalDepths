@@ -11,7 +11,7 @@
 			"stackingTextures": {
 				"metal": "block/metal/plate/reinforced",
 			},
-			"collisionBox": { x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.0625, z2: 0.875 },
+			"collisionBox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.0625, "z2": 0.875 },
 			"cbScaleYByLayer": 1,
 			"modelItemsToStackSizeRatio": 1,
 			"stackingCapacity": 16,
@@ -20,8 +20,8 @@
 		}
 		}
 	],
-	"shape": { base: "game:item/plate" },
-	"texture": { base: "block/metal/plate/reinforced" },
+	"shape": { "base": "game:item/plate" },
+	"texture": { "base": "block/metal/plate/reinforced" },
 	"attributes": {
 		"clothingRepairStrength": 0.5,
 		"displaycaseable": true,
@@ -40,26 +40,26 @@
 	"maxstacksize": 8,
 	"materialDensity": 10520,
 	"fpHandTransform": {
-		"translation": { x: -0.35, y: -0.15, z: 0 },
-		"rotation": { x: 0, y: 0, z: 79 },
+		"translation": { "x": -0.35, "y": -0.15, "z": 0 },
+		"rotation": { "x": 0, "y": 0, "z": 79 },
 		"scale": 1.8
 	},
 	"guiTransform": {
-		"translation": { x: 3, y: 0, z: 0 },
-		"rotation": { x: -30, y: -44, z: -180 },
-		"origin": { x: 0.5, y: 0.0625, z: 0.5 },
+		"translation": { "x": 3, "y": 0, "z": 0 },
+		"rotation": { "x": -30, "y": -44, "z": -180 },
+		"origin": { "x": 0.5, "y": 0.0625, "z": 0.5 },
 		"scale": 1.85
 	},
 	"groundTransform": {
-		"translation": { x: 0, y: 0, z: 0 },
-		"rotation": { x: 0, y: 90, z: 0 },
-		"origin": { x: 0.5, y: 0, z: 0.5 },
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 0, "y": 90, "z": 0 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
 		"scale": 3.31
 	},
 	"tpHandTransform": {
-		"translation": { x: -0.7, y: 0.1, z: -0.53 },
-		"rotation": { x: 94, y: 0, z: 0 },
-		"origin": { x: 0.5, y: 0.1, z: 0.5 },
+		"translation": { "x": -0.7, "y": 0.1, "z": -0.53 },
+		"rotation": { "x": 94, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
 		"scale": 0.75
 	}
 }

@@ -7,5 +7,5 @@
   "shapeless": true,
   "width": 3,
   "height": 3,
-  "output": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}", "quantity": 1 }
+  "output": { "type": "item", "code": "abyssaldepths:heavycanvas-{color}" }
 }

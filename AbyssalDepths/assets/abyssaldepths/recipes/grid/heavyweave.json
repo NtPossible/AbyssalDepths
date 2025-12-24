@@ -9,7 +9,7 @@
     "shapeless": true,
     "width": 2,
     "height": 1,
-    "output": { "type": "item", "code": "abyssaldepths:heavyweave-{color}", "quantity": 1 }
+    "output": { "type": "item", "code": "abyssaldepths:heavyweave-{color}" }
   },
   {
     "ingredientPattern": "AB",
@@ -24,11 +24,7 @@
     "width": 2,
     "height": 1,
     "requiresTrait": "clothier",
-    "output": {
-      "type": "item",
-      "code": "abyssaldepths:heavyweave-{color}",
-      "quantity": 1
-    }
+    "output": { "type": "item", "code": "abyssaldepths:heavyweave-{color}" }
   }
 
 ]

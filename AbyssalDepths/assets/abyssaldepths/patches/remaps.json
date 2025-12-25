@@ -1,0 +1,34 @@
+[
+  {
+    "op": "addmerge",
+    "file": "game:config/remaps.json",
+    "path": "/game:v1.21.0-abyssaldepths-cloth-rework",
+    "value": [
+      "/iir remapq abyssaldepths:treatedheavycanvas-plain abyssaldepths:heavyweave-plain force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-blue abyssaldepths:heavyweave-blue force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-red abyssaldepths:heavyweave-red force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-yellow abyssaldepths:heavyweave-yellow force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-green abyssaldepths:heavyweave-green force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-purple abyssaldepths:heavyweave-purple force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-pink abyssaldepths:heavyweave-pink force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-orange abyssaldepths:heavyweave-orange force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-brown abyssaldepths:heavyweave-brown force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-gray abyssaldepths:heavyweave-gray force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-black abyssaldepths:heavyweave-black force",
+      "/iir remapq abyssaldepths:treatedheavycanvas-white abyssaldepths:heavyweave-white force",
+
+      "/iir remapq abyssaldepths:sealedheavycanvas-plain abyssaldepths:treatedheavyweave-plain force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-blue abyssaldepths:treatedheavyweave-blue force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-red abyssaldepths:treatedheavyweave-red force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-yellow abyssaldepths:treatedheavyweave-yellow force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-green abyssaldepths:treatedheavyweave-green force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-purple abyssaldepths:treatedheavyweave-purple force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-pink abyssaldepths:treatedheavyweave-pink force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-orange abyssaldepths:treatedheavyweave-orange force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-brown abyssaldepths:treatedheavyweave-brown force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-gray abyssaldepths:treatedheavyweave-gray force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-black abyssaldepths:treatedheavyweave-black force",
+      "/iir remapq abyssaldepths:sealedheavycanvas-white abyssaldepths:treatedheavyweave-white force"
+    ]
+  }
+]

@@ -4,10 +4,10 @@
 		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
 		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 4 },
 		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"E": { "type": "item", "code": "game:jonasframes-oscillator01" },
+		"E": { "type": "item", "code": "game:metalplate-cupronickel", "quantity": 3 },
 		"F": { "type": "item", "code": "game:jonasframes-joint01" }
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-mk3" }
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-plain-mk3" }
 }

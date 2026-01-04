@@ -4,6 +4,7 @@
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "bodypart", "states": ["head", "body", "legs"] },
+    { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
    "attributesByType": {
@@ -33,21 +34,22 @@
     }
   },
   "shapeByType": {
-    "divingsuit-head-mk1": { "base": "entity/armour/divingsuit1/head" },
-    "divingsuit-body-mk1": { "base": "entity/armour/divingsuit1/body" },
-    "divingsuit-legs-mk1": { "base": "entity/armour/divingsuit1/legs" },
+    "divingsuit-head-*-mk1": { "base": "entity/armour/divingsuit1/head" },
+    "divingsuit-body-*-mk1": { "base": "entity/armour/divingsuit1/body" },
+    "divingsuit-legs-*-mk1": { "base": "entity/armour/divingsuit1/legs" },
 
-    "divingsuit-head-mk2": { "base": "entity/armour/divingsuit2/head" },
-    "divingsuit-body-mk2": { "base": "entity/armour/divingsuit2/body" },
-    "divingsuit-legs-mk2": { "base": "entity/armour/divingsuit2/legs" },
+    "divingsuit-head-*-mk2": { "base": "entity/armour/divingsuit2/head" },
+    "divingsuit-body-*-mk2": { "base": "entity/armour/divingsuit2/body" },
+    "divingsuit-legs-*-mk2": { "base": "entity/armour/divingsuit2/legs" },
 
-    "divingsuit-head-mk3": { "base": "entity/armour/divingsuit3/head" },
-    "divingsuit-body-mk3": { "base": "entity/armour/divingsuit3/body" },
-    "divingsuit-legs-mk3": { "base": "entity/armour/divingsuit3/legs" }
+    "divingsuit-head-*-mk3": { "base": "entity/armour/divingsuit3/head" },
+    "divingsuit-body-*-mk3": { "base": "entity/armour/divingsuit3/body" },
+    "divingsuit-legs-*-mk3": { "base": "entity/armour/divingsuit3/legs" }
   },
   "texturesByType": {
     "*": {
-      "seraph": { "base": "game:block/transparent" }
+      "seraph": { "base": "game:block/transparent" },
+      "cloth": { "base": "game:block/cloth/linen/{color}" }
     }
   },
   "storageFlags": 128,
@@ -152,9 +154,45 @@
     }
   },
   "creativeinventory": {
-    "general": ["*"],
-    "items": ["*"],
-    "clothing": ["*"]
+    "general": [
+      "divingsuit-body-*-mk1",
+      "divingsuit-legs-*-mk1",
+      "divingsuit-body-*-mk2",
+      "divingsuit-legs-*-mk2",
+
+      "divingsuit-head-plain-mk1",
+      "divingsuit-head-plain-mk2",
+
+      "divingsuit-head-plain-mk3",
+      "divingsuit-body-plain-mk3",
+      "divingsuit-legs-plain-mk3"
+    ],
+    "items": [
+      "divingsuit-body-*-mk1",
+      "divingsuit-legs-*-mk1",
+      "divingsuit-body-*-mk2",
+      "divingsuit-legs-*-mk2",
+
+      "divingsuit-head-plain-mk1",
+      "divingsuit-head-plain-mk2",
+
+      "divingsuit-head-plain-mk3",
+      "divingsuit-body-plain-mk3",
+      "divingsuit-legs-plain-mk3"
+    ],
+    "clothing": [
+      "divingsuit-body-*-mk1",
+      "divingsuit-legs-*-mk1",
+      "divingsuit-body-*-mk2",
+      "divingsuit-legs-*-mk2",
+
+      "divingsuit-head-plain-mk1",
+      "divingsuit-head-plain-mk2",
+
+      "divingsuit-head-plain-mk3",
+      "divingsuit-body-plain-mk3",
+      "divingsuit-legs-plain-mk3"
+    ]
   },
   "renderAlphaTest": 0.25,
   "durabilityByType": {

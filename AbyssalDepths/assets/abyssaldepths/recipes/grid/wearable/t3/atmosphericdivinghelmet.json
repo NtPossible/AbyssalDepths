@@ -1,14 +1,15 @@
 {
-	"ingredientPattern": "BBB,DGF,EA_",
+	"ingredientPattern": "BBB,DGF,EAH",
 	"ingredients": {
 		"A": { "type": "item", "code": "abyssaldepths:waxedcloth" , "quantity": 3 },
 		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 2 },
 		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
 		"E": { "type": "item", "code": "game:jonasframes-gears02" },
 		"F": { "type": "item", "code": "game:jonasparts-tank01" },
-		"G": { "type": "block", "code": "game:glassslab-plain-down-free" }
+		"G": { "type": "block", "code": "game:glassslab-plain-down-free" },
+	  "H": { "type": "item", "code": "game:metalplate-cupronickel", "quantity": 3 }
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-mk3" }
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-plain-mk3" }
 }

@@ -8,5 +8,5 @@
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-mk2" }
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-{color}-mk2" }
 }

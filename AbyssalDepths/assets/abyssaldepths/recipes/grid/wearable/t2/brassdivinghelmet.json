@@ -10,5 +10,5 @@
 	},
 	"width": 3,
 	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-mk2" }
+	"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-plain-mk2" }
 }

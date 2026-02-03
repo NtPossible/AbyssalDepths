@@ -75,26 +75,26 @@
   },
   "tpHandTransformByType": {
     "*": {
-    translation: { x: -1, y: -0.5, z: -0 },
-    rotation: { x: -180, y: -29, z: -94 },
-    origin: { x: 0.5, y: 0.7, z: 0.5 },
-    scale: 0.74
+    "translation": { "x": -1, "y": -0.5, "z": -0 },
+    "rotation": { "x": -180, "y": -29, "z": -94 },
+    "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
+    "scale": 0.74
     }
   },
   "guiTransformByType": {
     "*": {
-    translation: { x: -7, y: -21, z: 0 },
-    rotation: { x: -50, y: -48, z: -179 },
-    origin: { x: 0.5, y: 0.6, z: 0.5 },
-    scale: 1.56
+    "translation": { "x": -7, "y": -21, "z": 0 },
+    "rotation": { "x": -50, "y": -48, "z": -179 },
+    "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
+    "scale": 1.56
     }
   },
   "groundTransformByType": {
     "*": {
-    translation: { x: -0.1, y: 0.65, z: -0.4 },
-    rotation: { x: 0, y: -52, z: -8 },
-    origin: { x: 0.34, y: 1.12, z: 0.5 },
-    scale: 3.1
+    "translation": { "x": -0.1, "y": 0.65, "z": -0.4 },
+    "rotation": { "x": 0, "y": -52, "z": -8 },
+    "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
+    "scale": 3.1
     }
   }
 }

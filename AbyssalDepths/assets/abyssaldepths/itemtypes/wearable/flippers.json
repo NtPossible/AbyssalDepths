@@ -1,0 +1,100 @@
+{
+  "code": "flippers",
+  "class": "ItemWearable",
+  "heldTpIdleAnimation": "holdunderarm",
+  "variantgroups": [
+    { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
+    { "code": "level", "states": ["mk1", "mk2", "mk3"] }
+  ],
+  "shapeByType": {
+    "*": { "base": "entity/armour/flippers/flippers-{level}" }
+  },
+  "texturesByType": {
+    "*mk1": {
+      "seraph": { "base": "game:block/transparent" },
+      "wood": { "base": "game:block/wood/planks/{wood}3" }
+    },
+    "*mk2": {
+      "seraph": { "base": "game:block/transparent" },
+      "wood": { "base": "game:block/wood/planks/{wood}3" },
+      "leather": { "base": "game:block/leather/plain" }
+    },
+    "*mk3": {
+      "seraph": { "base": "game:block/transparent" },
+      "wood": { "base": "game:block/wood/planks/{wood}3" },
+      "leather": { "base": "game:block/leather/chromium" }
+    }
+  },
+  "storageFlags": 128,
+  "attributes": {
+    "handbook": {
+      "groupBy": ["flippers-{wood}-{level}-*"]
+    },
+    "wearableAttachment": true,
+    "visibleDamageEffect": true,
+    "clothesCategoryByType": {
+      "*": "armorlegs"
+    },
+    "defaultProtLoss": {
+      "perTierRelativeProtectionLoss": [0.03, 0.15],
+      "perTierFlatDamageReductionLoss": [0.1, 0.2]
+    },
+    "footStepSoundByType": {
+    },
+    "protectionModifiersByType": {
+      "*": {
+        "relativeProtection": 0.2,
+        "flatDamageReduction": 0.5,
+        "protectionTier": 2,
+        "perTierRelativeProtectionLoss": [0.015, 0.075],
+        "perTierFlatDamageReductionLoss": [0.05, 0.1]
+      }
+    },
+    "statModifiersByType": {
+      "*": {
+        "walkSpeed": -0.1
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "renderAlphaTest": 0.25,
+  "durabilityByType": {
+    "*mk1": 1500,
+    "*mk2": 2000,
+    "*mk3": 5500
+  },
+  "fpHandTransformByType": {
+    "*": {
+      "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
+      "rotation": { "x": 163, "y": -111, "z": -180 },
+      "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
+      "scale": 2.15
+    }
+  },
+  "tpHandTransformByType": {
+    "*": {
+    translation: { x: -1, y: -0.5, z: -0 },
+    rotation: { x: -180, y: -29, z: -94 },
+    origin: { x: 0.5, y: 0.7, z: 0.5 },
+    scale: 0.74
+    }
+  },
+  "guiTransformByType": {
+    "*": {
+    translation: { x: -7, y: -21, z: 0 },
+    rotation: { x: -50, y: -48, z: -179 },
+    origin: { x: 0.5, y: 0.6, z: 0.5 },
+    scale: 1.56
+    }
+  },
+  "groundTransformByType": {
+    "*": {
+    translation: { x: -0.1, y: 0.65, z: -0.4 },
+    rotation: { x: 0, y: -52, z: -8 },
+    origin: { x: 0.34, y: 1.12, z: 0.5 },
+    scale: 3.1
+    }
+  }
+}

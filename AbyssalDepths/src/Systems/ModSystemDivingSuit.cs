@@ -249,7 +249,6 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-
             float baseMax = GetDefaultPlayerOxygen(entity);
             if (!NearlyEqual(breathe.MaxOxygen, baseMax))
             {

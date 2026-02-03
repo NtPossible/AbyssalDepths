@@ -1,0 +1,136 @@
+[
+	{
+		"ingredientPattern": "_B_,A_A",
+		"ingredients": {
+			"A": {
+				"type": "item",
+				"code": "game:plank-*",
+				"name": "wood",
+				"allowedVariants": [
+					"acacia",
+					"baldcypress",
+					"birch",
+					"ebony",
+					"kapok",
+					"larch",
+					"maple",
+					"oak",
+					"pine",
+					"purpleheart",
+					"redwood",
+					"walnut"
+				],
+				"quantity": 4
+			},
+			"B": {
+				"type": "item",
+				"code": "game:saw-*",
+				"isTool": true,
+				"toolDurabilityCost": 25
+			}
+		},
+		"width": 3,
+		"height": 2,
+		"output": {
+			"type": "item",
+			"code": "abyssaldepths:flippers-{wood}-mk1"
+		}
+	},
+	{
+		"ingredientPattern": "_B_,ACA",
+		"ingredients": {
+			"A": {
+				"type": "item",
+				"code": "game:plank-*",
+				"name": "wood",
+				"allowedVariants": [
+					"acacia",
+					"baldcypress",
+					"birch",
+					"ebony",
+					"kapok",
+					"larch",
+					"maple",
+					"oak",
+					"pine",
+					"purpleheart",
+					"redwood",
+					"walnut"
+				],
+				"quantity": 4
+			},
+			"B": {
+				"type": "item",
+				"code": "game:saw-*",
+				"isTool": true,
+				"toolDurabilityCost": 50
+			},
+			"C": {
+				"type": "item",
+				"code": "game:leather-normal-plain",
+				"quantity": 4
+			}
+		},
+		"width": 3,
+		"height": 2,
+		"output": {
+			"type": "item",
+			"code": "abyssaldepths:flippers-{wood}-mk2"
+		}
+	},
+	{
+		"ingredientPattern": "B_D,ACA",
+		"ingredients": {
+			"A": {
+				"type": "item",
+				"code": "game:plank-*",
+				"name": "wood",
+				"allowedVariants": [
+					"acacia",
+					"baldcypress",
+					"birch",
+					"ebony",
+					"kapok",
+					"larch",
+					"maple",
+					"oak",
+					"pine",
+					"purpleheart",
+					"redwood",
+					"walnut"
+				],
+				"quantity": 8
+			},
+			"B": {
+				"type": "item",
+				"code": "game:saw-*",
+				"isTool": true,
+				"toolDurabilityCost": 100
+			},
+			"C": {
+				"type": "item",
+				"code": "game:leather-sturdy-plain",
+				"quantity": 6
+			},
+			"D": {
+				"type": "block",
+				"code": "game:bowl-*-fired"
+			}
+		},
+		"attributes": {
+			"liquidContainerProps": {
+				"requiresContent": {
+					"type": "item",
+					"code": "game:glueportion-*-hot"
+				},
+				"requiresLitres": 1
+			}
+		},
+		"width": 3,
+		"height": 2,
+		"output": {
+			"type": "item",
+			"code": "abyssaldepths:flippers-{wood}-mk3"
+		}
+	}
+]

@@ -121,5 +121,53 @@
   "item-divingsuit-legs-*-mk3": "Atmospheric Diving Leggings",
 
   "item-divingsuit-maxoxygen": "Max Oxygen: {0}",
-  "item-divingsuit-safedepth": "Maximum Depth: {0}m"
+  "item-divingsuit-safedepth": "Maximum Depth: {0}m",
+
+
+
+// Flippers MK1
+"abyssaldepths:item-flippers-acacia-mk1": "Basic flippers (acacia)",
+"abyssaldepths:item-flippers-baldcypress-mk1": "Basic flippers (baldcypress)",
+"abyssaldepths:item-flippers-birch-mk1": "Basic flippers (birch)",
+"abyssaldepths:item-flippers-ebony-mk1": "Basic flippers (ebony)",
+"abyssaldepths:item-flippers-kapok-mk1": "Basic flippers (kapok)",
+"abyssaldepths:item-flippers-larch-mk1": "Basic flippers (larch)",
+"abyssaldepths:item-flippers-maple-mk1": "Basic flippers (maple)",
+"abyssaldepths:item-flippers-oak-mk1": "Basic flippers (oak)",
+"abyssaldepths:item-flippers-pine-mk1": "Basic flippers (pine)",
+"abyssaldepths:item-flippers-purpleheart-mk1": "Basic flippers (purpleheart)",
+"abyssaldepths:item-flippers-redwood-mk1": "Basic flippers (redwood)",
+"abyssaldepths:item-flippers-walnut-mk1": "Basic flippers (walnut)",
+
+
+// Flippers MK2
+"abyssaldepths:item-flippers-acacia-mk2": "Advanced flippers (acacia)",
+"abyssaldepths:item-flippers-baldcypress-mk2": "Advanced flippers (baldcypress)",
+"abyssaldepths:item-flippers-birch-mk2": "Advanced flippers (birch)",
+"abyssaldepths:item-flippers-ebony-mk2": "Advanced flippers (ebony)",
+"abyssaldepths:item-flippers-kapok-mk2": "Advanced flippers (kapok)",
+"abyssaldepths:item-flippers-larch-mk2": "Advanced flippers (larch)",
+"abyssaldepths:item-flippers-maple-mk2": "Advanced flippers (maple)",
+"abyssaldepths:item-flippers-oak-mk2": "Advanced flippers (oak)",
+"abyssaldepths:item-flippers-pine-mk2": "Advanced flippers (pine)",
+"abyssaldepths:item-flippers-purpleheart-mk2": "Advanced flippers (purpleheart)",
+"abyssaldepths:item-flippers-redwood-mk2": "Advanced flippers (redwood)",
+"abyssaldepths:item-flippers-walnut-mk2": "Advanced flippers (walnut)",
+
+
+// Flippers MK3 
+"abyssaldepths:item-flippers-acacia-mk3": "Expert flippers (acacia)",
+"abyssaldepths:item-flippers-baldcypress-mk3": "Expert flippers (baldcypress)",
+"abyssaldepths:item-flippers-birch-mk3": "Expert flippers (birch)",
+"abyssaldepths:item-flippers-ebony-mk3": "Expert flippers (ebony)",
+"abyssaldepths:item-flippers-kapok-mk3": "Expert flippers (kapok)",
+"abyssaldepths:item-flippers-larch-mk3": "Expert flippers (larch)",
+"abyssaldepths:item-flippers-maple-mk3": "Expert flippers (maple)",
+"abyssaldepths:item-flippers-oak-mk3": "Expert flippers (oak)",
+"abyssaldepths:item-flippers-pine-mk3": "Expert flippers (pine)",
+"abyssaldepths:item-flippers-purpleheart-mk3": "Expert flippers (purpleheart)",
+"abyssaldepths:item-flippers-redwood-mk3": "Expert flippers (redwood)",
+"abyssaldepths:item-flippers-walnut-mk3": "Expert flippers (walnut)"
+
+
 }

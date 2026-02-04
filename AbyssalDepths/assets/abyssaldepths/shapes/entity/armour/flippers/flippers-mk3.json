@@ -1,7 +1,6 @@
 {
 	"editor": {
-		"backDropShape": "C:/Hry/Vintage Story/assets/game/shapes/entity/humanoid/seraph-hairless",
-		"collapsedPaths": "Root/ArmorUpperTorso,Root/ArmorLowerArmL/ArmorHandL/ArmorHandL3/HandLRim/HandLRim6,Root/ArmorLowerLegL/FootL/FootL1/FootRTip,Root/ArmorLowerArmL/ArmorHandL/ArmorHandL3/KneeLRim,Root/ArmorLowerArmL/ArmorHandL/ArmorHandL3/HandLRim/HandLRim4,Root/LineUpSideR,Root/LineDownBackR,Root/ArmorLowerLegL,Root/ArmorHelmet,Root/ArmorLowerLegL/LineDownBackL,Root/ArmorLowerTorso,Root/ArmorLowerLegR,Root/ArmorUpperArmR,Root/ArmorLowerArmL/ArmorHandL/ArmorHandL3/HandLRim/HandLRim2,Root/ArmorLowerLegL/FlipperL19,Root/ArmorLowerLegL/FlipperL18,Root/ArmorLowerLegL/FlipperL17",
+		"backDropShape": "entity/humanoid/seraph-hairless",
 		"allAngles": true,
 		"entityTextureMode": true
 	},

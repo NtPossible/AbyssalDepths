@@ -7,7 +7,7 @@
     { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
-   "attributesByType": {
+  "attributesByType": {
     "divingsuit-*-mk1": {
       "abyssalDepths": {
         "maxOxygen": 600000, // 10 minutes

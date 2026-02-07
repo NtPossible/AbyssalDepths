@@ -16,6 +16,7 @@ namespace AbyssalDepths
             TryLoadConfig(api);
 
             api.RegisterItemClass($"{Mod.Info.ModID}:ItemDivingSuit", typeof(ItemDivingSuit));
+            api.RegisterItemClass($"{Mod.Info.ModID}:ItemFlippers", typeof(ItemFlippers));
 
             new Harmony("abyssaldepths.divingsuit").PatchAll();
         }

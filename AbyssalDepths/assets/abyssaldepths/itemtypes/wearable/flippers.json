@@ -1,13 +1,30 @@
 {
   "code": "flippers",
-  "class": "ItemWearable",
+  "class": "abyssaldepths:ItemFlippers",
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
-    { "code": "level", "states": ["mk1", "mk2", "mk3"] }
+    { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
+  "attributesByType": {
+    "flippers-*-mk1": {
+      "abyssalDepths": {
+        "swimspeed": 1.5
+      }
+    },
+    "flippers-*-mk2": {
+      "abyssalDepths": {
+        "swimspeed": 2.00
+      }
+    },
+    "flippers-*-mk3": {
+      "abyssalDepths": {
+        "swimspeed": 2.50
+      }
+    }
+  },
   "shapeByType": {
-    "*": { "base": "entity/armour/flippers/flippers-{level}" }
+    "*": { "base": "entity/armour/flippers/flippers-{tier}" }
   },
   "texturesByType": {
     "*mk1": {
@@ -28,28 +45,14 @@
   "storageFlags": 128,
   "attributes": {
     "handbook": {
-      "groupBy": ["flippers-{wood}-{level}-*"]
+      "groupBy": ["flippers-{wood}-{tier}-*"]
     },
     "wearableAttachment": true,
     "visibleDamageEffect": true,
     "clothesCategoryByType": {
-      "*": "armorlegs"
+      "*": "foot"
     },
-    "defaultProtLoss": {
-      "perTierRelativeProtectionLoss": [0.03, 0.15],
-      "perTierFlatDamageReductionLoss": [0.1, 0.2]
-    },
-    "footStepSoundByType": {
-    },
-    "protectionModifiersByType": {
-      "*": {
-        "relativeProtection": 0.2,
-        "flatDamageReduction": 0.5,
-        "protectionTier": 2,
-        "perTierRelativeProtectionLoss": [0.015, 0.075],
-        "perTierFlatDamageReductionLoss": [0.05, 0.1]
-      }
-    },
+    "footStepSoundByType": {},
     "statModifiersByType": {
       "*": {
         "walkSpeed": -0.1
@@ -75,26 +78,26 @@
   },
   "tpHandTransformByType": {
     "*": {
-    "translation": { "x": -1, "y": -0.5, "z": -0 },
-    "rotation": { "x": -180, "y": -29, "z": -94 },
-    "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
-    "scale": 0.74
+      "translation": { "x": -1, "y": -0.5, "z": -0 },
+      "rotation": { "x": -180, "y": -29, "z": -94 },
+      "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
+      "scale": 0.74
     }
   },
   "guiTransformByType": {
     "*": {
-    "translation": { "x": -7, "y": -21, "z": 0 },
-    "rotation": { "x": -50, "y": -48, "z": -179 },
-    "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
-    "scale": 1.56
+      "translation": { "x": -7, "y": -21, "z": 0 },
+      "rotation": { "x": -50, "y": -48, "z": -179 },
+      "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
+      "scale": 1.56
     }
   },
   "groundTransformByType": {
     "*": {
-    "translation": { "x": -0.1, "y": 0.65, "z": -0.4 },
-    "rotation": { "x": 0, "y": -52, "z": -8 },
-    "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
-    "scale": 3.1
+      "translation": { "x": -0.1, "y": 0.65, "z": -0.4 },
+      "rotation": { "x": 0, "y": -52, "z": -8 },
+      "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
+      "scale": 3.1
     }
   }
 }

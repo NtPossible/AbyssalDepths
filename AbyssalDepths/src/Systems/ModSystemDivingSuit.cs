@@ -32,6 +32,7 @@ namespace AbyssalDepths.src.Systems
             {
                 return;
             }
+
             foreach (IPlayer player in sapi.World.AllOnlinePlayers)
             {
                 ProcessPlayer(player);

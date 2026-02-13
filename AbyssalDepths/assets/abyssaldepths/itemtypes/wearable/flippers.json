@@ -9,17 +9,17 @@
   "attributesByType": {
     "flippers-*-mk1": {
       "abyssalDepths": {
-        "swimspeed": 1.5
+        "swimspeed": 1.30
       }
     },
     "flippers-*-mk2": {
       "abyssalDepths": {
-        "swimspeed": 2.00
+        "swimspeed": 1.60
       }
     },
     "flippers-*-mk3": {
       "abyssalDepths": {
-        "swimspeed": 2.50
+        "swimspeed": 2.00
       }
     }
   },

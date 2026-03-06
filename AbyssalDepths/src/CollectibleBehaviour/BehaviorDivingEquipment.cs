@@ -5,17 +5,18 @@ using Vintagestory.API.Datastructures;
 
 namespace AbyssalDepths.src.CollectibleBehaviour
 {
-    public class CollectibleBehaviorDivingSuit : CollectibleBehavior
+    public class CollectibleBehaviorDivingEquipment : CollectibleBehavior
     {
         public string SuitSet { get; private set; } = string.Empty;
         public float MaxOxygen { get; private set; } = -1f;
         public int SafeDepth { get; private set; } = -1;
+        public float SwimSpeedMultiplier { get; private set; } = 1f;
         public bool Weighted { get; private set; } = false;
         public bool LockHead { get; private set; } = false;
         public AssetLocation? CreakSound { get; private set; }
         public AssetLocation? BreakSound { get; private set; }
 
-        public CollectibleBehaviorDivingSuit(CollectibleObject collectibleObject) : base(collectibleObject) { }
+        public CollectibleBehaviorDivingEquipment(CollectibleObject collectibleObject) : base(collectibleObject) { }
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -27,6 +28,7 @@ namespace AbyssalDepths.src.CollectibleBehaviour
                 SuitSet = abyssalDepths["suitId"].AsString("");
                 MaxOxygen = abyssalDepths["maxOxygen"].AsFloat(-1f);
                 SafeDepth = abyssalDepths["safeDepth"].AsInt(-1);
+                SwimSpeedMultiplier = abyssalDepths["swimSpeedMultiplier"].AsFloat(1f);
                 Weighted = abyssalDepths["weighted"].AsBool(false);
                 LockHead = abyssalDepths["lockHead"].AsBool(false);
 
@@ -48,22 +50,26 @@ namespace AbyssalDepths.src.CollectibleBehaviour
         {
             base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
 
-            double totalSeconds = MaxOxygen / 1000.0;
-            int minutes = (int)(totalSeconds / 60);
-            int seconds = (int)(totalSeconds % 60);
+            if (MaxOxygen > 0f)
+            {
+                double totalSeconds = MaxOxygen / 1000.0;
+                int minutes = (int)(totalSeconds / 60);
+                int seconds = (int)(totalSeconds % 60);
 
-            string timeText;
-            if (minutes > 0)
-            {
-                timeText = Lang.Get("{0}m {1}s", minutes, seconds);
-            }
-            else
-            {
-                timeText = Lang.Get("{0}s", seconds);
+                string timeText = minutes > 0  ? Lang.Get("{0}m {1}s", minutes, seconds) : Lang.Get("{0}s", seconds);
+
+                dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-maxoxygen", timeText));
             }
 
-            dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-maxoxygen", timeText));
-            dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-safedepth", SafeDepth));
+            if (SafeDepth > 0)
+            {
+                dsc.AppendLine(Lang.Get("abyssaldepths:item-divingsuit-safedepth", SafeDepth));
+            }
+
+            if (SwimSpeedMultiplier != 1f)
+            {
+                dsc.AppendLine(Lang.Get("abyssaldepths:item-equipment-swimspeed", SwimSpeedMultiplier));
+            }
         }
     }
 }

@@ -1,25 +1,26 @@
 {
   "code": "flippers",
-  "class": "abyssaldepths:ItemFlippers",
+  "class": "ItemWearable",
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
+  "behaviors": [ { "name": "abyssaldepths:DivingEquipment" } ],
   "attributesByType": {
     "flippers-*-mk1": {
       "abyssalDepths": {
-        "swimspeed": 1.30
+        "swimSpeedMultiplier": 1.30
       }
     },
     "flippers-*-mk2": {
       "abyssalDepths": {
-        "swimspeed": 1.60
+        "swimSpeedMultiplier": 1.60
       }
     },
     "flippers-*-mk3": {
       "abyssalDepths": {
-        "swimspeed": 2.00
+        "swimSpeedMultiplier": 2.00
       }
     }
   },

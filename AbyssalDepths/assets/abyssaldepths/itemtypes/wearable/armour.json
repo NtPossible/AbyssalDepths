@@ -7,7 +7,7 @@
     { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
-  "behaviors": [ { "name": "abyssaldepths:DivingSuit" } ],
+  "behaviors": [ { "name": "abyssaldepths:DivingEquipment" } ],
   "attributesByType": {
     "divingsuit-*-*-mk1": {
       "abyssalDepths": {

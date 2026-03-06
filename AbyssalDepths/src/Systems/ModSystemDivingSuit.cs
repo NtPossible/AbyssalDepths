@@ -9,11 +9,12 @@ using Vintagestory.GameContent;
 
 namespace AbyssalDepths.src.Systems
 {
-    public class ModSystemDivingSuit : ModSystem
+    public class ModSystemUnderwaterEquipment : ModSystem
     {
         private const string DisableSwimKey = "abyssalDepthsDisableSwim";
         private const string FullSuitKey = "abyssalDepthsFullDivingSuit";
         private const string LockHeadKey = "abyssalDepthsLockHeadMovement";
+        private const string SwimSpeedKey = "flippersSwimSpeed";
 
         private const float OxygenTolerance = 0.001f;
 
@@ -58,6 +59,7 @@ namespace AbyssalDepths.src.Systems
             bool hasFullSuit = TryGetEquippedDivingSuitSet(player, out _);
 
             float anySuitMaxOxygen = -1f;
+            float swimSpeedMultiplier = 1f;
 
             foreach (ItemSlot slot in inventory)
             {
@@ -66,13 +68,13 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
-                CollectibleBehaviorDivingSuit? behavior = slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingSuit>();
+                CollectibleBehaviorDivingEquipment? behavior = slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingEquipment>();
                 if (behavior == null)
                 {
                     continue;
                 }
 
-                if (anySuitMaxOxygen < 0f)
+                if (anySuitMaxOxygen < 0f && behavior.MaxOxygen > 0f)
                 {
                     anySuitMaxOxygen = behavior.MaxOxygen;
                 }
@@ -86,11 +88,19 @@ namespace AbyssalDepths.src.Systems
                 {
                     lockHead = true;
                 }
+
+                if (behavior.SwimSpeedMultiplier != 1f)
+                {
+                    swimSpeedMultiplier = behavior.SwimSpeedMultiplier;
+                }
             }
 
             SetWatchedBool(entity, DisableSwimKey, disableSwim);
             SetWatchedBool(entity, LockHeadKey, lockHead);
             SetWatchedBool(entity, FullSuitKey, hasFullSuit);
+
+            float activeSwimSpeed = entity.Swimming ? swimSpeedMultiplier : 1f;
+            entity.WatchedAttributes.SetFloat(SwimSpeedKey, activeSwimSpeed);
 
             // Oxygen only for full set of same tier
             if (!hasFullSuit || anySuitMaxOxygen <= 0f)
@@ -192,7 +202,7 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            CollectibleBehaviorDivingSuit? behavior = slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingSuit>();
+            CollectibleBehaviorDivingEquipment? behavior = slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingEquipment>();
             if (behavior == null)
             {
                 return;

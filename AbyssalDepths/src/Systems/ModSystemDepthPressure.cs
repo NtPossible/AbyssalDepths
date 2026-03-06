@@ -123,7 +123,7 @@ namespace AbyssalDepths.src.Systems
             suitSlots = new List<ItemSlot>();
             safeDepth = 0;
 
-            if (!ModSystemDivingSuit.TryGetEquippedDivingSuitSet(player, out string suitSet))
+            if (!ModSystemUnderwaterEquipment.TryGetEquippedDivingSuitSet(player, out string suitSet))
             {
                 return false;
             }
@@ -139,14 +139,14 @@ namespace AbyssalDepths.src.Systems
             return safeDepth > 0;
         }
 
-        private static CollectibleBehaviorDivingSuit? GetDivingSuitBehavior(ItemSlot? slot)
+        private static CollectibleBehaviorDivingEquipment? GetDivingEquipmentBehavior(ItemSlot? slot)
         {
             if (slot == null || slot.Itemstack == null)
             {
                 return null;
             }
 
-            return slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingSuit>();
+            return slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingEquipment>();
         }
 
         private static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
@@ -169,7 +169,7 @@ namespace AbyssalDepths.src.Systems
         {
             foreach (ItemSlot slot in slots)
             {
-                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
                 if (behavior == null)
                 {
                     continue;
@@ -189,7 +189,7 @@ namespace AbyssalDepths.src.Systems
         {
             foreach (ItemSlot slot in slots)
             {
-                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
                 if (behavior == null)
                 {
                     continue;
@@ -211,7 +211,7 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in suitSlots)
             {
-                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
                 if (behavior == null)
                 {
                     continue;
@@ -353,7 +353,7 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
-                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
                 if (behavior == null)
                 {
                     continue;
@@ -407,10 +407,10 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
-                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
                 if (behavior == null)
                 {
-                    continue;   
+                    continue;
                 }
 
                 int before = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);

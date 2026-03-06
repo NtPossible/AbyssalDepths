@@ -34,7 +34,7 @@ namespace AbyssalDepths.src.Patches.Transpilers
             return true;
         }
 
-        // Blocks Entity.Swimming from being set to true during player-controlled physics when a diving suit is worn enabling normal walking physics underwater
+        // Blocks Entity.Swimming from being set to true during player-controlled physics when a diving suit is worn, enabling normal walking underwater
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
         {
             var tmpBool = ilGenerator.DeclareLocal(typeof(bool));

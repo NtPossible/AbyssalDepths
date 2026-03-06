@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using AbyssalDepths.src.CollectibleBehaviour;
+using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
-using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -57,7 +57,7 @@ namespace AbyssalDepths.src.Systems
 
             bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
             int baseSafeDepth = AbyssalDepthsModSystem.Config.BaseSafeDepth;
-            int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth; 
+            int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth;
             int waterDepth = GetWaterDepth(world, entity, effectiveSafeDepth);
             if (waterDepth <= 0)
             {
@@ -120,33 +120,33 @@ namespace AbyssalDepths.src.Systems
 
         private static bool TryGetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
         {
-            suitSlots = [];
+            suitSlots = new List<ItemSlot>();
             safeDepth = 0;
 
-            if (!ModSystemDivingSuit.TryGetEquippedDivingSuitTier(player, out string tier))
+            if (!ModSystemDivingSuit.TryGetEquippedDivingSuitSet(player, out string suitSet))
             {
                 return false;
             }
 
-            suitSlots = GetEquippedSuitSlots(player, tier);
+            suitSlots = GetEquippedSuitSlots(player, suitSet);
 
             if (SuitDamaged(suitSlots))
             {
                 return false;
             }
 
-            safeDepth = GetSuitSafeDepthFromJson(suitSlots);
+            safeDepth = GetSuitSafeDepthFromBehavior(suitSlots);
             return safeDepth > 0;
         }
 
-        private static JsonObject? GetDivingSuitAttributes(ItemSlot? slot)
+        private static CollectibleBehaviorDivingSuit? GetDivingSuitBehavior(ItemSlot? slot)
         {
             if (slot == null || slot.Itemstack == null)
             {
                 return null;
             }
 
-            return slot.Itemstack.Item.Attributes?["abyssalDepths"];
+            return slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingSuit>();
         }
 
         private static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
@@ -157,7 +157,7 @@ namespace AbyssalDepths.src.Systems
 
             if (world.Rand.NextDouble() < chance)
             {
-                AssetLocation? sound = GetSuitCreakSoundFromJson(suitSlots);
+                AssetLocation? sound = GetSuitCreakSoundFromBehavior(suitSlots);
                 if (sound != null)
                 {
                     world.PlaySoundAt(sound, entity, null, true, 14f);
@@ -165,59 +165,59 @@ namespace AbyssalDepths.src.Systems
             }
         }
 
-        private static AssetLocation? GetSuitCreakSoundFromJson(List<ItemSlot> slots)
+        private static AssetLocation? GetSuitCreakSoundFromBehavior(List<ItemSlot> slots)
         {
             foreach (ItemSlot slot in slots)
             {
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                if (behavior == null)
                 {
                     continue;
                 }
 
-                string creakCode = abyssalDepths["creakSound"].AsString(null);
-                if (!string.IsNullOrEmpty(creakCode))
+                AssetLocation? creak = behavior.CreakSound;
+                if (creak != null)
                 {
-                    return new AssetLocation(creakCode);
+                    return creak;
                 }
             }
 
             return null;
         }
 
-        private static AssetLocation? GetSuitBreakSoundFromJson(List<ItemSlot> slots)
+        private static AssetLocation? GetSuitBreakSoundFromBehavior(List<ItemSlot> slots)
         {
             foreach (ItemSlot slot in slots)
             {
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                if (behavior == null)
                 {
                     continue;
                 }
 
-                string breakCode = abyssalDepths["breakSound"].AsString(null);
-                if (!string.IsNullOrEmpty(breakCode))
+                AssetLocation? breakSound = behavior.BreakSound;
+                if (breakSound != null)
                 {
-                    return new AssetLocation(breakCode);
+                    return breakSound;
                 }
             }
 
             return null;
         }
 
-        private static int GetSuitSafeDepthFromJson(List<ItemSlot> suitSlots)
+        private static int GetSuitSafeDepthFromBehavior(List<ItemSlot> suitSlots)
         {
             int maxSafeDepth = 0;
 
             foreach (ItemSlot slot in suitSlots)
             {
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                if (behavior == null)
                 {
                     continue;
                 }
 
-                int safeDepth = abyssalDepths["safeDepth"].AsInt(-1);
+                int safeDepth = behavior.SafeDepth;
                 if (safeDepth > maxSafeDepth)
                 {
                     maxSafeDepth = safeDepth;
@@ -336,9 +336,9 @@ namespace AbyssalDepths.src.Systems
             return false;
         }
 
-        private static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string tier)
+        private static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string suitSet)
         {
-            List<ItemSlot> slots = [];
+            List<ItemSlot> slots = new();
 
             IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
             if (inventory == null)
@@ -348,24 +348,23 @@ namespace AbyssalDepths.src.Systems
 
             foreach (ItemSlot slot in inventory)
             {
-                if (slot == null || slot.Itemstack == null)
+                if (slot?.Itemstack == null)
                 {
                     continue;
                 }
 
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                if (behavior.SuitSet != suitSet)
                 {
                     continue;
                 }
 
                 string bodypart = slot.Itemstack.Item.Variant["bodypart"];
-                string suitTier = slot.Itemstack.Item.Variant["tier"];
-
-                if (suitTier != tier)
-                {
-                    continue;
-                }
 
                 if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
                 {
@@ -408,10 +407,10 @@ namespace AbyssalDepths.src.Systems
                     continue;
                 }
 
-                JsonObject? abyssalDepths = GetDivingSuitAttributes(slot);
-                if (abyssalDepths == null || !abyssalDepths.Exists)
+                CollectibleBehaviorDivingSuit? behavior = GetDivingSuitBehavior(slot);
+                if (behavior == null)
                 {
-                    continue;
+                    continue;   
                 }
 
                 int before = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
@@ -433,7 +432,7 @@ namespace AbyssalDepths.src.Systems
 
             if (anyJustBroke)
             {
-                AssetLocation? sound = GetSuitBreakSoundFromJson(slots);
+                AssetLocation? sound = GetSuitBreakSoundFromBehavior(slots);
                 if (sound != null)
                 {
                     world.PlaySoundAt(sound, entity, null, true, 32f);

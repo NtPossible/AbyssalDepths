@@ -1,4 +1,5 @@
-﻿using AbyssalDepths.src.Config;
+﻿using AbyssalDepths.src.CollectibleBehaviour;
+using AbyssalDepths.src.Config;
 using AbyssalDepths.src.Items.Wearable;
 using HarmonyLib;
 using System;
@@ -15,8 +16,8 @@ namespace AbyssalDepths
         {
             TryLoadConfig(api);
 
-            api.RegisterItemClass($"{Mod.Info.ModID}:ItemDivingSuit", typeof(ItemDivingSuit));
             api.RegisterItemClass($"{Mod.Info.ModID}:ItemFlippers", typeof(ItemFlippers));
+            api.RegisterCollectibleBehaviorClass($"{Mod.Info.ModID}:DivingSuit", typeof(CollectibleBehaviorDivingSuit));
 
             new Harmony("abyssaldepths.divingsuit").PatchAll();
         }

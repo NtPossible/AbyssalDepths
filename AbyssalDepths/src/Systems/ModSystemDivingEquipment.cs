@@ -16,8 +16,6 @@ namespace AbyssalDepths.src.Systems
         private const string LockHeadKey = "abyssalDepthsLockHeadMovement";
         private const string SwimSpeedKey = "flippersSwimSpeed";
 
-        private const float OxygenTolerance = 0.001f;
-
         private ICoreServerAPI? sapi;
 
         public override bool ShouldLoad(EnumAppSide forSide) => true;
@@ -146,7 +144,7 @@ namespace AbyssalDepths.src.Systems
 
             float targetMaxOxygen = GetSuitMaxOxygen(maxOxygen, entity);
 
-            if (!NearlyEqual(breathe.MaxOxygen, targetMaxOxygen))
+            if (breathe.MaxOxygen != targetMaxOxygen)
             {
                 breathe.MaxOxygen = targetMaxOxygen;
             }
@@ -263,7 +261,7 @@ namespace AbyssalDepths.src.Systems
 
             float baseMax = GetDefaultPlayerOxygen(entity);
 
-            if (!NearlyEqual(breathe.MaxOxygen, baseMax))
+            if (breathe.MaxOxygen != baseMax)
             {
                 breathe.MaxOxygen = baseMax;
             }
@@ -272,12 +270,6 @@ namespace AbyssalDepths.src.Systems
             {
                 breathe.Oxygen = baseMax;
             }
-        }
-
-        // done to get rid of some floating point inequality complaint
-        private static bool NearlyEqual(float a, float b)
-        {
-            return Math.Abs(a - b) <= OxygenTolerance;
         }
     }
 }

@@ -55,7 +55,7 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            bool hasFunctionalSuit = TryGetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
+            bool hasFunctionalSuit = GetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
             int baseSafeDepth = AbyssalDepthsModSystem.Config.BaseSafeDepth;
             int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth;
             int waterDepth = GetWaterDepth(world, entity, effectiveSafeDepth);
@@ -118,12 +118,12 @@ namespace AbyssalDepths.src.Systems
             return GetDepthSeverity(depthOver);
         }
 
-        private static bool TryGetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
+        private static bool GetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
         {
             suitSlots = new List<ItemSlot>();
             safeDepth = 0;
 
-            if (!ModSystemUnderwaterEquipment.TryGetEquippedDivingSuitSet(player, out string suitSet))
+            if (!ModSystemUnderwaterEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
             {
                 return false;
             }

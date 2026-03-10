@@ -54,7 +54,7 @@ namespace AbyssalDepths.src.Systems
 
             bool disableSwim = false;
             bool lockHead = false;
-            bool hasFullSuit = TryGetEquippedDivingSuitSet(player, out _);
+            bool hasFullSuit = GetEquippedDivingSuitSet(player, out _);
 
             float anySuitMaxOxygen = -1f;
             float swimSpeedMultiplier = 1f;
@@ -165,7 +165,7 @@ namespace AbyssalDepths.src.Systems
             return entity.World.Config.GetAsInt("lungCapacity", 40000);
         }
 
-        public static bool TryGetEquippedDivingSuitSet(IPlayer player, out string suitSet)
+        public static bool GetEquippedDivingSuitSet(IPlayer player, out string suitSet)
         {
             suitSet = string.Empty;
 

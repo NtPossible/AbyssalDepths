@@ -32,13 +32,13 @@ namespace AbyssalDepths.src.CollectibleBehaviour
                 Weighted = abyssalDepths["weighted"].AsBool(false);
                 LockHead = abyssalDepths["lockHead"].AsBool(false);
 
-                string creakCode = abyssalDepths["creakSound"].AsString(null);
+                string? creakCode = abyssalDepths["creakSound"].AsString(null);
                 if (!string.IsNullOrEmpty(creakCode))
                 {
                     CreakSound = new AssetLocation(creakCode);
                 }
 
-                string breakCode = abyssalDepths["breakSound"].AsString(null);
+                string? breakCode = abyssalDepths["breakSound"].AsString(null);
                 if (!string.IsNullOrEmpty(breakCode))
                 {
                     BreakSound = new AssetLocation(breakCode);

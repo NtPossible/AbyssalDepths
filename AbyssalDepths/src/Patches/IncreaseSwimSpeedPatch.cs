@@ -5,8 +5,8 @@ using Vintagestory.API.MathTools;
 
 namespace AbyssalDepths.src.Patches
 {
-    [HarmonyPatch(typeof(PModulePlayerInLiquid), "HandleSwimming")]
-    public static class Patch_PModulePlayerInLiquid_HandleSwimming
+    [HarmonyPatch(typeof(PModulePlayerInLiquid), nameof(PModulePlayerInLiquid.HandleSwimming))]
+    public static class IncreaseSwimSpeedPatch
     {
         private static bool _handlingSwimming = true;
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
@@ -26,7 +27,7 @@ namespace AbyssalDepths.src.Systems
             api.Event.RegisterGameTickListener(OnTickServer1s, 1000, 200);
         }
 
-        private void OnTickServer1s(float dt)
+        public void OnTickServer1s(float dt)
         {
             if (sapi?.World == null)
             {
@@ -39,7 +40,7 @@ namespace AbyssalDepths.src.Systems
             }
         }
 
-        private static void ProcessPlayer(IPlayer? player)
+        public static void ProcessPlayer(IPlayer? player)
         {
             if (player?.Entity is not EntityPlayer entity || !entity.Alive)
             {
@@ -110,7 +111,7 @@ namespace AbyssalDepths.src.Systems
             ApplyFullSuitOxygen(player, anySuitMaxOxygen);
         }
 
-        private static void SetWatchedBool(EntityPlayer entity, string key, bool value)
+        public static void SetWatchedBool(EntityPlayer entity, string key, bool value)
         {
             SyncedTreeAttribute attribute = entity.WatchedAttributes;
             if (attribute == null)
@@ -124,7 +125,7 @@ namespace AbyssalDepths.src.Systems
             }
         }
 
-        private static void ApplyFullSuitOxygen(IPlayer player, float maxOxygen)
+        public static void ApplyFullSuitOxygen(IPlayer player, float maxOxygen)
         {
             if (player?.Entity is not EntityPlayer entity || !entity.Alive)
             {
@@ -150,7 +151,7 @@ namespace AbyssalDepths.src.Systems
             }
         }
 
-        private static float GetSuitMaxOxygen(float maxOxygen, EntityPlayer entity)
+        public static float GetSuitMaxOxygen(float maxOxygen, EntityPlayer entity)
         {
             if (maxOxygen > 0f)
             {
@@ -160,7 +161,7 @@ namespace AbyssalDepths.src.Systems
             return GetDefaultPlayerOxygen(entity);
         }
 
-        private static float GetDefaultPlayerOxygen(EntityPlayer entity)
+        public static float GetDefaultPlayerOxygen(EntityPlayer entity)
         {
             return entity.World.Config.GetAsInt("lungCapacity", 40000);
         }
@@ -193,7 +194,7 @@ namespace AbyssalDepths.src.Systems
             return false;
         }
 
-        private static void IsValidDivingSuitSlot(ItemSlot slot, ref string? foundSuitSet, HashSet<string> bodypartsFound)
+        public static void IsValidDivingSuitSlot(ItemSlot slot, ref string? foundSuitSet, HashSet<string> bodypartsFound)
         {
             if (slot?.Itemstack?.Item == null)
             {
@@ -241,7 +242,7 @@ namespace AbyssalDepths.src.Systems
             bodypartsFound.Add(bodypart);
         }
 
-        private static void ResetPlayerOxygen(IPlayer player)
+        public static void ResetPlayerOxygen(IPlayer player)
         {
             if (player.Entity is not EntityPlayer entity)
             {
@@ -269,6 +270,219 @@ namespace AbyssalDepths.src.Systems
             if (breathe.Oxygen > baseMax)
             {
                 breathe.Oxygen = baseMax;
+            }
+        }
+
+        public static bool GetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
+        {
+            suitSlots = new List<ItemSlot>();
+            safeDepth = 0;
+
+            if (!ModSystemUnderwaterEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
+            {
+                return false;
+            }
+
+            suitSlots = GetEquippedSuitSlots(player, suitSet);
+
+            if (SuitDamaged(suitSlots))
+            {
+                return false;
+            }
+
+            safeDepth = GetSuitSafeDepth(suitSlots);
+            return safeDepth > 0;
+        }
+
+        public static CollectibleBehaviorDivingEquipment? GetDivingEquipmentBehavior(ItemSlot? slot)
+        {
+            if (slot == null || slot.Itemstack == null)
+            {
+                return null;
+            }
+
+            return slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingEquipment>();
+        }
+
+        public static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
+        {
+            int depthOver = GameMath.Max(0, waterDepth - safeDepth);
+
+            float chance = GameMath.Clamp(0.01f + 0.005f * depthOver, 0f, 0.08f);
+
+            if (world.Rand.NextDouble() < chance)
+            {
+                AssetLocation? sound = GetSuitCreakSound(suitSlots);
+                if (sound != null)
+                {
+                    world.PlaySoundAt(sound, entity, null, true, 14f);
+                }
+            }
+        }
+
+        public static AssetLocation? GetSuitCreakSound(List<ItemSlot> slots)
+        {
+            foreach (ItemSlot slot in slots)
+            {
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                AssetLocation? creak = behavior.CreakSound;
+                if (creak != null)
+                {
+                    return creak;
+                }
+            }
+
+            return null;
+        }
+
+        public static AssetLocation? GetSuitBreakSound(List<ItemSlot> slots)
+        {
+            foreach (ItemSlot slot in slots)
+            {
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                AssetLocation? breakSound = behavior.BreakSound;
+                if (breakSound != null)
+                {
+                    return breakSound;
+                }
+            }
+
+            return null;
+        }
+
+        public static int GetSuitSafeDepth(List<ItemSlot> suitSlots)
+        {
+            int maxSafeDepth = 0;
+
+            foreach (ItemSlot slot in suitSlots)
+            {
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                int safeDepth = behavior.SafeDepth;
+                if (safeDepth > maxSafeDepth)
+                {
+                    maxSafeDepth = safeDepth;
+                }
+            }
+
+            return maxSafeDepth;
+        }
+
+        public static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string suitSet)
+        {
+            List<ItemSlot> slots = new();
+
+            IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
+            if (inventory == null)
+            {
+                return slots;
+            }
+
+            foreach (ItemSlot slot in inventory)
+            {
+                if (slot?.Itemstack == null)
+                {
+                    continue;
+                }
+
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                if (behavior.SuitSet != suitSet)
+                {
+                    continue;
+                }
+
+                string bodypart = slot.Itemstack.Item.Variant["bodypart"];
+
+                if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
+                {
+                    continue;
+                }
+
+                slots.Add(slot);
+            }
+
+            return slots;
+        }
+
+        public static bool SuitDamaged(List<ItemSlot> slots)
+        {
+            foreach (ItemSlot slot in slots)
+            {
+                if (slot?.Itemstack == null)
+                {
+                    return true;
+                }
+
+                int durability = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
+                if (durability <= 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static void DamageSuit(IServerWorldAccessor world, EntityPlayer entity, List<ItemSlot> slots, int amountPerPiece)
+        {
+            bool anyJustBroke = false;
+
+            foreach (ItemSlot slot in slots)
+            {
+                if (slot?.Itemstack == null)
+                {
+                    continue;
+                }
+
+                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
+                if (behavior == null)
+                {
+                    continue;
+                }
+
+                int before = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
+
+                if (before <= 0)
+                {
+                    continue;
+                }
+
+                slot.Itemstack.Collectible.DamageItem(world, entity, slot, amountPerPiece);
+
+                int after = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
+
+                if (after <= 0 && before > 0)
+                {
+                    anyJustBroke = true;
+                }
+            }
+
+            if (anyJustBroke)
+            {
+                AssetLocation? sound = GetSuitBreakSound(slots);
+                if (sound != null)
+                {
+                    world.PlaySoundAt(sound, entity, null, true, 32f);
+                }
             }
         }
     }

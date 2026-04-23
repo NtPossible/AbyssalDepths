@@ -1,31 +1,44 @@
 {
   "code": "divingsuit",
-  "class": "ItemWearable",
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "bodypart", "states": ["head", "body", "legs"] },
     { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
-  "behaviors": [ { "name": "abyssaldepths:DivingEquipment" } ],
+  "behaviors": [
+    { "name": "Wearable" },
+    { "name": "abyssaldepths:DivingEquipment" }
+  ],
   "attributesByType": {
+    "divingsuit-head-*-mk1": {
+      "abyssalDepths": {
+        "suitId": "mk1",
+        "maxOxygen": 600000,
+        "safeDepth": 40,
+        "weighted": false,
+        "creakSound": "abyssaldepths:sounds/wearable/creak*",
+        "breakSound": "abyssaldepths:sounds/wearable/break"
+      }
+    },
     "divingsuit-*-*-mk1": {
       "abyssalDepths": {
         "suitId": "mk1",
         "maxOxygen": 600000,
         "safeDepth": 40,
+        "weighted": true,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"
       }
     },
-    "divingsuit-body-*-mk1": {
+    "divingsuit-head-*-mk2": {
       "abyssalDepths": {
-        "weighted": true
-      }
-    },
-    "divingsuit-legs-*-mk1": {
-      "abyssalDepths": {
-        "weighted": true
+        "suitId": "mk1",
+        "maxOxygen": 600000,
+        "safeDepth": 40,
+        "weighted": false,
+        "creakSound": "abyssaldepths:sounds/wearable/creak*",
+        "breakSound": "abyssaldepths:sounds/wearable/break"
       }
     },
     "divingsuit-*-*-mk2": {
@@ -33,12 +46,22 @@
         "suitId": "mk2",
         "maxOxygen": 1500000,
         "safeDepth": 60,
+        "weighted": true,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"
       }
     },
-    "divingsuit-body-*-mk2": { "abyssalDepths": { "weighted": true } },
-    "divingsuit-legs-*-mk2": { "abyssalDepths": { "weighted": true } },
+    "divingsuit-head-*-mk3": {
+      "abyssalDepths": {
+        "suitId": "mk3",
+        "maxOxygen": 3000000,
+        "safeDepth": 300,
+        "weighted": true,
+        "lockHead": true,
+        "creakSound": "abyssaldepths:sounds/wearable/creak*",
+        "breakSound": "abyssaldepths:sounds/wearable/break"
+      }
+    },
     "divingsuit-*-*-mk3": {
       "abyssalDepths": {
         "suitId": "mk3",
@@ -48,8 +71,7 @@
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"
       }
-    },
-    "divingsuit-head-*-mk3": { "abyssalDepths": { "lockHead": true } }
+    }
   },
   "shapeByType": {
     "divingsuit-*-*-mk1": { "base": "entity/armour/divingsuit1/{bodypart}" },
@@ -65,7 +87,7 @@
   "storageFlags": 128,
   "attributes": {
     "handbook": {
-      "groupBy": ["divingsuit-{bodypart}-*"]
+      "groupBy": [ "divingsuit-{bodypart}-*" ]
     },
     "visibleDamageEffect": true,
     "clothesCategoryByType": {
@@ -108,26 +130,26 @@
         ]
       },
       "keepElementsByType": {
-        "divingsuit-head-*": ["hair-covered"],
-        "divingsuit-legs-*": ["showshoeR", "showshoeL"]
+        "divingsuit-head-*": [ "hair-covered" ],
+        "divingsuit-legs-*": [ "showshoeR", "showshoeL" ]
       }
     },
     "defaultProtLoss": {
-      "perTierRelativeProtectionLoss": [0.03, 0.15],
-      "perTierFlatDamageReductionLoss": [0.1, 0.2]
+      "perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
+      "perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
     },
     "footStepSoundByType": {
-      "divingsuit-body-mk1": "game:wearable/leather*",
-      "divingsuit-body-mk2": "game:wearable/scale*",
-      "divingsuit-body-mk3": "abyssaldepths:sounds/wearable/deep*"
+      "divingsuit-body-*-mk1": "game:wearable/leather*",
+      "divingsuit-body-*-mk2": "game:wearable/scale*",
+      "divingsuit-body-*-mk3": "abyssaldepths:sounds/wearable/deep*"
     },
     "protectionModifiersByType": {
       "divingsuit-*-mk1": {
         "relativeProtection": 0.7,
         "flatDamageReduction": 0.7,
         "protectionTier": 2,
-        "perTierRelativeProtectionLoss": [0.015, 0.075],
-        "perTierFlatDamageReductionLoss": [0.05, 0.1]
+        "perTierRelativeProtectionLoss": [ 0.015, 0.075 ],
+        "perTierFlatDamageReductionLoss": [ 0.05, 0.1 ]
       },
       "divingsuit-*-mk2": {
         "relativeProtection": 0.88,

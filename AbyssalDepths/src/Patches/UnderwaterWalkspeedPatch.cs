@@ -4,8 +4,8 @@ using Vintagestory.API.Datastructures;
 
 namespace AbyssalDepths.src.Patches
 {
-    [HarmonyPatch(typeof(EntityPlayer), "GetWalkSpeedMultiplier")]
-    public static class Patch_EntityPlayer_WalkSpeed
+    [HarmonyPatch(typeof(EntityPlayer), nameof(EntityPlayer.GetWalkSpeedMultiplier))]
+    public static class UnderwaterWalkspeedPatch
     {
         // Increase walk speed by 20% when wearing a full diving suit and if in liquid
         static void Postfix(EntityPlayer __instance, ref double __result)

@@ -1,0 +1,42 @@
+{
+	"editor": {
+		"backDropShape": "",
+		"collapsedPaths": "",
+		"allAngles": false,
+		"entityTextureMode": false,
+		"singleTexture": false,
+		"vsFormatConverted": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"brass.png": [32, 32]
+	},
+	"textures": {
+		"brass.png": "game:block/metal/ingot/copper"
+	},
+	"elements": [
+		{
+			"name": "cube",
+			"from": [-12, 0, -12],
+			"to": [28, 50, 28],
+			"rotationOrigin": [0, 0, 0],
+			"uv": [0, 0],
+			"shade": true,
+			"faces": {
+				"north": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false},
+				"east": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false},
+				"south": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false},
+				"west": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false},
+				"up": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false},
+				"down": {"texture": "#brass.png", "uv": [0, 0, 16, 16], "autoUv": false, "snapUv": false}
+			},
+			"stepParentName": "",
+			"climateColorMap": "",
+			"gradientShade": false,
+			"renderPass": 0,
+			"seasonColorMap": ""
+		}
+	],
+	"animations": []
+}

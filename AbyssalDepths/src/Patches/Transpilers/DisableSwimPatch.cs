@@ -9,11 +9,11 @@ using Vintagestory.GameContent;
 
 namespace AbyssalDepths.src.Patches.Transpilers
 {
-    [HarmonyPatch(typeof(EntityBehaviorControlledPhysics), "ApplyTests")]
-    public static class Patch_ControlledPhysics_ApplyTests
+    [HarmonyPatch(typeof(EntityBehaviorControlledPhysics), nameof(EntityBehaviorControlledPhysics.ApplyTests))]
+    public static class DisableSwimPatch
     {
         static readonly FieldInfo SwimmingField = AccessTools.Field(typeof(Entity), nameof(Entity.Swimming));
-        static readonly MethodInfo ShouldAllowSwimmingMethod = AccessTools.Method(typeof(Patch_ControlledPhysics_ApplyTests), nameof(ShouldAllowSwimming));
+        static readonly MethodInfo ShouldAllowSwimmingMethod = AccessTools.Method(typeof(DisableSwimPatch), nameof(ShouldAllowSwimming));
 
         public static bool ShouldAllowSwimming(Entity entity, bool shouldSwim)
         {

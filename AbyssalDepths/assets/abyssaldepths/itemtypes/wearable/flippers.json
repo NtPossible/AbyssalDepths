@@ -1,12 +1,14 @@
 {
   "code": "flippers",
-  "class": "ItemWearable",
   "heldTpIdleAnimation": "holdunderarm",
   "variantgroups": [
     { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
     { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
   ],
-  "behaviors": [ { "name": "abyssaldepths:DivingEquipment" } ],
+  "behaviors": [
+    { "name": "Wearable" },
+    { "name": "abyssaldepths:DivingEquipment" }
+  ],
   "attributesByType": {
     "flippers-*-mk1": {
       "abyssalDepths": {

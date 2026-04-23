@@ -1,8 +1,6 @@
-﻿using AbyssalDepths.src.CollectibleBehaviour;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -55,7 +53,7 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            bool hasFunctionalSuit = GetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
+            bool hasFunctionalSuit = ModSystemUnderwaterEquipment.GetFunctionalSuit(player, out List<ItemSlot> suitSlots, out int safeDepth);
             int baseSafeDepth = AbyssalDepthsModSystem.Config.BaseSafeDepth;
             int effectiveSafeDepth = hasFunctionalSuit ? safeDepth : baseSafeDepth;
             int waterDepth = GetWaterDepth(world, entity, effectiveSafeDepth);
@@ -76,12 +74,12 @@ namespace AbyssalDepths.src.Systems
             // If the worn suit is beyond its safe depth, damage it first
             if (hasFunctionalSuit && waterDepth > safeDepth)
             {
-                TryPlaySuitCreak(world, entity, waterDepth, safeDepth, suitSlots);
+                ModSystemUnderwaterEquipment.TryPlaySuitCreak(world, entity, waterDepth, safeDepth, suitSlots);
 
-                DamageSuit(world, entity, suitSlots, suitDamagePerSecond);
+                ModSystemUnderwaterEquipment.DamageSuit(world, entity, suitSlots, suitDamagePerSecond);
 
                 // If the full suit still has durability after the damage tick, the suit is still protecting
-                if (!SuitDamaged(suitSlots))
+                if (!ModSystemUnderwaterEquipment.SuitDamaged(suitSlots))
                 {
                     return;
                 }
@@ -118,121 +116,12 @@ namespace AbyssalDepths.src.Systems
             return GetDepthSeverity(depthOver);
         }
 
-        private static bool GetFunctionalSuit(IPlayer player, out List<ItemSlot> suitSlots, out int safeDepth)
-        {
-            suitSlots = new List<ItemSlot>();
-            safeDepth = 0;
-
-            if (!ModSystemUnderwaterEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
-            {
-                return false;
-            }
-
-            suitSlots = GetEquippedSuitSlots(player, suitSet);
-
-            if (SuitDamaged(suitSlots))
-            {
-                return false;
-            }
-
-            safeDepth = GetSuitSafeDepthFromBehavior(suitSlots);
-            return safeDepth > 0;
-        }
-
-        private static CollectibleBehaviorDivingEquipment? GetDivingEquipmentBehavior(ItemSlot? slot)
-        {
-            if (slot == null || slot.Itemstack == null)
-            {
-                return null;
-            }
-
-            return slot.Itemstack.Item.GetBehavior<CollectibleBehaviorDivingEquipment>();
-        }
-
-        private static void TryPlaySuitCreak(IServerWorldAccessor world, EntityPlayer entity, int waterDepth, int safeDepth, List<ItemSlot> suitSlots)
-        {
-            int depthOver = GameMath.Max(0, waterDepth - safeDepth);
-
-            float chance = GameMath.Clamp(0.01f + 0.005f * depthOver, 0f, 0.08f);
-
-            if (world.Rand.NextDouble() < chance)
-            {
-                AssetLocation? sound = GetSuitCreakSoundFromBehavior(suitSlots);
-                if (sound != null)
-                {
-                    world.PlaySoundAt(sound, entity, null, true, 14f);
-                }
-            }
-        }
-
-        private static AssetLocation? GetSuitCreakSoundFromBehavior(List<ItemSlot> slots)
-        {
-            foreach (ItemSlot slot in slots)
-            {
-                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
-                if (behavior == null)
-                {
-                    continue;
-                }
-
-                AssetLocation? creak = behavior.CreakSound;
-                if (creak != null)
-                {
-                    return creak;
-                }
-            }
-
-            return null;
-        }
-
-        private static AssetLocation? GetSuitBreakSoundFromBehavior(List<ItemSlot> slots)
-        {
-            foreach (ItemSlot slot in slots)
-            {
-                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
-                if (behavior == null)
-                {
-                    continue;
-                }
-
-                AssetLocation? breakSound = behavior.BreakSound;
-                if (breakSound != null)
-                {
-                    return breakSound;
-                }
-            }
-
-            return null;
-        }
-
-        private static int GetSuitSafeDepthFromBehavior(List<ItemSlot> suitSlots)
-        {
-            int maxSafeDepth = 0;
-
-            foreach (ItemSlot slot in suitSlots)
-            {
-                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
-                if (behavior == null)
-                {
-                    continue;
-                }
-
-                int safeDepth = behavior.SafeDepth;
-                if (safeDepth > maxSafeDepth)
-                {
-                    maxSafeDepth = safeDepth;
-                }
-            }
-
-            return maxSafeDepth;
-        }
-
         // checks a radius around the player's head for maximum water depth
         private static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity, int effectiveSafeDepth)
         {
             IBlockAccessor blockAccessor = world.BlockAccessor;
 
-            EntityPos entityPosition = entity.ServerPos ?? entity.Pos;
+            EntityPos entityPosition = entity.Pos;
             BlockPos centerPos = entityPosition.AsBlockPos;
 
             int maxY = blockAccessor.MapSizeY - 1;
@@ -275,7 +164,7 @@ namespace AbyssalDepths.src.Systems
             return maxDepth;
         }
 
-        // Measures how much water is above a position, stopping at open air or flowing water that is not enclosed.
+        // Measures how much water is above a position, stopping at open air or flowing water that is not enclosed
         private static int GetColumnWaterDepth(IBlockAccessor blockAccessor, int x, int z, int startY, int maxY, BlockPos reusablePos)
         {
             int depth = 0;
@@ -310,7 +199,7 @@ namespace AbyssalDepths.src.Systems
             return depth;
         }
 
-        // Checks whether a water block is open to air on enough sides to prevent pressure buildup.
+        // Checks whether a water block is open to air on enough sides to prevent pressure buildup
         private static bool IsExposedToAir(IBlockAccessor blockAccessor, int x, int y, int z, BlockPos reusablePos)
         {
             reusablePos.Set(x + 1, y, z);
@@ -335,111 +224,6 @@ namespace AbyssalDepths.src.Systems
             }
             return false;
         }
-
-        private static List<ItemSlot> GetEquippedSuitSlots(IPlayer player, string suitSet)
-        {
-            List<ItemSlot> slots = new();
-
-            IInventory inventory = player.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
-            if (inventory == null)
-            {
-                return slots;
-            }
-
-            foreach (ItemSlot slot in inventory)
-            {
-                if (slot?.Itemstack == null)
-                {
-                    continue;
-                }
-
-                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
-                if (behavior == null)
-                {
-                    continue;
-                }
-
-                if (behavior.SuitSet != suitSet)
-                {
-                    continue;
-                }
-
-                string bodypart = slot.Itemstack.Item.Variant["bodypart"];
-
-                if (bodypart != "head" && bodypart != "body" && bodypart != "legs")
-                {
-                    continue;
-                }
-
-                slots.Add(slot);
-            }
-
-            return slots;
-        }
-
-        private static bool SuitDamaged(List<ItemSlot> slots)
-        {
-            foreach (ItemSlot slot in slots)
-            {
-                if (slot?.Itemstack == null)
-                {
-                    return true;
-                }
-
-                int durability = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
-                if (durability <= 0)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static void DamageSuit(IServerWorldAccessor world, EntityPlayer entity, List<ItemSlot> slots, int amountPerPiece)
-        {
-            bool anyJustBroke = false;
-
-            foreach (ItemSlot slot in slots)
-            {
-                if (slot?.Itemstack == null)
-                {
-                    continue;
-                }
-
-                CollectibleBehaviorDivingEquipment? behavior = GetDivingEquipmentBehavior(slot);
-                if (behavior == null)
-                {
-                    continue;
-                }
-
-                int before = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
-
-                if (before <= 0)
-                {
-                    continue;
-                }
-
-                slot.Itemstack.Collectible.DamageItem(world, entity, slot, amountPerPiece);
-
-                int after = slot.Itemstack.Item.GetRemainingDurability(slot.Itemstack);
-
-                if (after <= 0 && before > 0)
-                {
-                    anyJustBroke = true;
-                }
-            }
-
-            if (anyJustBroke)
-            {
-                AssetLocation? sound = GetSuitBreakSoundFromBehavior(slots);
-                if (sound != null)
-                {
-                    world.PlaySoundAt(sound, entity, null, true, 32f);
-                }
-            }
-        }
-
         private static void ApplyPressureDamage(EntityPlayer entity, float amount)
         {
             if (amount <= 0 || !entity.Alive)

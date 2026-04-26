@@ -33,9 +33,9 @@
     },
     "divingsuit-head-*-mk2": {
       "abyssalDepths": {
-        "suitId": "mk1",
+        "suitId": "mk2",
         "maxOxygen": 600000,
-        "safeDepth": 40,
+        "safeDepth": 60,
         "weighted": false,
         "creakSound": "abyssaldepths:sounds/wearable/creak*",
         "breakSound": "abyssaldepths:sounds/wearable/break"

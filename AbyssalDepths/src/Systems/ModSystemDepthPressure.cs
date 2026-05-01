@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -23,11 +22,9 @@ namespace AbyssalDepths.src.Systems
                 return;
             }
 
-            IServerWorldAccessor world = sapi.World;
-
-            foreach (IPlayer player in world.AllOnlinePlayers)
+            foreach (IPlayer player in sapi.World.AllOnlinePlayers)
             {
-                ProcessPlayer(world, player);
+                ProcessPlayer(sapi.World, player);
             }
         }
 
@@ -121,8 +118,7 @@ namespace AbyssalDepths.src.Systems
         {
             IBlockAccessor blockAccessor = world.BlockAccessor;
 
-            EntityPos entityPosition = entity.Pos;
-            BlockPos centerPos = entityPosition.AsBlockPos;
+            BlockPos centerPos = entity.Pos.AsBlockPos;
 
             int maxY = blockAccessor.MapSizeY - 1;
 
@@ -145,10 +141,7 @@ namespace AbyssalDepths.src.Systems
             {
                 for (int dz = -sampleRadius; dz <= sampleRadius; dz++)
                 {
-                    int x = centerPos.X + dx;
-                    int z = centerPos.Z + dz;
-
-                    int depth = GetColumnWaterDepth(blockAccessor, x, z, headY, maxY, scanPos);
+                    int depth = GetColumnWaterDepth(blockAccessor, centerPos.X + dx, centerPos.Z + dz, headY, maxY, scanPos);
                     if (depth > maxDepth)
                     {
                         maxDepth = depth;
@@ -184,6 +177,7 @@ namespace AbyssalDepths.src.Systems
                 // Stop at a real surface
                 reusablePos.Set(x, y + 1, z);
                 Block above = blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid);
+
                 if (above == null || !above.IsLiquid())
                 {
                     break;
@@ -207,21 +201,25 @@ namespace AbyssalDepths.src.Systems
             {
                 return true;
             }
+
             reusablePos.Set(x - 1, y, z);
             if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
             {
                 return true;
             }
+
             reusablePos.Set(x, y, z + 1);
             if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
             {
                 return true;
             }
+
             reusablePos.Set(x, y, z - 1);
             if (!blockAccessor.GetBlock(reusablePos, BlockLayersAccess.Fluid).IsLiquid())
             {
                 return true;
             }
+
             return false;
         }
         private static void ApplyPressureDamage(EntityPlayer entity, float amount)

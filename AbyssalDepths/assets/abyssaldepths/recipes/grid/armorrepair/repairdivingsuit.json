@@ -2,49 +2,146 @@
 	{
 		"ingredientPattern": "BL,P_",
 		"recipeGroup": 2,
-		"ingredients": { 
-			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk1", "legs-mk1", "body-mk1" ] },
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-head-*-mk1", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
 			"P": { "type": "item", "code": "game:metalplate-copper" },
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
 		},
 		"width": 2,
 		"height": 2,
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk1 repair",
-		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
-},
+		"name": "divingsuit head mk1 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-{color}-mk1" }
+	},
 	{
 		"ingredientPattern": "BL,P_",
 		"recipeGroup": 2,
 		"ingredients": {
-			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk2", "legs-mk2", "body-mk2" ] },
-			"P": { "type": "item", "code": "game:metalplate-brass" },
-			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" }
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-body-*-mk1", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
+			"P": { "type": "item", "code": "game:metalplate-copper" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
 		},
 		"width": 2,
 		"height": 2,
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk2 repair",
-		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
+		"name": "divingsuit body mk1 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-{color}-mk1" }
 	},
 	{
-		"ingredientPattern": "B_,PC",
+		"ingredientPattern": "BL,P_",
 		"recipeGroup": 2,
 		"ingredients": {
-			"B": { "type": "item", "code": "abyssaldepths:divingsuit-*", "name": "type", "allowedVariants": [ "head-mk3", "legs-mk3", "body-mk3" ] },
-			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
-			"C": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-legs-*-mk1", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
+			"P": { "type": "item", "code": "game:metalplate-copper" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
 		},
 		"width": 2,
 		"height": 2,
 		"shapeless": true,
 		"copyAttributesFrom": "B",
 		"averageDurability": false,
-		"name": "divingsuit mk3 repair",
-		"output": { "type": "item", "code": "abyssaldepths:divingsuit-{type}" }
+		"name": "divingsuit legs mk1 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk1" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-head-*-mk2", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
+			"P": { "type": "item", "code": "game:metalplate-brass" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit head mk2 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-{color}-mk2" }
+	},
+
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-body-*-mk2", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
+			"P": { "type": "item", "code": "game:metalplate-brass" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit body mk2 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-{color}-mk2" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-legs-*-mk2", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] },
+			"P": { "type": "item", "code": "game:metalplate-brass" },
+			"L": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-*", "name": "color", "allowedVariants": ["plain","blue","red","yellow","green","purple","pink","orange","brown","gray","black","white"] }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit legs mk2 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk2" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-head-plain-mk3" },
+			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
+			"L": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit head mk3 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-head-plain-mk3" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-body-plain-mk3" },
+			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
+			"L": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit body mk3 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-plain-mk3" }
+	},
+	{
+		"ingredientPattern": "BL,P_",
+		"recipeGroup": 2,
+		"ingredients": {
+			"B": { "type": "item", "code": "abyssaldepths:divingsuit-legs-plain-mk3" },
+			"P": { "type": "item", "code": "abyssaldepths:reinforcedplate" },
+			"L": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+		},
+		"width": 2,
+		"height": 2,
+		"shapeless": true,
+		"copyAttributesFrom": "B",
+		"averageDurability": false,
+		"name": "divingsuit legs mk3 repair",
+		"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-plain-mk3" }
 	}
 ]

@@ -3,7 +3,7 @@
     public class AbyssalDepthsConfig
     {
         public bool EnablePressure = true;
-        public int BaseSafeDepth = 20;
+        public int BaseSafeDepth = 10;
         public bool EnableSchematicCrafting = false;
     }
 }

@@ -10,7 +10,7 @@ using Vintagestory.GameContent;
 
 namespace AbyssalDepths.src.Systems
 {
-    public class ModSystemUnderwaterEquipment : ModSystem
+    public class ModSystemDivingEquipment : ModSystem
     {
         private const string DisableSwimKey = "abyssalDepthsDisableSwim";
         private const string FullSuitKey = "abyssalDepthsFullDivingSuit";
@@ -236,6 +236,7 @@ namespace AbyssalDepths.src.Systems
             else if (foundSuitSet != suitSet)
             {
                 foundSuitSet = null;
+                bodypartsFound.Clear();
                 return;
             }
 
@@ -278,7 +279,7 @@ namespace AbyssalDepths.src.Systems
             suitSlots = new List<ItemSlot>();
             safeDepth = 0;
 
-            if (!ModSystemUnderwaterEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
+            if (!ModSystemDivingEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
             {
                 return false;
             }

@@ -19,7 +19,11 @@ namespace AbyssalDepths.src.Patches
             SyncedTreeAttribute attributes = entityPlayer.WatchedAttributes;
             if (attributes?.GetBool("abyssalDepthsDisableSwim") == true)
             {
-                entityPlayer.Swimming = false;
+                EntityPos pos = entityPlayer.Pos;
+                if (pos != null && !double.IsNaN(pos.X) && !double.IsNaN(pos.Y) && !double.IsNaN(pos.Z))
+                {
+                    entityPlayer.Swimming = false;
+                }
             }
         }
     }

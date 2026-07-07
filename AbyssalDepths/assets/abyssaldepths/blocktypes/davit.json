@@ -1,334 +1,46 @@
 {
-	code: "chest",
-	//class: "BlockGenericTypedContainer",
-	//entityclass: "GenericTypedContainer",
-	//attributes: {
-	//	humanoidTraversalCost: 100,
-	//	reinforcable: true,
-	//	partialAttachable: true,
-	//	inventoryClassName: "chest",
-	//	defaultType: "normal-generic",
-	//	types: ["normal-generic", "golden", "owl", "golden-aged", "owl-aged", "normal-aged","collapsed1", "collapsed2", "collapsed3",  "collapsed4"],
-	//	collisionSelectionBoxes: {
-	//		owl: [{ x1: 0.125, y1: 0, z1: 0.1875, x2: 0.875, y2: 0.4875, z2: 0.75 }],
-	//		"owl-aged": [{ x1: 0.125, y1: 0, z1: 0.1875, x2: 0.875, y2: 0.4875, z2: 0.75 }],
-	//		golden: [{ x1: 0.125, y1: 0, z1: 0.1875, x2: 0.875, y2: 0.4875, z2: 0.75 }],
-	//		"golden-aged": [{ x1: 0.125, y1: 0, z1: 0.1875, x2: 0.875, y2: 0.4875, z2: 0.75 }]
-	//	},
-	//	rotatatableInterval: {
-	//		"normal-generic": "22.5degnot45deg",
-	//		golden: "22.5deg",
-	//		owl: "22.5deg",
-	//		"normal-aged": "22.5degnot45deg",
-	//		"golden-aged": "22.5deg",
-	//		"owl-aged": "22.5deg",
-	//		collapsed1: "22.5degnot45deg",
-	//		collapsed2: "22.5degnot45deg",
-	//		collapsed3: "22.5degnot45deg",
-	//		collapsed4: "22.5degnot45deg"
-	//	},
-	//	drop: {
-	//		"normal-generic": true,
-	//		golden: true,
-	//		owl: true,
-	//		"normal-aged": true,
-	//		"golden-aged": true,
-	//		"owl-aged": true,
-	//		collapsed1: false,
-	//		collapsed2: false,
-	//		collapsed3: false,
-	//		collapsed4: false
-	//	},
-	//	quantitySlots: {
-	//		"normal-generic": 16,
-	//		golden: 4,
-	//		owl: 4,
-	//		"normal-aged": 16,
-	//		"golden-aged": 4,
-	//		"owl-aged": 4,
-	//		collapsed1: 8,
-	//		collapsed2: 8,
-	//		collapsed3: 8,
-	//		collapsed4: 8
-	//	},
-	//	dialogTitleLangCode: {
-	//		"normal-generic": "chestcontents",
-	//		golden: "chestcontents",
-	//		owl: "chestcontents",
-	//		"normal-aged": "chestcontents",
-	//		"golden-aged": "chestcontents",
-	//		"owl-aged": "chestcontents",
-	//		collapsed1: "chestcontents",
-	//		collapsed2: "chestcontents",
-	//		collapsed3: "chestcontents",
-	//		collapsed4: "chestcontents"
-	//	},
-	//	storageType: {
-	//		"normal-generic": 189,
-	//		golden: 72,
-	//		owl: 72,
-	//		"normal-aged": 189,
-	//		"golden-aged": 72,
-	//		"owl-aged": 72,
-	//		collapsed1: 189,
-	//		collapsed2: 189,
-	//		collapsed3: 189,
-	//		collapsed4: 189
-	//	},
-	//	retrieveOnly: {
-	//		"normal-generic": false,
-	//		golden: false,
-	//		owl: false,
-	//		"normal-aged": false,
-	//		"golden-aged": false,
-	//		"owl-aged": false,
-	//		collapsed1: true,
-	//		collapsed2: true,
-	//		collapsed3: true,
-	//		collapsed4: true
-	//	},
-	//	changeIntoWhenEmpty: {
-	//		collapsed1: { type: "block", code: "clutter", attributes: { type: "chestrubble" } },
-	//		collapsed2: { type: "block", code: "clutter", attributes: { type: "chestrubble" } },
-	//		collapsed3: { type: "block", code: "clutter", attributes: { type: "chestrubble" } },
-	//		collapsed4: { type: "block", code: "clutter", attributes: { type: "chestrubble" } }
-	//	},
-	//	shape: {
-	//		"normal-generic": "block/wood/chest/normal",
-	//		golden: "block/wood/chest/golden",
-	//		owl: "block/wood/chest/owl",
-	//		"normal-aged": "block/wood/chest/normal",
-	//		"golden-aged": "block/wood/chest/golden",
-	//		"owl-aged": "block/wood/chest/owl",
-	//		collapsed1: "block/wood/chest/collapsed1",
-	//		collapsed2: "block/wood/chest/collapsed2",
-	//		collapsed3: "block/wood/chest/collapsed3",
-	//		collapsed4: "block/wood/chest/collapsed4",
-	//	},
-	//	openSound: { path: "block/chestopen", pitch: { avg: 1.0, var: 0.25 } },
-	//	closeSound: { path: "block/chestclose", pitch: { avg: 1.0, var: 0.25 } },
-	//	typedOpenSound: {
-	//		"normal-generic": "sounds/block/largechestopen",
-	//		"normal-aged": "sounds/block/largechestopen",
-	//		"collapsed1": "sounds/block/largechestopen",
-	//		"collapsed2": "sounds/block/largechestopen",
-	//		"collapsed3": "sounds/block/largechestopen",
-	//		"collapsed4": "sounds/block/largechestopen"
-	//	},
-	//	typedCloseSound: {
-	//		"normal-generic": "sounds/block/largechestclose",
-	//		"normal-aged": "sounds/block/largechestclose",
-	//		"collapsed1": "sounds/block/largechestclose",
-	//		"collapsed2": "sounds/block/largechestclose",
-	//		"collapsed3": "sounds/block/largechestclose",
-	//		"collapsed4": "sounds/block/largechestclose"
-	//	},
-	//	variantByGroup: "side",
-	//	variantByGroupInventory: null
-	//},
-	//behaviors: [
-	//	{ name: "Lockable" }, 
-	//	{ name: "Container"}, 
-	//	{ name: "BoatableGenericTypedContainer" }
-	//],
-	//entityBehaviors: [{ name: "Animatable" }],
-	//variantgroups: [
-	//	{ code: "side", loadFromProperties: "abstract/horizontalorientation" }
-	//],
-	//creativeinventory: {  },
-	//creativeinventoryStacksByType: {
-	//	"*-east": [
-	//		{
-	//			tabs: [ "general", "decorative" ],
-	//			stacks: [
-	//				{ type: "block", code: "chest-east", attributes: { type: "normal-generic" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "golden" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "owl" } },
-	//			]
-	//		},
-	//		{
-	//			tabs: [ "general", "clutter" ],
-	//			stacks: [
-	//				{ type: "block", code: "chest-east", attributes: { type: "normal-aged" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "golden-aged" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "owl-aged" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "collapsed1" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "collapsed2" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "collapsed3" } },
-	//				{ type: "block", code: "chest-east", attributes: { type: "collapsed4" } }
-	//			]
-	//		}
-	//	]
-	//},
-	//heldTpIdleAnimation: "holdunderarm",
-	//shapeInventory: { base: "block/wood/chest/normal", rotateY: 270 },
-	//shapeByType: {
-	//	"*-north": { base: "block/wood/chest/normal", rotateY: 0 },
-	//	"*-east": { base: "block/wood/chest/normal", rotateY: 270 },
-	//	"*-west": { base: "block/wood/chest/normal", rotateY: 90 },
-	//	"*-south": { base: "block/wood/chest/normal", rotateY: 180 },
-	//},
-	//// Must declare textures so they get added to the block texture atlas
-	//textures: {
-	//	"normal-generic-sides2": { base: "block/wood/trunk/sides" },
-	//	"normal-generic-lid": { base: "block/wood/trunk/lid" },
-	//	"normal-generic-accessories": { base: "block/wood/trunk/accessories" },
-
-	//	"normal-aged-sides2": { base: "block/wood/trunk/aged-sides" },
-	//	"normal-aged-lid": { base: "block/wood/trunk/aged-lid" },
-	//	"normal-aged-accessories": { base: "block/wood/trunk/aged-accessories" },
-
-	//	"collapsed4-corners": { base: "block/wood/chest/aged/corners" },
-	//	"collapsed4-lid": { base: "block/wood/chest/aged/lid" },
-	//	"collapsed4-lid2": { base: "block/wood/chest/aged/lid" },
-	//	"collapsed4-sides": { base: "block/wood/chest/aged/sides" },
-	//	"collapsed4-floor": { base: "block/wood/chest/aged/floor" },
-	//	"collapsed4-accessories": { base: "block/wood/trunk/aged-accessories" },
-		
-	//	"collapsed1-corners": {
-	//		base: "block/wood/chest/aged/corners",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed1-lid": { 
-	//		base: "block/wood/chest/aged/lid",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed1-sides": { 
-	//		base: "block/wood/chest/aged/sides",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed1-floor": { 
-	//		base: "block/wood/chest/aged/floor",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-		
-	//	"collapsed2-corners": {
-	//		base: "block/wood/chest/aged/corners",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed2-lid": { 
-	//		base: "block/wood/chest/aged/lid",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed2-sides": { 
-	//		base: "block/wood/chest/aged/sides",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed2-floor": { 
-	//		base: "block/wood/chest/aged/floor",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-		
-
-	//	"collapsed3-corners": {
-	//		base: "block/wood/chest/aged/corners",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/corners", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed3-lid": { 
-	//		base: "block/wood/chest/aged/lid",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/lid", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed3-sides": { 
-	//		base: "block/wood/chest/aged/sides",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/sides", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-	//	"collapsed3-floor": { 
-	//		base: "block/wood/chest/aged/floor",
-	//		alternates: [
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen1" ] },
-	//			{ base: "block/wood/chest/aged/floor", overlays: [ "block/overlay/lichen2" ] }
-	//		]
-	//	},
-		
-		
-	//	"golden-top": { base: "block/wood/chest/golden/top" },
-	//	"golden-sides2": { base: "block/wood/chest/golden/sides2" },
-	//	"golden-sides1":{ base: "block/wood/chest/golden/sides1" },
-	//	"golden-inside": { base: "block/wood/chest/golden/inside" },
-
-	//	"owl-top": { base: "block/wood/chest/owl/top" },
-	//	"owl-sides2": { base: "block/wood/chest/owl/sides2" },
-	//	"owl-sides1": { base: "block/wood/chest/owl/sides1" },
-	//	"owl-inside": { base: "block/wood/chest/owl/inside" },
-		
-	//	"golden-aged-top": { base: "block/wood/chest/golden-aged/top" },
-	//	"golden-aged-sides2": { base: "block/wood/chest/golden-aged/sides2" },
-	//	"golden-aged-sides1":{ base: "block/wood/chest/golden-aged/sides1" },
-	//	"golden-aged-inside": { base: "block/wood/chest/golden-aged/inside" },
-
-	//	"owl-aged-top": { base: "block/wood/chest/owl-aged/top" },
-	//	"owl-aged-sides2": { base: "block/wood/chest/owl-aged/sides2" },
-	//	"owl-aged-sides1": { base: "block/wood/chest/owl-aged/sides1" },
-	//	"owl-aged-inside": { base: "block/wood/chest/owl-aged/inside" }
-	//},
-	//blockmaterial: "Wood",
-	//replaceable: 900,
-	//resistance: 3,
-	//lightAbsorption: 0,
-	//sideAo: { all: false },
-	//sidesolid: {
-	//	all: false
-	//},
-	//sideopaque: {
-	//	all: false
-	//},
-	//collisionbox: {
-	//	x1: 0.0625, y1: 0, z1: 0.0625, x2: 0.9375, y2: 0.8125, z2: 0.9375
-	//},
-	//selectionbox: {
-	//	x1: 0.0625, y1: 0, z1: 0.0625, x2: 0.9375, y2: 0.8125, z2: 0.9375
-	//},
-	//combustibleProps: {
-	//	burnTemperature: 600,
-	//	burnDuration: 35,
-	//},
-	//sounds: {
-	//	"place": "block/planks",
-	//	"hit": "block/planks",
-	//	"break": "block/planks",
-	//	"walk": "walk/wood"
-	//},
-	//materialDensity: 600,
-	//tpHandTransform: {
-	//	translation: { x: -0.9, y: -0.5, z: -0.3 },
-	//	rotation: { x: 0, y: 90, z: -102 },
-	//	scale: 0.56
-	//},
-	//guiTransform: {
-	//	origin: { x: 0.5, y: 0.4, z: 0.5 },
-	//	scale: 1.16
-	//}
+	"code": "davit",
+	"class": "ItemDavit",
+	"behaviors": [
+		{ "name": "GroundStorable", "properties": { "layout": "SingleCenter", "collisionBox": { "x1": 0.1, "y1":0, "z1": 0.2, "x2": 0.9, "y2": 0.75, "z2": 0.8 } } }
+	],
+	"variantgroups": [
+		{ "code": "type", "states": [ "stone" ] }
+	],
+	"attributes": {
+		"loweredDavitShape": { "base": "entity/nonliving/boat/sailed-davit-lowered" },
+		"attachableToEntity": {
+			"categoryCode": "davit",
+			"attachedShapeBySlotCode": {
+				"Left Prow Storage": { "base": "entity/nonliving/boat/sailed-davit" }
+			}
+		}
+	},
+	"shape": { "base": "entity/nonliving/boat/sailed-davit" },
+	"texturesByType": {
+		"*": {
+			"granitegradient": { "base": "block/stone/rock/granite1", "blendedOverlays": [ { "base": "block/stone/quern/baseside", "blendMode": "Overlay" } ] }
+		}
+	},
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"maxstacksize": 1,
+	"materialDensity": 400,
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": -32, "y": 16, "z": -180 },
+		"origin": { "x": 0.5299, "y": 0.425, "z": 0.5 },
+		"scale": 1.51
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 0, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 2.8
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.7, "y": -0.28, "z": -0.8 },
+		"rotation": { "x": -78, "y": 7, "z": 8 },
+		"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
+		"scale": 0.7
+	}
 }

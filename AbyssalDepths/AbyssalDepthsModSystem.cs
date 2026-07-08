@@ -1,6 +1,7 @@
 ﻿using AbyssalDepths.src.CollectibleBehaviour;
 using AbyssalDepths.src.Config;
 using AbyssalDepths.src.Entities.Behaviors;
+using AbyssalDepths.src.Items;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace AbyssalDepths
 
             api.RegisterCollectibleBehaviorClass($"{Mod.Info.ModID}:DivingEquipment", typeof(CollectibleBehaviorDivingEquipment));
             api.RegisterEntityBehaviorClass($"{Mod.Info.ModID}:Pressure", typeof(EntityBehaviorPressure));
+            api.RegisterItemClass($"{Mod.Info.ModID}:ItemDavit", typeof(ItemDavit));
 
             new Harmony("abyssaldepths.divingsuit").PatchAll();
         }

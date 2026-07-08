@@ -8,15 +8,15 @@
 		{ "code": "type", "states": [ "metal" ] }
 	],
 	"attributes": {
-		"loweredDavitShape": { "base": "entity/nonliving/boat/sailed-davit-lowered" },
+		"loweredDavitShape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit-lowered" },
 		"attachableToEntity": {
 			"categoryCode": "davit",
 			"attachedShapeBySlotCode": {
-				"Right Storage 3": { "base": "entity/nonliving/boat/sailed-davit" }
+				"Right Storage 3": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" }
 			}
 		}
 	},
-	"shape": { "base": "entity/nonliving/boat/sailed-davit" },
+	"shape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" },
 	"texturesByType": {
 		"*": {
 			"metal": { "base": "game:block/metal/plate/*" }

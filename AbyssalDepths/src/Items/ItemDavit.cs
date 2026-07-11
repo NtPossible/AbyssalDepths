@@ -15,10 +15,15 @@ namespace AbyssalDepths.src.Items
     {
         CompositeShape loweredShape;
 
+        protected ClothManager clothManager;
+        protected Vec3f offsetToDavitTp = null!;
+
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
+            clothManager = api.ModLoader.GetModSystem<ClothManager>();
             loweredShape = Attributes["loweredDavitShape"].AsObject<CompositeShape>();
+            offsetToDavitTp = new Vec3f(0,0,0);
         }
 
         public CompositeShape GetAttachedShape(ItemStack stack, string slotCode)
@@ -29,8 +34,42 @@ namespace AbyssalDepths.src.Items
         public void OnInteract(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityAgent byEntity, Vec3d hitPosition, EnumInteractMode mode, ref EnumHandling handled, Action onRequireSave)
         {
             // on interact with a diving bell, attach the diving bell to the davit if possible
-            itemslot.Itemstack.Attributes.SetBool("lowered", !itemslot.Itemstack.Attributes.GetBool("lowered"));
+            LowerDavit(itemslot, byEntity, onEntity);
             onEntity.MarkShapeModified();
+        }
+
+        private void LowerDavit(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        {
+            // if just a rope, then extend a rope from the davit
+            itemslot.Itemstack.Attributes.SetBool("lowered", !itemslot.Itemstack.Attributes.GetBool("lowered"));
+            if (itemslot.Itemstack.Attributes.GetBool("lowered"))
+            {
+                CreateDavitRope(itemslot, (EntityBoat)onEntity);
+            }
+            else
+            {
+                clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+                itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
+            }
+
+            // TODO: if a rope and diving bell is in inv then deploy both but attach the diving bell to the rope
+        }
+
+        private ClothSystem CreateDavitRope(ItemSlot slot, EntityBoat boat)
+        {
+            Vec3d startPos = boat.Pos.XYZ;
+            Vec3d endPos = startPos.Clone().Add(0, -8, 0);
+            ClothSystem clothSystem = ClothSystem.CreateRope(api, clothManager, startPos, endPos, null, 4f);
+            clothSystem.ChangeRopeLength(0.5);
+            clothSystem.CanPull = false;
+            clothSystem.CanRip = false;
+            clothSystem.FirstPoint.PinTo(boat, offsetToDavitTp);
+            clothSystem.LastPoint.NoAttachTransform = true;
+            clothSystem.RopeRenderThickness = 1f;
+            clothManager.RegisterCloth(clothSystem);
+            slot.Itemstack?.Attributes.SetInt("clothId", clothSystem.ClothId);
+            slot.MarkDirty();
+            return clothSystem;
         }
 
         public int RequiresBehindSlots { get; set; } = 0;
@@ -51,12 +90,19 @@ namespace AbyssalDepths.src.Items
         {
             itemslot.Itemstack.Attributes.RemoveAttribute("lowered");
             // on detach remove the attached diving bell if there is one
+            clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+            itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
         }
 
-        public void OnEntityDeath(ItemSlot itemslot, int slotIndex, Entity onEntity, DamageSource damageSourceForDeath) { }
+        public void OnEntityDeath(ItemSlot itemslot, int slotIndex, Entity onEntity, DamageSource damageSourceForDeath) {
+            clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+            itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
+        }
 
-        public void OnEntityDespawn(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityDespawnData despawn) { }
-
+        public void OnEntityDespawn(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityDespawnData despawn) {
+            clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+            itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
+        }
 
         public void OnReceivedClientPacket(ItemSlot itemslot, int slotIndex, Entity onEntity, IServerPlayer player, int packetid, byte[] data, ref EnumHandling handled, Action onRequireSave) { }
 

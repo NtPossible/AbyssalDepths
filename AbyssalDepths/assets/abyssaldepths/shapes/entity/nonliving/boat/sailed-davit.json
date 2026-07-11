@@ -98,22 +98,32 @@
 					}
 				},
 				{
-					"name": "cube6",
-					"from": [ -1.0, 30.0, 42.0 ],
+					"name": "davit",
+					"from": [ -1.0, 30.0, 41.0 ],
 					"to": [ 1.0, 33.0, 43.0 ],
 					"climateColorMap": "",
 					"seasonColorMap": "",
 					"renderPass": 0,
-					"rotationOrigin": [ 0.0, 31.5, 42.5 ],
+					"rotationOrigin": [ 0.0, 31.5, 41.5 ],
 					"faces": {
 						"north": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [2,3,3,2] },
-						"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"east": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 3.0 ] },
 						"south": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 3.0 ] },
-						"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
-						"up": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
-						"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 1.0 ] }
+						"west": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 3.0 ] },
+						"up": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#brass", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					},
+					"attachmentpoints": [
+						{
+							"code": "rope",
+							"posX": "1.0","posY": "1.0","posZ": "1.0",
+							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+						}
+					]
 					}
+			]
 				}
+	],
+	"animations": [
 			]
 		}
-	]}

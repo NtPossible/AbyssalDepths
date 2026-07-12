@@ -33,26 +33,44 @@ namespace AbyssalDepths.src.Items
 
         public void OnInteract(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityAgent byEntity, Vec3d hitPosition, EnumInteractMode mode, ref EnumHandling handled, Action onRequireSave)
         {
-            // on interact with a diving bell, attach the diving bell to the davit if possible
-            LowerDavit(itemslot, byEntity, onEntity);
-            onEntity.MarkShapeModified();
+            if (onEntity.World.Side != EnumAppSide.Server)
+            {
+                return;
+            }
+
+            EntityControls controls = byEntity.MountedOn?.Controls ?? byEntity.Controls;
+            if (mode == EnumInteractMode.Interact && controls.CtrlKey)
+            {
+                return;
+            }
+            LowerOrRaiseRope(itemslot, byEntity, onEntity);
         }
 
-        private void LowerDavit(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        // if just a rope, then extend a rope from the davit
+        private void LowerOrRaiseRope(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
         {
-            // if just a rope, then extend a rope from the davit
-            itemslot.Itemstack.Attributes.SetBool("lowered", !itemslot.Itemstack.Attributes.GetBool("lowered"));
-            if (itemslot.Itemstack.Attributes.GetBool("lowered"))
+            if (byEntity.ActiveHandItemSlot.Itemstack?.Collectible.Code.Path == "rope")
             {
-                CreateDavitRope(itemslot, (EntityBoat)onEntity);
+                byEntity.ActiveHandItemSlot.TakeOut(1);
+                itemslot.Itemstack.Attributes.SetBool("lowered", !itemslot.Itemstack.Attributes.GetBool("lowered"));
+                if (itemslot.Itemstack.Attributes.GetBool("lowered"))
+                {
+                    CreateDavitRope(itemslot, (EntityBoat)onEntity);
+                }
+                else
+                {
+                    byEntity.TryGiveItemStack(new ItemStack(byEntity.World.GetItem(new AssetLocation("rope"))));
+                    clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+                    itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
+                }
+                onEntity.MarkShapeModified();
             }
-            else
-            {
-                clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
-                itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
-            }
+        }
 
-            // TODO: if a rope and diving bell is in inv then deploy both but attach the diving bell to the rope
+        // TODO: if a rope and diving bell is in inv then deploy both but attach the diving bell to the rope
+        private void LowerDivingBell(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        {
+
         }
 
         private ClothSystem CreateDavitRope(ItemSlot slot, EntityBoat boat)
@@ -60,7 +78,6 @@ namespace AbyssalDepths.src.Items
             Vec3d startPos = boat.Pos.XYZ;
             Vec3d endPos = startPos.Clone().Add(0, -8, 0);
             ClothSystem clothSystem = ClothSystem.CreateRope(api, clothManager, startPos, endPos, null, 4f);
-            clothSystem.ChangeRopeLength(0.5);
             clothSystem.CanPull = false;
             clothSystem.CanRip = false;
             clothSystem.FirstPoint.PinTo(boat, offsetToDavitTp);

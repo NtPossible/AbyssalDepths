@@ -13,6 +13,19 @@ namespace AbyssalDepths
     {
         public static AbyssalDepthsConfig Config { get; private set; } = new();
 
+        private Harmony? harmony;
+        private const string HarmonyId = "abyssaldepths.divingsuit";
+
+        public override void StartPre(ICoreAPI api)
+        {
+            base.StartPre(api);
+            if (!Harmony.HasAnyPatches(HarmonyId))
+            {
+                harmony = new Harmony(HarmonyId);
+                harmony.PatchAll();
+            }
+        }
+
         public override void Start(ICoreAPI api)
         {
             TryLoadConfig(api);
@@ -21,7 +34,6 @@ namespace AbyssalDepths
             api.RegisterEntityBehaviorClass($"{Mod.Info.ModID}:Pressure", typeof(EntityBehaviorPressure));
             api.RegisterItemClass($"{Mod.Info.ModID}:ItemDavit", typeof(ItemDavit));
 
-            new Harmony("abyssaldepths.divingsuit").PatchAll();
         }
 
         public static void TryLoadConfig(ICoreAPI api)
@@ -47,6 +59,12 @@ namespace AbyssalDepths
 
             List<GridRecipe> recipes = api.World.GridRecipes;
             recipes.RemoveAll(recipe => recipe?.Output?.Code?.Path?.StartsWith("ad-schematic-divinggear") == true);
+        }
+
+        public override void Dispose()
+        {
+            harmony?.UnpatchAll(HarmonyId);
+            base.Dispose();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace AbyssalDepths.src.Items
             base.OnLoaded(api);
             clothManager = api.ModLoader.GetModSystem<ClothManager>();
             loweredShape = Attributes["loweredDavitShape"].AsObject<CompositeShape>();
-            offsetToDavitTp = new Vec3f(0,0,0);
+            offsetToDavitTp = new Vec3f(0, 0, 0);
         }
 
         public CompositeShape GetAttachedShape(ItemStack stack, string slotCode)
@@ -43,34 +43,52 @@ namespace AbyssalDepths.src.Items
             {
                 return;
             }
-            LowerOrRaiseRope(itemslot, byEntity, onEntity);
+
+            if (itemslot.Itemstack.Attributes.GetBool("lowered"))
+            {
+                RaiseRope(itemslot, byEntity, onEntity);
+            }
+            else
+            {
+                LowerRope(itemslot, byEntity, onEntity);
+            }
         }
 
         // if just a rope, then extend a rope from the davit
-        private void LowerOrRaiseRope(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        private void LowerRope(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
         {
-            if (byEntity.ActiveHandItemSlot.Itemstack?.Collectible.Code.Path == "rope")
+            if (byEntity.ActiveHandItemSlot.Itemstack?.Collectible.Code.Path != "rope")
             {
-                byEntity.ActiveHandItemSlot.TakeOut(1);
-                itemslot.Itemstack.Attributes.SetBool("lowered", !itemslot.Itemstack.Attributes.GetBool("lowered"));
-                if (itemslot.Itemstack.Attributes.GetBool("lowered"))
-                {
-                    CreateDavitRope(itemslot, (EntityBoat)onEntity);
-                }
-                else
-                {
-                    byEntity.TryGiveItemStack(new ItemStack(byEntity.World.GetItem(new AssetLocation("rope"))));
-                    clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
-                    itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
-                }
-                onEntity.MarkShapeModified();
+                return;
             }
+            byEntity.ActiveHandItemSlot.TakeOut(1);
+            byEntity.ActiveHandItemSlot.MarkDirty();
+
+            itemslot.Itemstack.Attributes.SetBool("lowered", true);
+            CreateDavitRope(itemslot, (EntityBoat)onEntity);
+
+            onEntity.MarkShapeModified();
+        }
+
+        private void RaiseRope(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        {
+            itemslot.Itemstack.Attributes.SetBool("lowered", false);
+            byEntity.TryGiveItemStack(new ItemStack(byEntity.World.GetItem(new AssetLocation("rope"))));
+            clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
+            itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
+
+            onEntity.MarkShapeModified();
         }
 
         // TODO: if a rope and diving bell is in inv then deploy both but attach the diving bell to the rope
         private void LowerDivingBell(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
         {
 
+        }
+
+        // TODO: remove diving bell and rope if diving bell is pulled all the way up
+        private void RaiseDivingBell(ItemSlot itemslot, EntityAgent byEntity, Entity onEntity)
+        {
         }
 
         private ClothSystem CreateDavitRope(ItemSlot slot, EntityBoat boat)
@@ -100,23 +118,24 @@ namespace AbyssalDepths.src.Items
         public void OnAttached(ItemSlot itemslot, int slotIndex, Entity toEntity, EntityAgent byEntity)
         {
             itemslot.Itemstack.Attributes.RemoveAttribute("lowered");
-            // davit should never have a diving bell attched when its not placed
         }
 
+        // TODO: when the davit is removed from the boat, the rope or diving bell is also removed
         public void OnDetached(ItemSlot itemslot, int slotIndex, Entity fromEntity, EntityAgent byEntity)
         {
             itemslot.Itemstack.Attributes.RemoveAttribute("lowered");
-            // on detach remove the attached diving bell if there is one
             clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
             itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
         }
 
-        public void OnEntityDeath(ItemSlot itemslot, int slotIndex, Entity onEntity, DamageSource damageSourceForDeath) {
+        public void OnEntityDeath(ItemSlot itemslot, int slotIndex, Entity onEntity, DamageSource damageSourceForDeath)
+        {
             clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
             itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
         }
 
-        public void OnEntityDespawn(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityDespawnData despawn) {
+        public void OnEntityDespawn(ItemSlot itemslot, int slotIndex, Entity onEntity, EntityDespawnData despawn)
+        {
             clothManager.UnregisterCloth(itemslot.Itemstack.Attributes.GetInt("clothId", 0));
             itemslot.Itemstack.Attributes.RemoveAttribute("clothId");
         }

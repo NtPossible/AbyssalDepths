@@ -279,7 +279,7 @@ namespace AbyssalDepths.src.Systems
             suitSlots = new List<ItemSlot>();
             safeDepth = 0;
 
-            if (!ModSystemDivingEquipment.GetEquippedDivingSuitSet(player, out string suitSet))
+            if (!GetEquippedDivingSuitSet(player, out string suitSet))
             {
                 return false;
             }

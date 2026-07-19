@@ -1,10 +1,10 @@
 {
-  "ingredientPattern": "A,B",
-  "ingredients": {
-    "A": { "type": "item", "code": "abyssaldepths:sealedheavycanvas-{color}", "name": "color" },
-    "B": { "type": "item", "code": "abyssaldepths:waxedcloth" }
-  },
-  "width": 1,
-  "height": 2,
-  "output": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}" }
+    "ingredientPattern": "A,B",
+    "ingredients": {
+        "A": { "type": "item", "code": "abyssaldepths:sealedheavycanvas-{color}", "name": "color" },
+        "B": { "type": "item", "code": "abyssaldepths:waxedcloth" }
+    },
+    "width": 1,
+    "height": 2,
+    "output": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}" }
 }

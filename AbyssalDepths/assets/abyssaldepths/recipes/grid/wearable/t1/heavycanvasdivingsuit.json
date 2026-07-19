@@ -1,12 +1,12 @@
 {
-	"ingredientPattern": "ABA,ACA,DAD",
-	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
-		"B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"C": { "type": "item", "code": "game:ingot-copper", "quantity": 5 },
-		"D": { "type": "block", "code": "game:metal-parts", "quantity": 4 }
-	},
-	"width": 3,
-	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-{color}-mk1" }
+    "ingredientPattern": "ABA,ACA,DAD",
+    "ingredients": {
+        "A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+        "B": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+        "C": { "type": "item", "code": "game:ingot-copper", "quantity": 5 },
+        "D": { "type": "block", "code": "game:metal-parts", "quantity": 4 }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "item", "code": "abyssaldepths:divingsuit-body-{color}-mk1" }
 }

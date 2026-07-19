@@ -1,13 +1,13 @@
 {
-	"ingredientPattern": "ADA,BEB,BFB",
-	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:waxedcloth", "quantity": 8 },
-		"B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 6 },
-		"D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"E": { "type": "item", "code": "game:jonasframes-spring01" },
-		"F": { "type": "item", "code": "game:metalplate-cupronickel", "quantity": 3 }
-	},
-	"width": 3,
-	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-body-plain-mk3" }
+    "ingredientPattern": "ADA,BEB,BFB",
+    "ingredients": {
+        "A": { "type": "item", "code": "abyssaldepths:waxedcloth", "quantity": 8 },
+        "B": { "type": "item", "code": "abyssaldepths:reinforcedplate", "quantity": 6 },
+        "D": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+        "E": { "type": "item", "code": "game:jonasframes-spring01" },
+        "F": { "type": "item", "code": "game:metalplate-cupronickel", "quantity": 3 }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "item", "code": "abyssaldepths:divingsuit-body-plain-mk3" }
 }

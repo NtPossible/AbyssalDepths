@@ -1,13 +1,13 @@
 {
-	"ingredientPattern": "AAA,BCB,DED",
-	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
-		"B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
-		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"D": { "type": "item", "code": "game:ingot-lead" },
-		"E": { "type": "item", "code": "game:metalplate-brass", "quantity": 2 }
-	},
-	"width": 3,
-	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk2" }
+    "ingredientPattern": "AAA,BCB,DED",
+    "ingredients": {
+        "A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+        "B": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" , "quantity": 2 },
+        "C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+        "D": { "type": "item", "code": "game:ingot-lead" },
+        "E": { "type": "item", "code": "game:metalplate-brass", "quantity": 2 }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk2" }
 }

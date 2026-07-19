@@ -1,12 +1,12 @@
 {
-	"ingredientPattern": "BAB,ACA,D_D",
-	"ingredients": {
-		"A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
-		"B": { "type": "block", "code": "game:metal-parts", "quantity": 4 },
-		"C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
-		"D": { "type": "item", "code": "game:ingot-lead" }
-	},
-	"width": 3,
-	"height": 3,
-	"output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk1" }
+    "ingredientPattern": "BAB,ACA,D_D",
+    "ingredients": {
+        "A": { "type": "item", "code": "abyssaldepths:heavycanvaslayer-{color}", "name": "color" },
+        "B": { "type": "block", "code": "game:metal-parts", "quantity": 4 },
+        "C": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear", "returnedStack": { "type": "item", "code": "abyssaldepths:ad-schematic-divinggear" } },
+        "D": { "type": "item", "code": "game:ingot-lead" }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "item", "code": "abyssaldepths:divingsuit-legs-{color}-mk1" }
 }

@@ -1,9 +1,9 @@
 [
-  {
-    "op": "add",
-    "path": "/behaviorConfigs/rideableaccessories/wearableSlots/11/forCategoryCodes/5",
-    "value": "davit",
-    "file": "game:entities/nonliving/boat-sailed.json",
-    "side": "Server"
-  }
+    {
+        "op": "add",
+        "path": "/behaviorConfigs/rideableaccessories/wearableSlots/11/forCategoryCodes/5",
+        "value": "davit",
+        "file": "game:entities/nonliving/boat-sailed.json",
+        "side": "Server"
+    }
 ]

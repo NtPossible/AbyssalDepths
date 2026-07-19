@@ -1,315 +1,315 @@
 {
-  "code": "divingsuit",
-  "heldTpIdleAnimation": "holdunderarm",
-  "variantgroups": [
-    { "code": "bodypart", "states": ["head", "body", "legs"] },
-    { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
-    { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
-  ],
-  "behaviors": [
-    { "name": "Wearable" },
-    { "name": "abyssaldepths:DivingEquipment" }
-  ],
-  "attributesByType": {
-    "divingsuit-head-*-mk1": {
-      "abyssalDepths": {
-        "suitId": "mk1",
-        "maxOxygen": 600000,
-        "safeDepth": 40,
-        "weighted": false,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
+    "code": "divingsuit",
+    "heldTpIdleAnimation": "holdunderarm",
+    "variantgroups": [
+        { "code": "bodypart", "states": ["head", "body", "legs"] },
+        { "code": "color", "states": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"] },
+        { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
+    ],
+    "behaviors": [
+        { "name": "Wearable" },
+        { "name": "abyssaldepths:DivingEquipment" }
+    ],
+    "attributesByType": {
+        "divingsuit-head-*-mk1": {
+            "abyssalDepths": {
+                "suitId": "mk1",
+                "maxOxygen": 600000,
+                "safeDepth": 40,
+                "weighted": false,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+        },
+        "divingsuit-*-*-mk1": {
+            "abyssalDepths": {
+                "suitId": "mk1",
+                "maxOxygen": 600000,
+                "safeDepth": 40,
+                "weighted": true,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+        },
+        "divingsuit-head-*-mk2": {
+            "abyssalDepths": {
+                "suitId": "mk2",
+                "maxOxygen": 600000,
+                "safeDepth": 60,
+                "weighted": false,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+        },
+        "divingsuit-*-*-mk2": {
+            "abyssalDepths": {
+                "suitId": "mk2",
+                "maxOxygen": 1500000,
+                "safeDepth": 60,
+                "weighted": true,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+         },
+        "divingsuit-head-*-mk3": {
+            "abyssalDepths": {
+                "suitId": "mk3",
+                "maxOxygen": 3000000,
+                "safeDepth": 300,
+                "weighted": true,
+                "lockHead": true,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+        },
+        "divingsuit-*-*-mk3": {
+            "abyssalDepths": {
+                "suitId": "mk3",
+                "maxOxygen": 3000000,
+                "safeDepth": 300,
+                "weighted": true,
+                "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                "breakSound": "abyssaldepths:sounds/wearable/break"
+            }
+        }
     },
-    "divingsuit-*-*-mk1": {
-      "abyssalDepths": {
-        "suitId": "mk1",
-        "maxOxygen": 600000,
-        "safeDepth": 40,
-        "weighted": true,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
+    "shapeByType": {
+        "divingsuit-*-*-mk1": { "base": "entity/armour/divingsuit1/{bodypart}" },
+        "divingsuit-*-*-mk2": { "base": "entity/armour/divingsuit2/{bodypart}" },
+        "divingsuit-*-*-mk3": { "base": "entity/armour/divingsuit3/{bodypart}" }
     },
-    "divingsuit-head-*-mk2": {
-      "abyssalDepths": {
-        "suitId": "mk2",
-        "maxOxygen": 600000,
-        "safeDepth": 60,
-        "weighted": false,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
+    "texturesByType": {
+        "*": {
+            "seraph": { "base": "game:block/transparent" },
+            "cloth": { "base": "game:block/cloth/linen/{color}" }
+        }
     },
-    "divingsuit-*-*-mk2": {
-      "abyssalDepths": {
-        "suitId": "mk2",
-        "maxOxygen": 1500000,
-        "safeDepth": 60,
-        "weighted": true,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
+    "storageFlags": 128,
+    "attributes": {
+        "handbook": {
+            "groupBy": [ "divingsuit-{bodypart}-*" ]
+        },
+        "visibleDamageEffect": true,
+        "clothesCategoryByType": {
+            "divingsuit-head-*": "armorhead",
+            "divingsuit-body-*": "armorbody",
+            "divingsuit-legs-*": "armorlegs"
+        },
+        "attachableToEntity": {
+            "texturePrefixCode": "divingsuit-{bodypart}-{tier}",
+            "categoryCodeByType": {
+                "divingsuit-head-*": "armorhead",
+                "divingsuit-body-*": "armorbody",
+                "divingsuit-legs-*": "armorlegs"
+        },
+        "disableElementsByType": {
+            "divingsuit-head-*": [
+                "hidehat",
+                "Hair tile upper part",
+                "ponytailhigh",
+                "ponytaillow",
+                "hair-uncovered",
+                "sidehigh",
+                "sidelow",
+                "bangs"
+            ],
+            "divingsuit-body-*": [
+                "Waist",
+                "hideupperarm",
+                "hidelowerarm",
+                "mittenfrill-l",
+                "mittenfrill-r",
+                "glovefrill-l",
+                "glovefrill-r"
+            ],
+            "divingsuit-legs-*": [
+                "hideshoeL",
+                "hideshoeR",
+                "shoefluffL",
+                "shoefluffR"
+            ]
+        },
+            "keepElementsByType": {
+                "divingsuit-head-*": [ "hair-covered" ],
+                "divingsuit-legs-*": [ "showshoeR", "showshoeL" ]
+            }
+        },
+        "defaultProtLoss": {
+            "perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
+            "perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
+        },
+        "footStepSoundByType": {
+            "divingsuit-body-*-mk1": "game:wearable/leather*",
+            "divingsuit-body-*-mk2": "game:wearable/scale*",
+            "divingsuit-body-*-mk3": "abyssaldepths:sounds/wearable/deep*"
+        },
+        "protectionModifiersByType": {
+            "divingsuit-*-mk1": {
+                "relativeProtection": 0.7,
+                "flatDamageReduction": 0.7,
+                "protectionTier": 2,
+                "perTierRelativeProtectionLoss": [ 0.015, 0.075 ],
+                "perTierFlatDamageReductionLoss": [ 0.05, 0.1 ]
+            },
+            "divingsuit-*-mk2": {
+                "relativeProtection": 0.88,
+                "flatDamageReduction": 1.5,
+                "protectionTier": 3
+            },
+            "divingsuit-*-mk3": {
+                "relativeProtection": 0.985,
+                "flatDamageReduction": 6,
+                "highDamageTierResistant": true,
+                "protectionTier": 4
+            }
+        },
+        "statModifiersByType": {
+            "divingsuit-*-mk1": {
+                "walkSpeed": -0.04,
+                "healingeffectivness": -0.17,
+                "hungerrate": 0.03
+            },
+            "divingsuit-*-mk2": {
+                "rangedWeaponsAcc": -0.1,
+                "rangedWeaponsSpeed": -0.2,
+                "walkSpeed": -0.1,
+                "healingeffectivness": -0.17,
+                "hungerrate": 0.12
+            },
+            "divingsuit-*-mk3": {
+                "rangedWeaponsAcc": -0.2,
+                "rangedWeaponsSpeed": -0.3,
+                "walkSpeed": -0.18,
+                "healingeffectivness": -0.35,
+                "hungerrate": 0.3
+            }
+        }
     },
-    "divingsuit-head-*-mk3": {
-      "abyssalDepths": {
-        "suitId": "mk3",
-        "maxOxygen": 3000000,
-        "safeDepth": 300,
-        "weighted": true,
-        "lockHead": true,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
-    },
-    "divingsuit-*-*-mk3": {
-      "abyssalDepths": {
-        "suitId": "mk3",
-        "maxOxygen": 3000000,
-        "safeDepth": 300,
-        "weighted": true,
-        "creakSound": "abyssaldepths:sounds/wearable/creak*",
-        "breakSound": "abyssaldepths:sounds/wearable/break"
-      }
-    }
-  },
-  "shapeByType": {
-    "divingsuit-*-*-mk1": { "base": "entity/armour/divingsuit1/{bodypart}" },
-    "divingsuit-*-*-mk2": { "base": "entity/armour/divingsuit2/{bodypart}" },
-    "divingsuit-*-*-mk3": { "base": "entity/armour/divingsuit3/{bodypart}" }
-  },
-  "texturesByType": {
-    "*": {
-      "seraph": { "base": "game:block/transparent" },
-      "cloth": { "base": "game:block/cloth/linen/{color}" }
-    }
-  },
-  "storageFlags": 128,
-  "attributes": {
-    "handbook": {
-      "groupBy": [ "divingsuit-{bodypart}-*" ]
-    },
-    "visibleDamageEffect": true,
-    "clothesCategoryByType": {
-      "divingsuit-head-*": "armorhead",
-      "divingsuit-body-*": "armorbody",
-      "divingsuit-legs-*": "armorlegs"
-    },
-    "attachableToEntity": {
-      "texturePrefixCode": "divingsuit-{bodypart}-{tier}",
-      "categoryCodeByType": {
-        "divingsuit-head-*": "armorhead",
-        "divingsuit-body-*": "armorbody",
-        "divingsuit-legs-*": "armorlegs"
-      },
-      "disableElementsByType": {
-        "divingsuit-head-*": [
-          "hidehat",
-          "Hair tile upper part",
-          "ponytailhigh",
-          "ponytaillow",
-          "hair-uncovered",
-          "sidehigh",
-          "sidelow",
-          "bangs"
+    "creativeinventory": {
+        "general": [
+            "divingsuit-body-*-mk1",
+            "divingsuit-legs-*-mk1",
+            "divingsuit-body-*-mk2",
+            "divingsuit-legs-*-mk2",
+
+            "divingsuit-head-plain-mk1",
+            "divingsuit-head-plain-mk2",
+
+            "divingsuit-head-plain-mk3",
+            "divingsuit-body-plain-mk3",
+            "divingsuit-legs-plain-mk3"
         ],
-        "divingsuit-body-*": [
-          "Waist",
-          "hideupperarm",
-          "hidelowerarm",
-          "mittenfrill-l",
-          "mittenfrill-r",
-          "glovefrill-l",
-          "glovefrill-r"
+        "items": [
+            "divingsuit-body-*-mk1",
+            "divingsuit-legs-*-mk1",
+            "divingsuit-body-*-mk2",
+            "divingsuit-legs-*-mk2",
+
+            "divingsuit-head-plain-mk1",
+            "divingsuit-head-plain-mk2",
+
+            "divingsuit-head-plain-mk3",
+            "divingsuit-body-plain-mk3",
+            "divingsuit-legs-plain-mk3"
         ],
-        "divingsuit-legs-*": [
-          "hideshoeL",
-          "hideshoeR",
-          "shoefluffL",
-          "shoefluffR"
+        "clothing": [
+            "divingsuit-body-*-mk1",
+            "divingsuit-legs-*-mk1",
+            "divingsuit-body-*-mk2",
+            "divingsuit-legs-*-mk2",
+
+            "divingsuit-head-plain-mk1",
+            "divingsuit-head-plain-mk2",
+
+            "divingsuit-head-plain-mk3",
+            "divingsuit-body-plain-mk3",
+            "divingsuit-legs-plain-mk3"
         ]
-      },
-      "keepElementsByType": {
-        "divingsuit-head-*": [ "hair-covered" ],
-        "divingsuit-legs-*": [ "showshoeR", "showshoeL" ]
-      }
     },
-    "defaultProtLoss": {
-      "perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
-      "perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
+    "renderAlphaTest": 0.25,
+    "durabilityByType": {
+        "divingsuit-*-mk1": 900,
+        "divingsuit-*-mk2": 1400,
+        "divingsuit-*-mk3": 5500
     },
-    "footStepSoundByType": {
-      "divingsuit-body-*-mk1": "game:wearable/leather*",
-      "divingsuit-body-*-mk2": "game:wearable/scale*",
-      "divingsuit-body-*-mk3": "abyssaldepths:sounds/wearable/deep*"
+    "fpHandTransformByType": {
+        "divingsuit-head-*": {
+            "translation": { "x": 0.4, "y": -1.9, "z": -0.5 },
+            "rotation": { "x": 163, "y": -111, "z": -180 },
+            "origin": { "x": 0.5, "y": 1.7, "z": 0.5 },
+            "scale": 2.15
+        },
+        "divingsuit-body-*": {
+            "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
+            "rotation": { "x": 163, "y": -111, "z": -180 },
+            "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
+            "scale": 2.15
+        },
+        "divingsuit-legs-*": {
+            "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
+            "rotation": { "x": 163, "y": -111, "z": -180 },
+            "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
+            "scale": 2.15
+        }
     },
-    "protectionModifiersByType": {
-      "divingsuit-*-mk1": {
-        "relativeProtection": 0.7,
-        "flatDamageReduction": 0.7,
-        "protectionTier": 2,
-        "perTierRelativeProtectionLoss": [ 0.015, 0.075 ],
-        "perTierFlatDamageReductionLoss": [ 0.05, 0.1 ]
-      },
-      "divingsuit-*-mk2": {
-        "relativeProtection": 0.88,
-        "flatDamageReduction": 1.5,
-        "protectionTier": 3
-      },
-      "divingsuit-*-mk3": {
-        "relativeProtection": 0.985,
-        "flatDamageReduction": 6,
-        "highDamageTierResistant": true,
-        "protectionTier": 4
-      }
+    "tpHandTransformByType": {
+        "divingsuit-head-*": {
+            "translation": { "x": -0.82, "y": -2.2, "z": -0.5 },
+            "rotation": { "x": 18, "y": 169, "z": 30 },
+            "origin": { "x": 0.5, "y": 1.7, "z": 0.5 },
+            "scale": 0.64
+        },
+        "divingsuit-body-*": {
+            "translation": { "x": -1, "y": -1.9, "z": -0.5 },
+            "rotation": { "x": 97, "y": -168, "z": 94 },
+            "origin": { "x": 0.5, "y": 1.5, "z": 0.5 },
+            "scale": 0.67
+        },
+        "divingsuit-legs-*": {
+            "translation": { "x": -0.7, "y": -0.6, "z": -0.4 },
+            "rotation": { "x": 95, "y": -20, "z": -91 },
+            "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
+            "scale": 0.74
+        }
     },
-    "statModifiersByType": {
-      "divingsuit-*-mk1": {
-        "walkSpeed": -0.04,
-        "healingeffectivness": -0.17,
-        "hungerrate": 0.03
-      },
-      "divingsuit-*-mk2": {
-        "rangedWeaponsAcc": -0.1,
-        "rangedWeaponsSpeed": -0.2,
-        "walkSpeed": -0.1,
-        "healingeffectivness": -0.17,
-        "hungerrate": 0.12
-      },
-      "divingsuit-*-mk3": {
-        "rangedWeaponsAcc": -0.2,
-        "rangedWeaponsSpeed": -0.3,
-        "walkSpeed": -0.18,
-        "healingeffectivness": -0.35,
-        "hungerrate": 0.3
-      }
+    "guiTransformByType": {
+        "divingsuit-head-*": {
+            "translation": { "x": 0, "y": 0, "z": 0 },
+            "rotation": { "x": -26, "y": -46, "z": -180 },
+            "origin": { "x": 0.6, "y": 1.72, "z": 0.5 },
+            "scale": 2
+        },
+        "divingsuit-body-*": {
+            "translation": { "x": 3, "y": 0, "z": 0 },
+            "rotation": { "x": -26, "y": -46, "z": -180 },
+            "origin": { "x": 0.5, "y": 1.11, "z": 0.5 },
+            "scale": 1.37
+        },
+          "divingsuit-legs-*": {
+            "translation": { "x": 1, "y": 0, "z": 0 },
+            "rotation": { "x": -26, "y": -46, "z": -180 },
+            "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
+            "scale": 1.25
+        }
+    },
+    "groundTransformByType": {
+        "divingsuit-head-*": {
+            "translation": { "x": 0, "y": 0, "z": 0 },
+            "rotation": { "x": 0, "y": 0, "z": 0 },
+            "origin": { "x": 0.34, "y": 1.71, "z": 0.5 },
+            "scale": 3.1
+        },
+        "divingsuit-body-*": {
+            "translation": { "x": 0, "y": 0, "z": 0 },
+            "rotation": { "x": 0, "y": 0, "z": 90 },
+            "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
+            "scale": 3.1
+        },
+        "divingsuit-legs-*": {
+            "translation": { "x": 0, "y": 0, "z": 0 },
+            "rotation": { "x": 0, "y": 0, "z": 90 },
+            "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
+            "scale": 3.1
+        }
     }
-  },
-  "creativeinventory": {
-    "general": [
-      "divingsuit-body-*-mk1",
-      "divingsuit-legs-*-mk1",
-      "divingsuit-body-*-mk2",
-      "divingsuit-legs-*-mk2",
-
-      "divingsuit-head-plain-mk1",
-      "divingsuit-head-plain-mk2",
-
-      "divingsuit-head-plain-mk3",
-      "divingsuit-body-plain-mk3",
-      "divingsuit-legs-plain-mk3"
-    ],
-    "items": [
-      "divingsuit-body-*-mk1",
-      "divingsuit-legs-*-mk1",
-      "divingsuit-body-*-mk2",
-      "divingsuit-legs-*-mk2",
-
-      "divingsuit-head-plain-mk1",
-      "divingsuit-head-plain-mk2",
-
-      "divingsuit-head-plain-mk3",
-      "divingsuit-body-plain-mk3",
-      "divingsuit-legs-plain-mk3"
-    ],
-    "clothing": [
-      "divingsuit-body-*-mk1",
-      "divingsuit-legs-*-mk1",
-      "divingsuit-body-*-mk2",
-      "divingsuit-legs-*-mk2",
-
-      "divingsuit-head-plain-mk1",
-      "divingsuit-head-plain-mk2",
-
-      "divingsuit-head-plain-mk3",
-      "divingsuit-body-plain-mk3",
-      "divingsuit-legs-plain-mk3"
-    ]
-  },
-  "renderAlphaTest": 0.25,
-  "durabilityByType": {
-    "divingsuit-*-mk1": 900,
-    "divingsuit-*-mk2": 1400,
-    "divingsuit-*-mk3": 5500
-  },
-  "fpHandTransformByType": {
-    "divingsuit-head-*": {
-      "translation": { "x": 0.4, "y": -1.9, "z": -0.5 },
-      "rotation": { "x": 163, "y": -111, "z": -180 },
-      "origin": { "x": 0.5, "y": 1.7, "z": 0.5 },
-      "scale": 2.15
-    },
-    "divingsuit-body-*": {
-      "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
-      "rotation": { "x": 163, "y": -111, "z": -180 },
-      "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
-      "scale": 2.15
-    },
-    "divingsuit-legs-*": {
-      "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
-      "rotation": { "x": 163, "y": -111, "z": -180 },
-      "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
-      "scale": 2.15
-    }
-  },
-  "tpHandTransformByType": {
-    "divingsuit-head-*": {
-      "translation": { "x": -0.82, "y": -2.2, "z": -0.5 },
-      "rotation": { "x": 18, "y": 169, "z": 30 },
-      "origin": { "x": 0.5, "y": 1.7, "z": 0.5 },
-      "scale": 0.64
-    },
-    "divingsuit-body-*": {
-      "translation": { "x": -1, "y": -1.9, "z": -0.5 },
-      "rotation": { "x": 97, "y": -168, "z": 94 },
-      "origin": { "x": 0.5, "y": 1.5, "z": 0.5 },
-      "scale": 0.67
-    },
-    "divingsuit-legs-*": {
-      "translation": { "x": -0.7, "y": -0.6, "z": -0.4 },
-      "rotation": { "x": 95, "y": -20, "z": -91 },
-      "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
-      "scale": 0.74
-    }
-  },
-  "guiTransformByType": {
-    "divingsuit-head-*": {
-      "translation": { "x": 0, "y": 0, "z": 0 },
-      "rotation": { "x": -26, "y": -46, "z": -180 },
-      "origin": { "x": 0.6, "y": 1.72, "z": 0.5 },
-      "scale": 2
-    },
-    "divingsuit-body-*": {
-      "translation": { "x": 3, "y": 0, "z": 0 },
-      "rotation": { "x": -26, "y": -46, "z": -180 },
-      "origin": { "x": 0.5, "y": 1.11, "z": 0.5 },
-      "scale": 1.37
-    },
-    "divingsuit-legs-*": {
-      "translation": { "x": 1, "y": 0, "z": 0 },
-      "rotation": { "x": -26, "y": -46, "z": -180 },
-      "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
-      "scale": 1.25
-    }
-  },
-  "groundTransformByType": {
-    "divingsuit-head-*": {
-      "translation": { "x": 0, "y": 0, "z": 0 },
-      "rotation": { "x": 0, "y": 0, "z": 0 },
-      "origin": { "x": 0.34, "y": 1.71, "z": 0.5 },
-      "scale": 3.1
-    },
-    "divingsuit-body-*": {
-      "translation": { "x": 0, "y": 0, "z": 0 },
-      "rotation": { "x": 0, "y": 0, "z": 90 },
-      "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
-      "scale": 3.1
-    },
-    "divingsuit-legs-*": {
-      "translation": { "x": 0, "y": 0, "z": 0 },
-      "rotation": { "x": 0, "y": 0, "z": 90 },
-      "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
-      "scale": 3.1
-    }
-  }
 }

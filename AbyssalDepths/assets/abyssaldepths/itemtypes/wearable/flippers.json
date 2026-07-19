@@ -1,106 +1,106 @@
 {
-  "code": "flippers",
-  "heldTpIdleAnimation": "holdunderarm",
-  "variantgroups": [
-    { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
-    { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
-  ],
-  "behaviors": [
-    { "name": "Wearable" },
-    { "name": "abyssaldepths:DivingEquipment" }
-  ],
-  "attributesByType": {
-    "flippers-*-mk1": {
-      "abyssalDepths": {
-        "swimSpeedMultiplier": 1.30
-      }
+    "code": "flippers",
+    "heldTpIdleAnimation": "holdunderarm",
+    "variantgroups": [
+        { "code": "wood", "states": ["acacia", "baldcypress", "birch", "ebony", "kapok", "larch", "maple", "oak", "pine", "purpleheart", "redwood", "walnut"] },
+        { "code": "tier", "states": ["mk1", "mk2", "mk3"] }
+    ],
+    "behaviors": [
+        { "name": "Wearable" },
+        { "name": "abyssaldepths:DivingEquipment" }
+    ],
+    "attributesByType": {
+        "flippers-*-mk1": {
+            "abyssalDepths": {
+                "swimSpeedMultiplier": 1.30
+            }
+        },
+        "flippers-*-mk2": {
+            "abyssalDepths": {
+                "swimSpeedMultiplier": 1.60
+            }
+        },
+        "flippers-*-mk3": {
+            "abyssalDepths": {
+              "swimSpeedMultiplier": 2.00
+            }
+        }
     },
-    "flippers-*-mk2": {
-      "abyssalDepths": {
-        "swimSpeedMultiplier": 1.60
-      }
+    "shapeByType": {
+        "*": { "base": "entity/armour/flippers/flippers-{tier}" }
     },
-    "flippers-*-mk3": {
-      "abyssalDepths": {
-        "swimSpeedMultiplier": 2.00
-      }
-    }
-  },
-  "shapeByType": {
-    "*": { "base": "entity/armour/flippers/flippers-{tier}" }
-  },
-  "texturesByType": {
-    "*mk1": {
-      "seraph": { "base": "game:block/transparent" },
-      "wood": { "base": "game:block/wood/planks/{wood}3" }
+    "texturesByType": {
+        "*mk1": {
+            "seraph": { "base": "game:block/transparent" },
+            "wood": { "base": "game:block/wood/planks/{wood}3" }
+        },
+        "*mk2": {
+            "seraph": { "base": "game:block/transparent" },
+            "wood": { "base": "game:block/wood/planks/{wood}3" },
+            "leather": { "base": "game:block/leather/plain" }
+        },
+        "*mk3": {
+            "seraph": { "base": "game:block/transparent" },
+            "wood": { "base": "game:block/wood/planks/{wood}3" },
+            "leather": { "base": "game:block/leather/chromium" }
+        }
     },
-    "*mk2": {
-      "seraph": { "base": "game:block/transparent" },
-      "wood": { "base": "game:block/wood/planks/{wood}3" },
-      "leather": { "base": "game:block/leather/plain" }
+    "storageFlags": 128,
+    "attributes": {
+        "handbook": {
+            "groupBy": ["flippers-{wood}-{tier}-*"]
+        },
+        "wearableAttachment": true,
+        "visibleDamageEffect": true,
+        "clothesCategoryByType": {
+          "*": "foot"
+        },
+        "footStepSoundByType": {},
+        "statModifiersByType": {
+            "*": {
+              "walkSpeed": -0.1
+            }
+        }
     },
-    "*mk3": {
-      "seraph": { "base": "game:block/transparent" },
-      "wood": { "base": "game:block/wood/planks/{wood}3" },
-      "leather": { "base": "game:block/leather/chromium" }
-    }
-  },
-  "storageFlags": 128,
-  "attributes": {
-    "handbook": {
-      "groupBy": ["flippers-{wood}-{tier}-*"]
+    "creativeinventory": {
+        "general": ["*"]
     },
-    "wearableAttachment": true,
-    "visibleDamageEffect": true,
-    "clothesCategoryByType": {
-      "*": "foot"
+    "renderAlphaTest": 0.25,
+    "durabilityByType": {
+        "*mk1": 1500,
+        "*mk2": 2000,
+        "*mk3": 5500
     },
-    "footStepSoundByType": {},
-    "statModifiersByType": {
-      "*": {
-        "walkSpeed": -0.1
-      }
+    "fpHandTransformByType": {
+        "*": {
+            "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
+            "rotation": { "x": 163, "y": -111, "z": -180 },
+            "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
+            "scale": 2.15
+        }
+    },
+    "tpHandTransformByType": {
+        "*": {
+            "translation": { "x": -1, "y": -0.5, "z": -0 },
+            "rotation": { "x": -180, "y": -29, "z": -94 },
+            "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
+            "scale": 0.74
+        }
+    },
+    "guiTransformByType": {
+        "*": {
+            "translation": { "x": -7, "y": -21, "z": 0 },
+            "rotation": { "x": -50, "y": -48, "z": -179 },
+            "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
+            "scale": 1.56
+        }
+    },
+    "groundTransformByType": {
+        "*": {
+            "translation": { "x": -0.1, "y": 0.65, "z": -0.4 },
+            "rotation": { "x": 0, "y": -52, "z": -8 },
+            "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
+            "scale": 3.1
+        }
     }
-  },
-  "creativeinventory": {
-    "general": ["*"]
-  },
-  "renderAlphaTest": 0.25,
-  "durabilityByType": {
-    "*mk1": 1500,
-    "*mk2": 2000,
-    "*mk3": 5500
-  },
-  "fpHandTransformByType": {
-    "*": {
-      "translation": { "x": 0.4, "y": -1.2, "z": -0.5 },
-      "rotation": { "x": 163, "y": -111, "z": -180 },
-      "origin": { "x": 0.5, "y": 1.6, "z": 0.5 },
-      "scale": 2.15
-    }
-  },
-  "tpHandTransformByType": {
-    "*": {
-      "translation": { "x": -1, "y": -0.5, "z": -0 },
-      "rotation": { "x": -180, "y": -29, "z": -94 },
-      "origin": { "x": 0.5, "y": 0.7, "z": 0.5 },
-      "scale": 0.74
-    }
-  },
-  "guiTransformByType": {
-    "*": {
-      "translation": { "x": -7, "y": -21, "z": 0 },
-      "rotation": { "x": -50, "y": -48, "z": -179 },
-      "origin": { "x": 0.5, "y": 0.6, "z": 0.5 },
-      "scale": 1.56
-    }
-  },
-  "groundTransformByType": {
-    "*": {
-      "translation": { "x": -0.1, "y": 0.65, "z": -0.4 },
-      "rotation": { "x": 0, "y": -52, "z": -8 },
-      "origin": { "x": 0.34, "y": 1.12, "z": 0.5 },
-      "scale": 3.1
-    }
-  }
 }

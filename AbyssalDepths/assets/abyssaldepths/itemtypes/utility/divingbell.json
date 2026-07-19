@@ -1,48 +1,48 @@
 {
-	"code": "divingbell",
-	"class": "ItemDivingBell",
-	"variantgroups": [
-		{ "code": "tier", "states": ["mk1"] },
-		//{ "code": "material", "states": ["brass"] }
-	],
-	"shapeByType": {
-		"*": { "base": "entity/nonliving/divingbell/divingbell", "ignoreElements": ["hideWater"] }
-	},
-	//"texturesByType": {
-	//	"*": {
-	//		"metal": { "base": "game:block/metal/ingot/{material}" }
-	//	}
-	//},
-	"attributes": {
-		"handbook": {
-			"groupBy": ["divingbell-*"]
+		"code": "divingbell",
+		"class": "ItemDivingBell",
+		"variantgroups": [
+				{ "code": "tier", "states": ["mk1"] },
+			//{ "code": "material", "states": ["brass"] }
+		],
+		"shapeByType": {
+				"*": { "base": "entity/nonliving/divingbell/divingbell", "ignoreElements": ["hideWater"] }
+		},
+		//"texturesByType": {
+		//		"*": {
+		//				"metal": { "base": "game:block/metal/ingot/{material}" }
+		//		}
+		//},
+		"attributes": {
+				"handbook": {
+						"groupBy": ["divingbell-*"]
+				}
+		},
+		"heldTpIdleAnimation": "holdunderarm",
+		"maxstacksize": 1,
+		"materialDensity": 1,
+		"liquidSelectable": 1,
+		"creativeinventory": { "general": ["*"], "items": ["*"], "tools": ["*"] },
+		"guiTransform": {
+				"translation": { "x": 4.0, "y": 7.0, "z": 0.0 },
+				"rotation": { "x": -32.0, "y": -35.0, "z": -180.0 },
+				"origin": { "x": 0.5, "y": 0.0, "z": 0.5 },
+				"scale": 0.6
+		},
+		"groundTransformByType": {
+				"divingbell-*": {
+						"translation": { "x": 0.0, "y": 0.0, "z": 0 },
+						"rotation": { "x": 0, "y": 0, "z": 0 },
+						"origin": { "x": 0, "y": 0, "z": 0 },
+						"scale": 1
+				}
+		},
+		"tpHandTransformByType": {
+				"divingbell-*": {
+						"translation": { "x": -0.7799, "y": 0.48, "z": -0.85 },
+						"rotation": { "x": -8, "y": 143, "z": 2 },
+						"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+						"scale": 0.25
+				}
 		}
-	},
-	"heldTpIdleAnimation": "holdunderarm",
-	"maxstacksize": 1,
-	"materialDensity": 1,
-	"liquidSelectable": 1,
-	"creativeinventory": { "general": ["*"], "items": ["*"], "tools": ["*"] },
-	"guiTransform": {
-		"translation": { "x": 4.0, "y": 7.0, "z": 0.0 },
-		"rotation": { "x": -32.0, "y": -35.0, "z": -180.0 },
-		"origin": { "x": 0.5, "y": 0.0, "z": 0.5 },
-		"scale": 0.6
-	},
-	"groundTransformByType": {
-		"divingbell-*": {
-			"translation": { "x": 0.0, "y": 0.0, "z": 0 },
-			"rotation": { "x": 0, "y": 0, "z": 0 },
-			"origin": { "x": 0, "y": 0, "z": 0 },
-			"scale": 1
-		}
-	},
-	"tpHandTransformByType": {
-		"divingbell-*": {
-			"translation": { "x": -0.7799, "y": 0.48, "z": -0.85 },
-			"rotation": { "x": -8, "y": 143, "z": 2 },
-			"origin": { "x": 0.5, "y": 0, "z": 0.5 },
-			"scale": 0.25
-		}
-	}
 }

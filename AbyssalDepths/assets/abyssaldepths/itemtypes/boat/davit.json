@@ -1,46 +1,48 @@
 {
-		"code": "davit",
-		"class": "abyssaldepths:ItemDavit",
-		"behaviors": [
-				{ "name": "GroundStorable", "properties": { "layout": "SingleCenter", "collisionBox": { "x1": 0.1, "y1":0, "z1": 0.2, "x2": 0.9, "y2": 0.75, "z2": 0.8 } } }
-		],
-		"variantgroups": [
-				{ "code": "type", "states": [ "metal" ] }
-		],
-		"attributes": {
-				"loweredDavitShape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" },
-				"attachableToEntity": {
-						"categoryCode": "davit",
-						"attachedShapeBySlotCode": {
-								"Right Storage 3": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" }
-						}
-				}
-		},
-		"shape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" },
-		"texturesByType": {
-				"*": {
-						"metal": { "base": "game:block/metal/plate/*" }
-				}
-		},
-		"creativeinventory": { "general": ["*"], "items": ["*"] },
-		"maxstacksize": 1,
-		"materialDensity": 400,
-		"guiTransform": {
-				"translation": { "x": 0, "y": 0, "z": 0 },
-				"rotation": { "x": -32, "y": 16, "z": -180 },
-				"origin": { "x": 0.5299, "y": 0.425, "z": 0.5 },
-				"scale": 1.51
-		},
-		"groundTransform": {
-				"translation": { "x": 0, "y": 0, "z": 0 },
-				"rotation": { "x": 0, "y": 0, "z": 0 },
-				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
-				"scale": 2.8
-		},
-		"tpHandTransform": {
-				"translation": { "x": -0.7, "y": -0.28, "z": -0.8 },
-				"rotation": { "x": -78, "y": 7, "z": 8 },
-				"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
-				"scale": 0.7
-		}
+    "code": "davit",
+    "class": "abyssaldepths:ItemDavit",
+    "behaviors": [
+        { "name": "GroundStorable", "properties": { "layout": "SingleCenter", "collisionBox": { "x1": 0.1, "y1":0, "z1": 0.2, "x2": 0.9, "y2": 0.75, "z2": 0.8 } } }
+    ],
+    "variantgroups": [
+        { "code": "type", "states": [ "metal" ] }
+    ],
+    "attributes": {
+        "loweredDavitShape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" },
+        "attachableToEntity": {
+            "categoryCode": "davit",
+            "attachedShapeBySlotCode": {
+                "Right Storage 3": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" }
+            }
+        }
+    },
+    "shape": { "base": "abyssaldepths:entity/nonliving/boat/sailed-davit" },
+    "texturesByType": {
+        "*": {
+            "metal": { "base": "game:block/metal/plate/*" }
+        }
+    },
+    "heldTpIdleAnimation": "holdbothhandslarge", "heldRightReadyAnimation": "heldblockready", 
+    "heldTpUseAnimation": "twohandplaceblock",
+    "creativeinventory": { "general": ["*"], "items": ["*"] },
+    "maxstacksize": 1,
+    "materialDensity": 400,
+    "guiTransform": {
+        "translation": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": -32, "y": 16, "z": -180 },
+        "origin": { "x": 0.5299, "y": 0.425, "z": 0.5 },
+        "scale": 1.51
+    },
+    "groundTransform": {
+        "translation": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": 0, "y": 0, "z": 0 },
+        "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+        "scale": 2.8
+    },
+    "tpHandTransform": {
+      "translation": { "x": 1, "y": 0.35, "z": -0.4 },
+      "rotation": { "x": -80, "y": 15, "z": -103 },
+      "origin": { "x": 0, "y": 0, "z": 0 },
+      "scale": 0.7
+    }
 }

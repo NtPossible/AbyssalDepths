@@ -8,11 +8,11 @@ namespace AbyssalDepths.src.Patches
     [HarmonyPatch(typeof(PModulePlayerInLiquid), nameof(PModulePlayerInLiquid.HandleSwimming))]
     public static class IncreaseSwimSpeedPatch
     {
-        private static bool _handlingSwimming = true;
+        private static bool handlingSwimming = true;
 
         static bool Prefix(PModulePlayerInLiquid __instance, float dt, Entity entity, EntityPos pos, EntityControls controls)
         {
-            if (!_handlingSwimming)
+            if (!handlingSwimming)
             {
                 return true;
             }
@@ -29,9 +29,9 @@ namespace AbyssalDepths.src.Patches
             }
 
             Vec3d? prevMotion = pos.Motion.Clone();
-            _handlingSwimming = false;
+            handlingSwimming = false;
             __instance.HandleSwimming(dt, entity, pos, controls);
-            _handlingSwimming = true;
+            handlingSwimming = true;
             pos.Motion.Set(prevMotion + (pos.Motion - prevMotion) * swimFactor);
 
             return false;

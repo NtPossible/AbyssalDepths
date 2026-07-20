@@ -128,7 +128,7 @@
     // descriptions
     "item-divingsuit-maxoxygen": "Max Oxygen: {0}",
     "item-divingsuit-safedepth": "Maximum Depth: {0}m",
-    "item-flippers-swimspeed": "Swimspeed: {0}x",
+    "item-equipment-swimspeed": "Swimspeed: {0}x",
 
     // Flippers mk1
     "abyssaldepths:item-flippers-acacia-mk1": "Acacia basic flippers",

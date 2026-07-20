@@ -1,4 +1,4 @@
-﻿using AbyssalDepths.src.CollectibleBehaviour;
+﻿using AbyssalDepths.src.CollectibleBehaviors;
 using System;
 using System.Collections.Generic;
 using Vintagestory.API.Common;

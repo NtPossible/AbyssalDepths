@@ -3,7 +3,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 
-namespace AbyssalDepths.src.CollectibleBehaviour
+namespace AbyssalDepths.src.CollectibleBehaviors
 {
     public class CollectibleBehaviorDivingEquipment : CollectibleBehavior
     {

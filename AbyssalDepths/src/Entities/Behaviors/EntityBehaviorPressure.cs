@@ -17,8 +17,6 @@ namespace AbyssalDepths.src.Entities.Behaviors
 
         private bool sealedEnvironment = false;
 
-        private static readonly Random rand = Random.Shared;
-
         public EntityBehaviorPressure(Entity entity) : base(entity)
         {
         }

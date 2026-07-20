@@ -1,5 +1,6 @@
 ﻿using AbyssalDepths.src.Systems;
 using System;
+using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
@@ -10,7 +11,12 @@ namespace AbyssalDepths.src.Entities.Behaviors
     public class EntityBehaviorPressure : EntityBehavior
     {
         public override string PropertyName() => "Pressure";
-        private float barotraumaTimer = 0f;
+        private float tickTimer = 0f;
+
+        private const float PressureUpdateInterval = 1f;
+
+        private bool sealedEnvironment = false;
+
         private static readonly Random rand = Random.Shared;
 
         public EntityBehaviorPressure(Entity entity) : base(entity)
@@ -39,40 +45,46 @@ namespace AbyssalDepths.src.Entities.Behaviors
                 return;
             }
 
-            barotraumaTimer -= deltaTime;
-            if (barotraumaTimer > 0)
+            tickTimer -= deltaTime;
+            if (tickTimer > 0)
             {
                 return;
             }
+            tickTimer = PressureUpdateInterval;
 
             if (!player.IsEyesSubmerged())
             {
-                barotraumaTimer = 1f;
+                sealedEnvironment = false;
                 return;
             }
 
-            int depth = GetWaterDepth(world, player, 999);
-            if (depth <= 0)
+            bool hasFunctionalSuit = ModSystemDivingEquipment.GetFunctionalSuit(player.Player, out List<ItemSlot> suitSlots, out int suitSafeDepth);
+
+            if (!hasFunctionalSuit && !sealedEnvironment)
             {
-                barotraumaTimer = 1f;
                 return;
             }
 
-            int depthOver = depth - AbyssalDepthsModSystem.Config.BaseSafeDepth;
-            if (depthOver <= 10)
+            int waterDepth = GetWaterDepth(world, player, hasFunctionalSuit ? suitSafeDepth : 0);
+
+            bool sealedNow = hasFunctionalSuit;
+
+            if (hasFunctionalSuit && waterDepth > suitSafeDepth)
             {
-                barotraumaTimer = 1f;
-                return;
+                int depthOver = waterDepth - suitSafeDepth;
+
+                ModSystemDivingEquipment.TryPlaySuitCreak(world, player, waterDepth, suitSafeDepth, suitSlots);
+                ModSystemDivingEquipment.DamageSuit(world, player, suitSlots, GetSuitDamagePerSecond(depthOver));
+
+                sealedNow = !ModSystemDivingEquipment.SuitDamaged(suitSlots);
             }
 
-            if (ModSystemDivingEquipment.GetFunctionalSuit(player.Player, out _, out _))
+            if (sealedEnvironment && !sealedNow && waterDepth > 0)
             {
-                barotraumaTimer = 1f;
-                return;
+                ApplyPressureShock(player, waterDepth);
             }
 
-            ApplyBarotrauma(player, depthOver);
-            barotraumaTimer = GetNextInterval(depthOver);
+            sealedEnvironment = sealedNow;
         }
 
         public static int GetWaterDepth(IServerWorldAccessor world, EntityPlayer entity, int effectiveSafeDepth)
@@ -184,33 +196,20 @@ namespace AbyssalDepths.src.Entities.Behaviors
             return false;
         }
 
-        private static void ApplyBarotrauma(EntityPlayer player, int depthOver)
+        private static void ApplyPressureShock(EntityPlayer player, int depth)
         {
-            float triggerChance = Math.Clamp(depthOver / 40f, 0f, 0.75f);
+            float ambientPressure = 1f + (depth / 10f);
+            float pressureDifference = ambientPressure - 1f;
 
-            if (rand.NextDouble() > triggerChance)
-            {
-                return;
-            }
-
-            float depthFactor = Math.Clamp(depthOver / 60f, 0f, 1f);
-
-            float minDamage = 0.1f + depthFactor * 0.4f;
-            float maxDamage = 0.2f + depthFactor * 5.8f;
-
-            float damage = minDamage + (float)rand.NextDouble() * (maxDamage - minDamage);
+            float damage = MathF.Pow(pressureDifference, 2.2f);
 
             ApplyPressureDamage(player, damage);
         }
 
-        private static float GetNextInterval(int depthOver)
+        private static int GetSuitDamagePerSecond(int depthOver)
         {
-            float depthFactor = Math.Clamp(depthOver / 50f, 0f, 1f);
-
-            float minInterval = 3f;
-            float maxInterval = 6f;
-
-            return (maxInterval - (maxInterval - minInterval) * depthFactor) + (float)(rand.NextDouble() * 0.5);
+            float severity = 0.5f + depthOver * 0.5f;
+            return (int)severity;
         }
 
         public static void ApplyPressureDamage(EntityPlayer entity, float amount)
@@ -229,6 +228,5 @@ namespace AbyssalDepths.src.Entities.Behaviors
 
             entity.ReceiveDamage(damageSource, amount);
         }
-
     }
 }

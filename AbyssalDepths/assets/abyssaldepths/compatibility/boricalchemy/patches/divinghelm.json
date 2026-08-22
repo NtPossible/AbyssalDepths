@@ -1,0 +1,29 @@
+[
+    {
+        "file": "boricalchemy:itemtypes/clothes/divinghelm.json",
+        "op": "addmerge",
+        "path": "/behaviors",
+        "side": "server",
+        "value": [
+            { "name": "abyssaldepths:DivingEquipment" }
+        ],
+        "dependsOn": [ { "modid": "boricalchemy" } ]
+    },
+    {
+        "file": "boricalchemy:itemtypes/clothes/divinghelm.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "server",
+        "value": {
+            "*": {
+                "abyssalDepths": {
+                  "suitId": "boricalchemyhelm",
+                  "safeDepth": 30,
+                  "creakSound": "abyssaldepths:sounds/wearable/creak*",
+                  "breakSound": "abyssaldepths:sounds/wearable/break"
+                }
+            }
+        },
+        "dependsOn": [ { "modid": "boricalchemy" } ]
+    }
+]

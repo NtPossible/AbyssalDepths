@@ -58,7 +58,7 @@ namespace AbyssalDepths
                 }
 
                 List<GridRecipe> recipes = api.World.GridRecipes;
-                recipes.RemoveAll(recipe => recipe?.Output?.Code?.Path?.StartsWith("ad-schematic-divinggear") == true);
+                recipes.RemoveAll(recipe => recipe?.Output?.Code?.PathStartsWith("ad-schematic-divinggear") == true);
             }
 
             public override void Dispose()

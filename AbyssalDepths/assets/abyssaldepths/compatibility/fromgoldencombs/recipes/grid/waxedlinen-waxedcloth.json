@@ -1,11 +1,11 @@
 
 {
-    "ingredientPattern": "AB",
+    "ingredientPattern": "ABB",
     "ingredients": {
         "A": { "type": "block", "code": "game:linen-waxed-*" },
-        "B": { "type": "item", "code": "game:stick" }
+        "B": { "type": "item", "code": "game:stick" },
     },
-    "width": 2,
+    "width": 3,
     "height": 1,
     "output": { "type": "item", "code": "abyssaldepths:waxedcloth" }
 }

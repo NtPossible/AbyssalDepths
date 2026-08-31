@@ -10,7 +10,7 @@
 		"brass": [16,16]
 	},
 	"textures": {
-		"brass": "game:block/metal/plate/brass"
+		"brass": "game:block/metal/ingot/brass"
 	},
 	"elements": [
 		{
@@ -120,10 +120,10 @@
 							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 						}
 					]
-					}
-			]
 				}
-	],
-	"animations": [
 			]
 		}
+	],
+	"animations": [
+	]
+}

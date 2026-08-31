@@ -199,7 +199,7 @@
     {
         "file": "abyssaldepths:itemtypes/wearable/armour",
         "dependsOn": [{ "modId": "combatoverhaul" }],
-        "op": "replace",
+        "op": "add",
         "path": "/class",
         "value": "CombatOverhaul:WearableArmor"
     },

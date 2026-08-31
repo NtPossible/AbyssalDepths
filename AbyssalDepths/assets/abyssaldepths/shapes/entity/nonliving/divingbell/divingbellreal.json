@@ -1,0 +1,657 @@
+{
+	"editor": {
+		"backDropShape": "",
+		"collapsedPaths": "",
+		"allAngles": false,
+		"entityTextureMode": false,
+		"singleTexture": false,
+		"vsFormatConverted": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {},
+	"textures": {},
+	"elements": [
+		{
+			"name": "divingbell",
+			"from": [8, 0, 8],
+			"to": [8, 0, 8],
+			"rotationOrigin": [8, 0, 8],
+			"children": [
+				{
+					"name": "cone",
+					"from": [0, 0, 0],
+					"to": [0, 0, 0],
+					"rotationOrigin": [0, 0, 0],
+					"children": [
+						{
+							"name": "plank1",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"rotationY": -60,
+							"children": [
+								{
+									"name": "plank1",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank2",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank3",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						},
+						{
+							"name": "plank3",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": 60,
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank2",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"children": [
+								{
+									"name": "plank1",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank2",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank3",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						},
+						{
+							"name": "plank5",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": 120,
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank3",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"rotationY": 60,
+							"children": [
+								{
+									"name": "plank2",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank3",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						},
+						{
+							"name": "plank7",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": -180,
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank4",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"rotationY": 120,
+							"children": [
+								{
+									"name": "plank3",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank4",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank8",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						},
+						{
+							"name": "plank9",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": -120,
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank5",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"rotationY": -180,
+							"children": [
+								{
+									"name": "plank4",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank5",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank8",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank8",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank9",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						},
+						{
+							"name": "plank11",
+							"from": [-1.5, 0, -0.4],
+							"to": [-1.47, 4, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": -60,
+							"rotationZ": -10
+						},
+						{
+							"name": "betweenplank6",
+							"from": [0, 0, 0],
+							"to": [0, 0, 0],
+							"rotationOrigin": [0, 0, 0],
+							"rotationY": -120,
+							"children": [
+								{
+									"name": "plank5",
+									"from": [-1.13, 0.025, -0.033],
+									"to": [-1.1, 4.03, 0.067],
+									"rotationOrigin": [0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank6",
+									"from": [1.1, 0.025, -0.033],
+									"to": [1.13, 4.03, 0.067],
+									"rotationOrigin": [-0.35, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank7",
+									"from": [1.2, 0.025, -0.033],
+									"to": [1.23, 3.38, 0.067],
+									"rotationOrigin": [-0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank8",
+									"from": [-1.23, 0.025, -0.033],
+									"to": [-1.2, 3.38, 0.067],
+									"rotationOrigin": [0.25, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank9",
+									"from": [-1.33, 0.025, -0.033],
+									"to": [-1.3, 2.23, 0.067],
+									"rotationOrigin": [0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								},
+								{
+									"name": "plank8",
+									"from": [1.3, 0.025, -0.033],
+									"to": [1.33, 2.23, 0.067],
+									"rotationOrigin": [-0.15, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank9",
+									"from": [1.4, 0.025, -0.033],
+									"to": [1.43, 1.08, 0.067],
+									"rotationOrigin": [-0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": -85.00006,
+									"rotationZ": -91.18765
+								},
+								{
+									"name": "plank10",
+									"from": [-1.43, 0.025, -0.033],
+									"to": [-1.4, 1.08, 0.067],
+									"rotationOrigin": [0.05, 0, 0.025],
+									"faces": {},
+									"rotationX": -99.93743,
+									"rotationY": 85.00006,
+									"rotationZ": 91.18765
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "top",
+					"from": [0, 0, 0],
+					"to": [0, 0, 0],
+					"rotationOrigin": [0, 0, 0],
+					"children": [
+						{
+							"name": "topplank1",
+							"from": [-0.75, 4.1, -0.4],
+							"to": [0.75, 4.2, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {}
+						},
+						{
+							"name": "topplank2",
+							"from": [-0.75, 4.1, -0.4],
+							"to": [0.75, 4.2001, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": 120
+						},
+						{
+							"name": "topplank3",
+							"from": [-0.75, 4.1, -0.4],
+							"to": [0.75, 4.201, 0.4],
+							"rotationOrigin": [0, 0, 0],
+							"faces": {},
+							"rotationY": 60
+						}
+					]
+				},
+				{
+					"name": "bottom",
+					"from": [0, 0, 0],
+					"to": [0, 0, 0],
+					"rotationOrigin": [0, 0, 0],
+					"children": []
+				}
+			]
+		}
+	],
+	"animations": []
+}
